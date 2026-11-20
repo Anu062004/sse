@@ -1,4 +1,4 @@
-const url = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sseaftermarket.com";
+const url = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sse-rosy.vercel.app";
 
 export const site = {
   name: "SSE Aftermarket Solution",
