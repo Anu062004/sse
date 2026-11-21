@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ProductCard } from "@/components/products/ProductCard";
-import { ProductDetail } from "@/components/products/ProductDetail";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { ChevronDownIcon, CloseIcon, SearchIcon } from "@/components/ui/Icons";
@@ -62,8 +61,6 @@ export function Catalogue({
   initialFilters: ProductFilters;
 }) {
   const [filters, setFilters] = useState<ProductFilters>(initialFilters);
-  const [selected, setSelected] = useState<string | null>(null);
-  const dialogRef = useRef<HTMLDialogElement>(null);
 
   const results = useMemo(() => filterProducts(filters, products), [filters, products]);
 
@@ -74,32 +71,8 @@ export function Catalogue({
     }
   }, [filters]);
 
-  // Navigate within the visible results; fall back to the full list if the
-  // open part has been filtered out.
-  const pool = results.some((item) => item.slug === selected) ? results : products;
-  const index = pool.findIndex((item) => item.slug === selected);
-  const current = index >= 0 ? pool[index] : null;
-
-  useEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-    if (current && !dialog.open) {
-      dialog.showModal();
-      document.documentElement.style.overflow = "hidden";
-    } else if (!current && dialog.open) {
-      dialog.close();
-    }
-    if (!current) document.documentElement.style.overflow = "";
-  }, [current]);
-
-  useEffect(() => () => {
-    document.documentElement.style.overflow = "";
-  }, []);
-
   const update = (patch: Partial<ProductFilters>) =>
     setFilters((value) => ({ ...value, ...patch }));
-  const step = (delta: number) =>
-    setSelected(pool[(index + delta + pool.length) % pool.length].slug);
 
   const tabs = [
     { slug: undefined, label: "All parts", count: products.length },
@@ -217,7 +190,7 @@ export function Catalogue({
           {results.length > 0 ? (
             <div className="grid grid-cols-1 gap-4 min-[521px]:grid-cols-2 min-[821px]:grid-cols-3 min-[821px]:gap-6 min-[1181px]:grid-cols-4">
               {results.map((product) => (
-                <ProductCard key={product.id} product={product} onOpen={(item) => setSelected(item.slug)} />
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           ) : (
@@ -235,37 +208,6 @@ export function Catalogue({
         </Container>
       </section>
 
-      <dialog
-        ref={dialogRef}
-        aria-labelledby="quick-view-title"
-        onClose={() => setSelected(null)}
-        onClick={(event) => {
-          if (event.target === event.currentTarget) setSelected(null);
-        }}
-        className="fade-in m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto bg-transparent p-[clamp(12px,3vw,40px)] backdrop:bg-[rgba(5,10,24,0.62)] backdrop:backdrop-blur-[10px]"
-      >
-        {current ? (
-          <div
-            className="grid min-h-full place-items-center"
-            onClick={(event) => {
-              if (event.target === event.currentTarget) setSelected(null);
-            }}
-          >
-            <ProductDetail
-              key={current.slug}
-              product={current}
-              titleId="quick-view-title"
-              nav={{
-                position: index + 1,
-                total: pool.length,
-                onPrev: () => step(-1),
-                onNext: () => step(1),
-              }}
-              onClose={() => setSelected(null)}
-            />
-          </div>
-        ) : null}
-      </dialog>
     </>
   );
 }

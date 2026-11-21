@@ -68,8 +68,8 @@ export default async function ProductPage({ params }: Props) {
               { label: product.name },
             ]}
           />
-          <div className="mt-8 flex justify-center">
-            <ProductDetail product={product} headingLevel="h1" priority />
+          <div className="mt-8">
+            <ProductDetail product={product} priority />
           </div>
         </Container>
       </div>

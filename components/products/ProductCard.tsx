@@ -1,35 +1,17 @@
 import Link from "next/link";
-import type { MouseEvent } from "react";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 import { MediaFrame } from "@/components/ui/MediaFrame";
 import { getCategory } from "@/data/categories";
 import { formatFitment } from "@/lib/format";
 import type { Product } from "@/lib/products";
 
-/**
- * Catalogue card. Always a real link to the product page; inside the catalogue
- * an `onOpen` handler turns a plain click into the quick-view panel instead.
- */
-export function ProductCard({
-  product,
-  onOpen,
-}: {
-  product: Product;
-  onOpen?: (product: Product) => void;
-}) {
+/** Catalogue card linking to the product page. */
+export function ProductCard({ product }: { product: Product }) {
   const category = getCategory(product.category);
-
-  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    if (!onOpen) return;
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
-    event.preventDefault();
-    onOpen(product);
-  };
 
   return (
     <Link
       href={`/products/${product.slug}`}
-      onClick={onOpen ? handleClick : undefined}
       className="lift group flex flex-col overflow-hidden rounded-[22px] bg-white text-left text-navy shadow-[0_1px_0_rgba(11,23,54,0.04),0_0_0_1px_rgba(11,23,54,0.06)] hover:shadow-[0_28px_50px_-28px_rgba(11,23,54,0.42),0_0_0_1px_rgba(11,23,54,0.08)]"
     >
       <span className="relative block">
