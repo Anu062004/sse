@@ -1,34 +1,55 @@
 import type { ReactNode } from "react";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { cn } from "@/lib/cn";
 
+/**
+ * Eyebrow + condensed display heading on the left, intro/action on the right.
+ * `index` is accepted for older call sites but no longer shown.
+ */
 export function SectionHeader({
-  index,
   label,
   title,
   intro,
   action,
+  tone = "light",
+  className,
 }: {
-  index: string;
+  index?: string;
   label: string;
-  title: string;
+  title: ReactNode;
   intro?: string;
   action?: ReactNode;
+  tone?: "light" | "dark";
+  className?: string;
 }) {
   return (
-    <div className="grid grid-cols-4 gap-x-4 gap-y-6 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
-      <p className="col-span-4 font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] opacity-55 lg:col-span-2">
-        {index} — {label}
-      </p>
-      <h2 className="col-span-4 text-3xl font-medium leading-[1.02] tracking-[-0.035em] sm:text-4xl lg:col-span-6 lg:col-start-3 lg:text-[clamp(2.5rem,3.6vw,4rem)]">
-        {title}
-      </h2>
-      <div className="col-span-4 flex flex-col items-start gap-5 lg:col-span-3 lg:col-start-10">
-        {intro ? (
-          <p className="text-sm leading-relaxed opacity-65 md:text-[15px]">
-            {intro}
-          </p>
-        ) : null}
-        {action}
+    <div
+      className={cn(
+        "reveal flex flex-wrap items-end justify-between gap-8",
+        className,
+      )}
+    >
+      <div>
+        <Eyebrow tone={tone}>{label}</Eyebrow>
+        <h2 className="display mt-[18px] max-w-[16ch] text-[clamp(32px,3.8vw,58px)] font-extrabold">
+          {title}
+        </h2>
       </div>
+      {intro || action ? (
+        <div className="flex max-w-[420px] flex-col items-start gap-5">
+          {intro ? (
+            <p
+              className={cn(
+                "text-base leading-relaxed",
+                tone === "dark" ? "text-white/75" : "text-slate",
+              )}
+            >
+              {intro}
+            </p>
+          ) : null}
+          {action}
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -51,7 +51,9 @@
     "spool_position": "Loader",
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-3dx-loader-spool-husco-2013-onwards.jpg"
+    ],
     "description": "Aftermarket loader spool for JCB 3DX machines with the Husco valve block, 2013 onwards. Supplied as a matched set of two.",
     "price": "",
     "in_stock": ""
@@ -70,7 +72,9 @@
     "spool_position": "Loader",
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control.jpg"
+    ],
     "description": "Replacement loader spool set for JCB 3DX XTRA machines running the Hydra Control valve block.",
     "price": "",
     "in_stock": ""
@@ -146,7 +150,9 @@
     "spool_position": "Unloader",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-3dx-xtra-unloader-spool-hydra-control.jpg"
+    ],
     "description": "Unloader spool for the JCB 3DX XTRA loader valve block with Hydra Control valve gear.",
     "price": "",
     "in_stock": ""
@@ -222,7 +228,9 @@
     "spool_position": "Excavator",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/mahindra-excavator-spool-husco.jpg"
+    ],
     "description": "Excavator spool for Mahindra machines with the Husco valve block.",
     "price": "",
     "in_stock": ""
@@ -241,7 +249,9 @@
     "spool_position": "Loader",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/lnt-terex-escorts-case-loader-spool-walvoil.jpg"
+    ],
     "description": "New-model loader spool for L&T, Terex, Escorts and Case machines with the Walvoil valve block.",
     "price": "",
     "in_stock": ""
@@ -279,7 +289,9 @@
     "spool_position": "Excavator",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/lnt-escorts-terex-excavator-spool.jpg"
+    ],
     "description": "Excavator spool for L&T, Escorts and Terex machines. Send the old spool or part number to confirm fitment.",
     "price": "",
     "in_stock": ""
@@ -298,7 +310,9 @@
     "spool_position": "Excavator",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/cat-424b-excavator-spool.jpg"
+    ],
     "description": "Excavator spool for CAT 424B machines.",
     "price": "",
     "in_stock": ""
@@ -412,7 +426,9 @@
     "spool_position": "Valve block",
     "pack_size": "1 kit (4 sets)",
     "material": "NBR seals with PU wipers",
-    "images": [],
+    "images": [
+      "/images/products/jcb-loader-valve-block-wiper-seal-kit.jpg"
+    ],
     "description": "Wiper seal kit for the JCB loader valve block with Husco valve gear. One kit contains four sets.",
     "price": "",
     "in_stock": ""
@@ -526,7 +542,9 @@
     "spool_position": "Transmission",
     "pack_size": "1 set",
     "material": "Hardened steel, machined",
-    "images": [],
+    "images": [
+      "/images/products/gear-lever-set-jcb-3dx.jpg"
+    ],
     "description": "Gear lever set for JCB 3DX. Machined lever with ball end.",
     "price": "",
     "in_stock": ""
@@ -564,7 +582,9 @@
     "spool_position": "Front axle",
     "pack_size": "1 pc",
     "material": "Forged steel, machined",
-    "images": [],
+    "images": [
+      "/images/products/stub-axle-jcb-3dx.jpg"
+    ],
     "description": "Stub axle for the JCB 3DX front axle assembly.",
     "price": "",
     "in_stock": ""

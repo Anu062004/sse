@@ -35,17 +35,17 @@ export default function BlogPage() {
                 <div className="col-span-4 md:col-span-2">
                   <time
                     dateTime={post.date}
-                    className="font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45"
+                    className="text-xs font-bold uppercase tracking-[0.16em] text-muted"
                   >
                     {formatDate(post.date)}
                   </time>
-                  <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
+                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-muted">
                     {post.category}
                   </p>
                 </div>
 
                 <div className="col-span-4 md:col-span-6 lg:col-span-7">
-                  <h2 className="text-xl font-medium leading-snug tracking-[-0.025em] group-hover:underline group-hover:decoration-yellow group-hover:underline-offset-4 sm:text-2xl">
+                  <h2 className="text-xl font-medium leading-snug tracking-[-0.025em] group-hover:underline group-hover:decoration-accent group-hover:underline-offset-4 sm:text-2xl">
                     {post.title}
                   </h2>
                   <p className="mt-2 max-w-2xl text-sm leading-relaxed text-navy/60">
@@ -54,7 +54,7 @@ export default function BlogPage() {
                 </div>
 
                 <div className="col-span-4 flex items-start justify-between gap-4 md:col-span-8 lg:col-span-3 lg:justify-end">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-navy/40">
+                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted">
                     {post.readingTime}
                   </span>
                   <span

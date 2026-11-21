@@ -24,18 +24,26 @@ export const site = {
     "https://www.google.com/maps/search/?api=1&query=SSE+Aftermarket+Solution+Faridabad",
   machines: ["JCB", "L&T", "Terex", "Escorts", "Case", "Mahindra", "CAT"],
   stats: [
-    { value: 15, suffix: "+", label: "States served" },
+    { value: 15, suffix: "+", label: "States supplied across India" },
     { value: 70, suffix: "+", label: "Product variants" },
-    { value: 7, suffix: "", label: "Machine brands" },
-    { value: 3, suffix: "", label: "Valve block makes" },
+    { value: 7, suffix: "", label: "Machine brands covered" },
+    { value: 3, suffix: "", label: "Valve block makes — Husco, Hydra Control, Walvoil" },
   ],
   nav: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Products", href: "/products" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Blog", href: "/blog" },
+    { label: "Catalogue", href: "/products" },
+    { label: "Spool finder", href: "/#finder" },
+    { label: "Quality", href: "/#quality" },
     { label: "Contact", href: "/contact" },
+  ],
+  footerNav: [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Catalogue", href: "/products" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Journal", href: "/blog" },
+    { label: "Get a quote", href: "/quote" },
   ],
 } as const;
 

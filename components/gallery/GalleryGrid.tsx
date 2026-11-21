@@ -114,11 +114,11 @@ export function GalleryGrid() {
             <div className="mt-3 flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-medium">{item.caption}</p>
-                <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-navy/45">
+                <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-muted">
                   {item.meta}
                 </p>
               </div>
-              <span className="font-mono text-[9px] tracking-[0.14em] text-navy/40">
+              <span className="text-xs font-bold tracking-[0.14em] text-muted">
                 {String(itemIndex + 1).padStart(2, "0")}
               </span>
             </div>
@@ -148,7 +148,7 @@ export function GalleryGrid() {
         {current && index !== null ? (
           <div className="flex h-dvh flex-col">
             <div className="flex h-16 shrink-0 items-center justify-between border-b border-white/15 px-5">
-              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/60">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/60">
                 {String(index + 1).padStart(2, "0")} /{" "}
                 {String(items.length).padStart(2, "0")}
               </p>
@@ -175,7 +175,7 @@ export function GalleryGrid() {
             <div className="flex shrink-0 items-center justify-between gap-4 border-t border-white/15 px-5 py-4">
               <div>
                 <p className="text-sm font-medium">{current.caption}</p>
-                <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-white/50">
+                <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-white/50">
                   {current.meta}
                 </p>
               </div>

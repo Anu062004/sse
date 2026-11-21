@@ -1,85 +1,78 @@
 import Image from "next/image";
-import fieldDetail from "@/assets/images/site/field-detail.jpg";
-import { ArrowLink } from "@/components/ui/ArrowLink";
+import jcbDesktop from "@/assets/images/hero/jcb-xcmg-desktop.jpg";
 import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { cn } from "@/lib/cn";
+import { site } from "@/lib/site";
 
 const steps = [
   {
     title: "Fit before finish",
-    body: "Spools are matched to the valve block position, not just the machine model.",
+    body: "Each spool is checked against its valve block before final finishing.",
   },
   {
-    title: "Material and machining",
-    body: "Parts are machined from steel and checked against the sample or drawing.",
+    title: "Material & machining",
+    body: "Precision-turned lands and grooves, matched to the original profile.",
   },
   {
     title: "Inspection",
-    body: "Dimensional checks and a trial fit are carried out before a batch is packed.",
+    body: "Dimensions and surface finish inspected before a part is released.",
   },
   {
     title: "Packing",
-    body: "Kits are packed by set, with the part number and fitment on the label.",
+    body: "Spools sleeved in protective tubes; seal kits sealed in SSE-branded packs.",
   },
 ];
 
 export function Quality() {
   return (
-    <Section id="quality" tone="paper">
-      <Container>
-        <SectionHeader
-          index="07"
-          label="Quality"
-          title="Measured, matched, packed."
-          intro="Fit and finish are checked before dispatch. Parts are packed by set with the part number on the label."
-          action={<ArrowLink href="/about">How we work</ArrowLink>}
-        />
+    <section id="quality" className="scroll-mt-24 py-section">
+      <Container className="grid grid-cols-1 items-stretch gap-[clamp(32px,5vw,80px)] min-[901px]:grid-cols-2">
+        <figure className="swipe-in relative m-0 min-h-[520px] overflow-hidden rounded-panel bg-navy">
+          <Image
+            src={jcbDesktop}
+            alt="JCB and XCMG crawler excavators parked on a sandy site"
+            fill
+            sizes="(min-width: 901px) 50vw, 100vw"
+            className="object-cover"
+          />
+          <figcaption className="absolute inset-x-5 bottom-5 flex items-center justify-between gap-3 rounded-2xl bg-ink/[0.78] px-[18px] py-3.5 text-sm text-white backdrop-blur-md">
+            <span>Built for abrasive site conditions</span>
+            <span className="font-semibold text-accent">{site.address.locality}</span>
+          </figcaption>
+        </figure>
 
-        <div className="mt-12 grid grid-cols-4 gap-x-4 gap-y-10 md:mt-16 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
-          <div className="col-span-4 lg:col-span-5">
-            <div className="relative aspect-[4/3] overflow-hidden bg-navy lg:aspect-[4/5]">
-              <Image
-                src={fieldDetail}
-                alt="Excavator tracks on a working site"
-                fill
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
-              Built for abrasive site conditions · Faridabad
-            </p>
-          </div>
-
-          <div className="col-span-4 lg:col-span-6 lg:col-start-7">
-            <ol className="border-b border-navy/20">
-              {steps.map((step, index) => (
-                <li
-                  key={step.title}
-                  className="grid grid-cols-[2rem_1fr] gap-x-4 border-t border-navy/20 py-5"
+        <div className="reveal flex flex-col justify-center">
+          <Eyebrow>Quality</Eyebrow>
+          <h2 className="display mt-[18px] text-[clamp(32px,3.8vw,58px)] font-extrabold">
+            Measured, matched, packed.
+          </h2>
+          <ol className="mt-10 grid grid-cols-1 gap-5 min-[761px]:grid-cols-2">
+            {steps.map((step, index) => (
+              <li
+                key={step.title}
+                className={cn(
+                  "rounded-card p-6",
+                  index === steps.length - 1 ? "bg-accent" : "bg-white",
+                )}
+              >
+                <span className="display block text-[30px] font-extrabold leading-none">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 text-[17px] font-bold">{step.title}</h3>
+                <p
+                  className={cn(
+                    "mt-2 text-sm leading-[1.55]",
+                    index === steps.length - 1 ? "text-navy" : "text-[#4A5672]",
+                  )}
                 >
-                  <span className="font-mono text-[10px] tracking-[0.12em] text-navy/40">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="text-base font-medium tracking-[-0.01em]">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-navy/60">
-                      {step.body}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            <div className="mt-8">
-              <ArrowLink href="/quote">Ask for a fitment check</ArrowLink>
-            </div>
-          </div>
+                  {step.body}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

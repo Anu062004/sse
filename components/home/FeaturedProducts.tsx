@@ -1,141 +1,93 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
-import { ArrowLink } from "@/components/ui/ArrowLink";
+import { useRef } from "react";
 import { Container } from "@/components/ui/Container";
-import { FitmentLine } from "@/components/ui/FitmentLine";
+import { ArrowLeftIcon, ArrowRightIcon } from "@/components/ui/Icons";
 import { MediaFrame } from "@/components/ui/MediaFrame";
-import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { getCategoryName } from "@/data/categories";
+import { formatFitment } from "@/lib/format";
 import type { Product } from "@/lib/products";
 
+/** Dark band with a horizontally scrolling rail of product cards. */
 export function FeaturedProducts({ products }: { products: Product[] }) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [index, setIndex] = useState(0);
+  const railRef = useRef<HTMLDivElement>(null);
 
-  const goTo = (next: number) => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const clamped = Math.max(0, Math.min(next, products.length - 1));
-    const reduce = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    track.scrollTo({
-      left: track.clientWidth * clamped,
-      behavior: reduce ? "auto" : "smooth",
-    });
-    setIndex(clamped);
-  };
-
-  const handleScroll = () => {
-    const track = trackRef.current;
-    if (!track || track.clientWidth === 0) return;
-
-    const next = Math.round(track.scrollLeft / track.clientWidth);
-    setIndex(Math.max(0, Math.min(next, products.length - 1)));
+  const scroll = (direction: 1 | -1) => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    railRef.current?.scrollBy({ left: direction * 320, behavior: reduce ? "auto" : "smooth" });
   };
 
   return (
-    <Section id="featured" tone="paper">
+    <section id="featured" className="on-dark scroll-mt-24 bg-navy py-[clamp(80px,9vw,128px)] text-white">
       <Container>
         <SectionHeader
-          index="04"
-          label="Featured products"
-          title="Current fitments."
-          intro="A short selection from the catalogue. Every listing carries the machine, year and valve block."
+          tone="dark"
+          label="From the catalogue"
+          title={
+            <>
+              Current <span className="text-accent">fitments.</span>
+            </>
+          }
           action={
-            <div className="flex items-center gap-2">
+            <div className="flex gap-2.5">
               <button
                 type="button"
-                onClick={() => goTo(index - 1)}
-                disabled={index === 0}
-                aria-label="Previous featured product"
-                className="flex h-11 w-11 items-center justify-center border border-navy/25 text-lg transition-colors hover:bg-navy hover:text-white disabled:pointer-events-none disabled:opacity-30"
+                aria-label="Scroll products left"
+                onClick={() => scroll(-1)}
+                className="icbtn icbtn-light"
               >
-                ←
+                <ArrowLeftIcon size={18} />
               </button>
               <button
                 type="button"
-                onClick={() => goTo(index + 1)}
-                disabled={index === products.length - 1}
-                aria-label="Next featured product"
-                className="flex h-11 w-11 items-center justify-center border border-navy/25 text-lg transition-colors hover:bg-navy hover:text-white disabled:pointer-events-none disabled:opacity-30"
+                aria-label="Scroll products right"
+                onClick={() => scroll(1)}
+                className="icbtn icbtn-light"
               >
-                →
+                <ArrowRightIcon size={18} />
               </button>
-              <span
-                className="ml-2 font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45"
-                aria-live="polite"
-              >
-                {String(index + 1).padStart(2, "0")} /{" "}
-                {String(products.length).padStart(2, "0")}
-              </span>
             </div>
           }
         />
+      </Container>
 
+      <Container className="mt-12">
         <div
-          ref={trackRef}
-          onScroll={handleScroll}
-          tabIndex={0}
-          role="group"
-          aria-roledescription="carousel"
+          ref={railRef}
+          role="region"
           aria-label="Featured products"
-          className="no-scrollbar mt-10 flex snap-x snap-mandatory overflow-x-auto motion-safe:scroll-smooth focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy md:mt-14"
+          tabIndex={0}
+          className="no-scrollbar flex snap-x snap-mandatory scroll-pl-1 gap-5 overflow-x-auto pb-2"
         >
-          {products.map((product, productIndex) => (
-            <article
+          {products.map((product) => (
+            <Link
               key={product.id}
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`${productIndex + 1} of ${products.length}`}
-              className="w-full shrink-0 snap-start"
+              href={`/products/${product.slug}`}
+              className="group flex shrink-0 basis-[300px] snap-start flex-col overflow-hidden rounded-card bg-white text-navy"
             >
-              <div className="grid grid-cols-4 gap-x-4 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
-                <div className="col-span-4 lg:col-span-7">
-                  <MediaFrame
-                    images={product.images}
-                    alt={product.name}
-                    label={product.name}
-                    ratio="aspect-[4/3]"
-                    sizes="(min-width: 1024px) 58vw, 100vw"
-                  />
-                </div>
-
-                <div className="col-span-4 mt-6 flex flex-col lg:col-span-4 lg:col-start-9 lg:mt-0 lg:justify-center">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45">
-                    {getCategoryName(product.category)}
-                  </p>
-                  <h3 className="mt-3 text-2xl font-medium leading-tight tracking-[-0.03em] sm:text-3xl">
-                    <Link
-                      href={`/products/${product.slug}`}
-                      className="hover:underline hover:decoration-yellow hover:underline-offset-4"
-                    >
-                      {product.name}
-                    </Link>
-                  </h3>
-                  <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
-                    Part {product.part_number}
-                  </p>
-                  <FitmentLine product={product} className="mt-3" />
-                  <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-navy/65">
-                    {product.description}
-                  </p>
-                  <div className="mt-6">
-                    <ArrowLink href={`/products/${product.slug}`}>
-                      View product
-                    </ArrowLink>
-                  </div>
-                </div>
+              <MediaFrame
+                images={product.images}
+                alt={product.name}
+                label={product.name}
+                category={product.category}
+                ratio="h-[360px]"
+                sizes="300px"
+              />
+              <div className="flex flex-col gap-2 px-[22px] pb-6 pt-5">
+                <span className="text-xs font-bold uppercase tracking-[0.12em] text-muted">
+                  {product.machine} · {product.spool_position}
+                </span>
+                <span className="display text-[22px] font-bold leading-[1.05]">{product.name}</span>
+                <span className="text-sm leading-[1.45] text-[#4A5672]">{formatFitment(product)}</span>
+                <span className="mt-2 inline-flex items-center gap-2 text-sm font-semibold">
+                  Enquire <ArrowRightIcon size={14} />
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

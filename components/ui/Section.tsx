@@ -4,14 +4,14 @@ import { cn } from "@/lib/cn";
 type Tone = "white" | "paper" | "navy";
 
 const tones: Record<Tone, string> = {
-  white: "border-line bg-white text-navy",
-  paper: "border-line bg-paper text-navy",
-  navy: "on-dark border-white/15 bg-navy text-white",
+  white: "bg-white text-navy",
+  paper: "bg-cream text-navy",
+  navy: "on-dark bg-navy text-white",
 };
 
 export function Section({
   id,
-  tone = "white",
+  tone = "paper",
   className,
   children,
 }: {
@@ -23,11 +23,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn(
-        "scroll-mt-20 border-t py-16 md:py-24 lg:py-28",
-        tones[tone],
-        className,
-      )}
+      className={cn("scroll-mt-24 py-section", tones[tone], className)}
     >
       {children}
     </section>

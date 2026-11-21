@@ -4,6 +4,7 @@ export type Category = {
   shortName: string;
   index: string;
   description: string;
+  image: string;
 };
 
 export const categories: Category[] = [
@@ -14,6 +15,7 @@ export const categories: Category[] = [
     index: "01",
     description:
       "Loader, excavator and unloader spools for Husco, Hydra Control and Walvoil valve blocks.",
+    image: "/images/categories/spool-valves.jpg",
   },
   {
     slug: "seal-kits",
@@ -22,6 +24,7 @@ export const categories: Category[] = [
     index: "02",
     description:
       "Wiper and seal kits for spools, hydraulic pumps and loader or excavator valve blocks.",
+    image: "/images/categories/seal-kits.jpg",
   },
   {
     slug: "gear-lever-sets",
@@ -30,6 +33,7 @@ export const categories: Category[] = [
     index: "03",
     description:
       "Machined gear lever sets for JCB 3DX and other earthmoving applications.",
+    image: "/images/categories/gear-lever-sets.jpg",
   },
   {
     slug: "hydro-clamp-seals",
@@ -38,6 +42,7 @@ export const categories: Category[] = [
     index: "04",
     description:
       "Hydro clamp seal sets for hydraulic clamp circuits on loaders and excavators.",
+    image: "/images/categories/hydro-clamp-seals.jpg",
   },
   {
     slug: "slew-plunger-bolts",
@@ -46,6 +51,7 @@ export const categories: Category[] = [
     index: "05",
     description:
       "Replacement slew plunger bolts for excavator slew and brake assemblies.",
+    image: "/images/categories/slew-plunger-bolts.jpg",
   },
   {
     slug: "stub-axles",
@@ -54,6 +60,7 @@ export const categories: Category[] = [
     index: "06",
     description:
       "Machined stub axles for JCB 3DX and other loader front axle assemblies.",
+    image: "/images/categories/stub-axles.jpg",
   },
   {
     slug: "hub-seals",
@@ -62,6 +69,7 @@ export const categories: Category[] = [
     index: "07",
     description:
       "Stub axle assemblies supplied with the matching front hub seal.",
+    image: "/images/categories/hub-seals.jpg",
   },
 ];
 

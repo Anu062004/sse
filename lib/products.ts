@@ -27,10 +27,16 @@ export const products = productsData as Product[];
 export const valveBlocks = ["Husco", "Hydra Control", "Walvoil"] as const;
 
 const featuredSlugs = [
-  "jcb-3dx-loader-spool-husco-2008-2010",
+  "jcb-3dx-xtra-loader-spool-hydra-control",
+  "jcb-3dx-loader-spool-husco-2013-onwards",
   "mahindra-excavator-spool-husco",
   "lnt-terex-escorts-case-loader-spool-walvoil",
+  "lnt-escorts-terex-excavator-spool",
+  "cat-424b-excavator-spool",
+  "jcb-3dx-xtra-unloader-spool-hydra-control",
+  "gear-lever-set-jcb-3dx",
   "jcb-loader-valve-block-wiper-seal-kit",
+  "stub-axle-jcb-3dx",
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -118,5 +124,26 @@ export function getProductSpecs(product: Product) {
       label: "Availability",
       value: product.in_stock ? "In stock" : "On request",
     },
+  ];
+}
+
+export function getProductFeatures(product: Product): string[] {
+  if (product.category === "spool-valves") {
+    return [
+      "Matched to machine, model year and valve block",
+      "Sleeved in a protective tube for transit",
+      "Matching seal kit available from SSE",
+    ];
+  }
+  if (product.category === "seal-kits" || product.category === "hydro-clamp-seals") {
+    return [
+      "Packed and labelled by valve block",
+      "Sealed SSE-branded pack",
+      "Dealer and bulk packs on request",
+    ];
+  }
+  return [
+    "Fitment confirmed against your machine model",
+    "Dealer and bulk rates available",
   ];
 }

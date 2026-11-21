@@ -54,15 +54,18 @@ function matchesYear(product: Product, year: number): boolean {
   return year <= product.year_to;
 }
 
-export function filterProducts(filters: ProductFilters): Product[] {
-  const query = filters.q?.toLowerCase();
+export function filterProducts(
+  filters: ProductFilters,
+  list: Product[] = products,
+): Product[] {
+  const query = filters.q?.trim().toLowerCase();
 
-  return products.filter((product) => {
+  return list.filter((product) => {
     if (filters.category && product.category !== filters.category) return false;
     if (filters.machine && !machineMatches(product, filters.machine)) {
       return false;
     }
-    if (filters.valve && product.valve_block !== filters.valve) return false;
+    if (filters.valve && !product.valve_block.includes(filters.valve)) return false;
     if (filters.year && !matchesYear(product, filters.year)) return false;
     if (query) {
       const haystack = [

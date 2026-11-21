@@ -1,49 +1,82 @@
 import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { ArrowRightIcon } from "@/components/ui/Icons";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "navy" | "outline" | "outline-light";
+type Variant =
+  | "light"
+  | "dark"
+  | "ghost"
+  | "line"
+  | "whatsapp"
+  | "on-accent"
+  // Legacy names, kept so existing pages map onto the new styles.
+  | "primary"
+  | "navy"
+  | "outline"
+  | "outline-light";
 
-const base =
-  "inline-flex min-h-12 items-center justify-center px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 disabled:cursor-not-allowed disabled:opacity-50";
+type Size = "md" | "sm";
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-yellow text-navy hover:bg-navy hover:text-white focus-visible:outline-navy",
-  navy: "bg-navy text-white hover:bg-yellow hover:text-navy focus-visible:outline-navy",
-  outline:
-    "border border-navy/25 text-navy hover:border-navy hover:bg-navy hover:text-white focus-visible:outline-navy",
-  "outline-light":
-    "border border-white/50 text-white hover:border-white hover:bg-white hover:text-navy focus-visible:outline-white",
+  light: "btn-light",
+  dark: "btn-dark",
+  ghost: "btn-ghost",
+  line: "btn-line",
+  whatsapp: "btn-whatsapp",
+  "on-accent": "btn-dark btn-on-accent",
+  primary: "btn-dark",
+  navy: "btn-dark",
+  outline: "btn-line",
+  "outline-light": "btn-ghost",
 };
 
 export function buttonStyles({
-  variant = "primary",
+  variant = "dark",
+  size = "md",
   className,
 }: {
   variant?: Variant;
+  size?: Size;
   className?: string;
 } = {}): string {
-  return cn(base, variants[variant], className);
+  return cn("btn", variants[variant], size === "sm" && "btn-sm", className);
 }
+
+/** The round icon well on the right of a pill button. Defaults to an arrow. */
+export function ButtonIcon({ children }: { children?: ReactNode }) {
+  return <span className="btn-ic">{children ?? <ArrowRightIcon />}</span>;
+}
+
+type CommonProps = {
+  children: ReactNode;
+  variant?: Variant;
+  size?: Size;
+  icon?: ReactNode | false;
+  className?: string;
+};
 
 export function ButtonLink({
   href,
   children,
-  variant = "primary",
+  variant,
+  size,
+  icon,
   className,
-}: {
-  href: string;
-  children: ReactNode;
-  variant?: Variant;
-  className?: string;
-}) {
-  const classes = buttonStyles({ variant, className });
+  onClick,
+}: CommonProps & { href: string; onClick?: () => void }) {
+  const classes = buttonStyles({ variant, size, className });
+  const content = (
+    <>
+      {children}
+      {icon === false ? null : <ButtonIcon>{icon}</ButtonIcon>}
+    </>
+  );
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} className={classes}>
-        {children}
+      <Link href={href} className={classes} onClick={onClick}>
+        {content}
       </Link>
     );
   }
@@ -53,22 +86,26 @@ export function ButtonLink({
     <a
       href={href}
       className={classes}
+      onClick={onClick}
       {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
     >
-      {children}
+      {content}
     </a>
   );
 }
 
 export function Button({
   children,
-  variant = "primary",
+  variant,
+  size,
+  icon,
   className,
   ...props
-}: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant }) {
+}: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children"> & CommonProps) {
   return (
-    <button className={buttonStyles({ variant, className })} {...props}>
+    <button className={buttonStyles({ variant, size, className })} {...props}>
       {children}
+      {icon === false ? null : <ButtonIcon>{icon}</ButtonIcon>}
     </button>
   );
 }

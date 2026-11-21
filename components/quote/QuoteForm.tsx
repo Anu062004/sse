@@ -12,7 +12,7 @@ type Status = "idle" | "submitting" | "error" | "success";
 type Errors = Record<string, string>;
 
 const labelClass =
-  "block font-mono text-[9px] uppercase tracking-[0.18em] text-navy/50";
+  "block text-xs font-bold uppercase tracking-[0.18em] text-muted";
 const fieldClass =
   "mt-2 h-12 w-full border-b border-line bg-transparent text-base text-navy placeholder:text-navy/30 focus:border-navy focus:outline-none";
 
@@ -99,7 +99,7 @@ export function QuoteForm({ product }: { product?: Product }) {
   if (status === "success") {
     return (
       <div role="status" className="border-t border-navy/20 pt-8">
-        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-navy/45">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted">
           Request sent
         </p>
         <h2 className="mt-3 text-3xl font-medium leading-tight tracking-[-0.035em]">
@@ -129,7 +129,7 @@ export function QuoteForm({ product }: { product?: Product }) {
   return (
     <>
       <noscript>
-        <p className="mb-6 border-l-2 border-yellow pl-3 text-sm leading-relaxed text-navy/70">
+        <p className="mb-6 border-l-2 border-accent pl-3 text-sm leading-relaxed text-navy/70">
           The quote form needs JavaScript. Please{" "}
           <a href={telHref} className="underline">
             call {site.phone}
@@ -145,11 +145,11 @@ export function QuoteForm({ product }: { product?: Product }) {
       <form onSubmit={handleSubmit} className="relative">
         {product ? (
           <div className="mb-8 border border-line bg-paper p-5">
-            <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">
               Quoting for
             </p>
             <p className="mt-2 text-base font-medium">{product.name}</p>
-            <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-navy/50">
+            <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-muted">
               Part {product.part_number}
             </p>
           </div>
@@ -279,7 +279,7 @@ export function QuoteForm({ product }: { product?: Product }) {
         </div>
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-xs text-[11px] leading-relaxed text-navy/50">
+          <p className="max-w-xs text-[11px] leading-relaxed text-muted">
             We use your details only to respond to this enquiry.
           </p>
           <Button

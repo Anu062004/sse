@@ -1,23 +1,35 @@
 import Image from "next/image";
-import { SpoolMark } from "@/components/ui/SpoolMark";
+import { CameraIcon } from "@/components/ui/Icons";
+import { ProductArt } from "@/components/ui/ProductArt";
 import { cn } from "@/lib/cn";
 
+/**
+ * Product photo, or a dark dotted placeholder with the part's outline drawing
+ * and a “Photo coming soon” chip when no photo exists yet.
+ */
 export function MediaFrame({
   images = [],
   alt,
   label,
+  category = "spool-valves",
   ratio = "aspect-square",
   sizes = "(min-width: 1024px) 33vw, 50vw",
   priority = false,
+  large = false,
+  fill = false,
   className,
   imageClassName,
 }: {
   images?: string[];
   alt: string;
   label: string;
+  category?: string;
   ratio?: string;
   sizes?: string;
   priority?: boolean;
+  large?: boolean;
+  /** Absolutely fill the positioned parent instead of sizing by `ratio`. */
+  fill?: boolean;
   className?: string;
   imageClassName?: string;
 }) {
@@ -25,9 +37,13 @@ export function MediaFrame({
 
   return (
     <div
-      className={cn("relative overflow-hidden bg-paper", ratio, className)}
+      className={cn(
+        "overflow-hidden bg-stone",
+        fill ? "absolute inset-0" : cn("relative", ratio),
+        className,
+      )}
       role={src ? undefined : "img"}
-      aria-label={src ? undefined : `${label} — image to be added`}
+      aria-label={src ? undefined : `${label}, photo coming soon`}
     >
       {src ? (
         <Image
@@ -36,24 +52,19 @@ export function MediaFrame({
           fill
           sizes={sizes}
           priority={priority}
-          className={cn("object-cover", imageClassName)}
+          className={cn("zoom-img object-cover", imageClassName)}
         />
       ) : (
-        <>
-          <div
-            aria-hidden="true"
-            className="absolute inset-4 border border-line/70"
+        <span className="ph-empty">
+          <ProductArt
+            category={category}
+            className={cn("ph-art", large ? "w-[78%] text-white/50" : "w-[72%]")}
           />
-          <div className="absolute inset-0 flex items-center justify-center px-8">
-            <SpoolMark className="w-28 text-navy/15" />
-          </div>
-          <p
-            aria-hidden="true"
-            className="absolute bottom-4 left-4 right-4 font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45"
-          >
-            Image slot · {label}
-          </p>
-        </>
+          <span className="inline-flex items-center gap-[7px] rounded-full border border-white/[0.12] bg-white/[0.08] px-[11px] py-1.5 text-[11.5px] font-semibold tracking-[0.04em] text-white/75">
+            <CameraIcon size={14} />
+            Photo coming soon
+          </span>
+        </span>
       )}
     </div>
   );

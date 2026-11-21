@@ -1,71 +1,61 @@
-import { getImageProps } from "next/image";
+import { getImageProps, type StaticImageData } from "next/image";
 import caseDesktop from "@/assets/images/hero/case-desktop.jpg";
 import caseMobile from "@/assets/images/hero/case-mobile.jpg";
 import jcbDesktop from "@/assets/images/hero/jcb-xcmg-desktop.jpg";
 import jcbMobile from "@/assets/images/hero/jcb-xcmg-mobile.jpg";
-import { HeroMedia, type HeroImage } from "@/components/home/HeroMedia";
+import backhoeDesktop from "@/assets/images/hero/backhoe-desktop.jpg";
+import backhoeMobile from "@/assets/images/hero/backhoe-mobile.jpg";
+import { HeroStage, type HeroSlide } from "@/components/home/HeroSlideshow";
 import { ButtonLink } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
+import { site } from "@/lib/site";
 
-function heroImage(
-  desktop: typeof caseDesktop,
-  mobile: typeof caseMobile,
+function source(image: StaticImageData, alt: string, maxWidth: number) {
+  const width = Math.min(maxWidth, image.width);
+  const height = Math.round((image.height / image.width) * width);
+  const { props } = getImageProps({ src: image, alt, sizes: "100vw", quality: 76, width, height });
+  return { src: props.src, srcSet: props.srcSet, width, height };
+}
+
+function slide(
+  desktop: StaticImageData,
+  mobile: StaticImageData | null,
   alt: string,
-): HeroImage {
-  const common = { sizes: "100vw", quality: 76, alt };
-  const desktopProps = getImageProps({
-    ...common,
-    src: desktop,
-    width: 2400,
-    height: 1600,
-  }).props;
-  const mobileProps = getImageProps({
-    ...common,
-    src: mobile,
-    width: 1200,
-    height: 1600,
-  }).props;
-
+  caption: string,
+): HeroSlide {
   return {
-    desktop: {
-      src: desktopProps.src,
-      srcSet: desktopProps.srcSet,
-      width: 2400,
-      height: 1600,
-    },
-    mobile: {
-      src: mobileProps.src,
-      srcSet: mobileProps.srcSet,
-      width: 1200,
-      height: 1600,
-    },
+    desktop: source(desktop, alt, 2400),
+    mobile: mobile ? source(mobile, alt, 1200) : undefined,
     alt,
+    caption,
   };
 }
 
 export function Hero() {
-  const first = heroImage(
-    caseDesktop,
-    caseMobile,
-    "CASE CX210B excavator working on a construction site",
-  );
-  const second = heroImage(
-    jcbDesktop,
-    jcbMobile,
-    "JCB and XCMG excavators on a sandy site",
-  );
+  const slides = [
+    slide(caseDesktop, caseMobile, "CASE CX210B excavator on a construction site", "Excavators · CASE, CAT, Mahindra"),
+    slide(backhoeDesktop, backhoeMobile, "JCB backhoe loader working on a building site", "Backhoe loaders · JCB 2D, 3DX, 3DX Xtra"),
+    slide(jcbDesktop, jcbMobile, "JCB and XCMG crawler excavators side by side", "Crawler excavators · on-site spares"),
+  ];
+  const first = slides[0];
+  const facts = [
+    { value: "15+", label: "States supplied" },
+    { value: "70+", label: "Product variants" },
+    { value: String(site.machines.length), label: "Machine brands" },
+  ];
 
   return (
-    <section className="on-dark relative isolate flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden bg-navy text-white">
-      <link
-        rel="preload"
-        as="image"
-        href={first.mobile.src}
-        imageSrcSet={first.mobile.srcSet}
-        imageSizes="100vw"
-        fetchPriority="high"
-        media="(max-width: 767px)"
-      />
+    <>
+      {first.mobile ? (
+        <link
+          rel="preload"
+          as="image"
+          href={first.mobile.src}
+          imageSrcSet={first.mobile.srcSet}
+          imageSizes="100vw"
+          fetchPriority="high"
+          media="(max-width: 767px)"
+        />
+      ) : null}
       <link
         rel="preload"
         as="image"
@@ -75,39 +65,45 @@ export function Hero() {
         fetchPriority="high"
         media="(min-width: 768px)"
       />
-      <HeroMedia first={first} second={second} />
-      <div aria-hidden="true" className="absolute inset-0 bg-navy/50" />
-
-      <Container className="relative z-10 flex flex-1 flex-col justify-end pb-12 pt-24 md:justify-center md:pb-16 md:pt-20">
-        <div className="grid grid-cols-4 gap-x-4 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
-          <div className="col-span-4 md:col-span-8 lg:col-span-9">
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/65">
-              SSE Aftermarket Solution · Faridabad
-            </p>
-            <h1 className="mt-5 text-[clamp(2.75rem,7.4vw,6.5rem)] font-medium leading-[0.92] tracking-[-0.05em]">
-              <span className="block">Precision spares.</span>
-              <span className="block">Built for the field.</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
-              Spool valves, seal kits and hydraulic spares for JCB, L&amp;T,
-              Terex, Escorts, Case, Mahindra and CAT machines.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="#finder">Find your spool</ButtonLink>
-              <ButtonLink href="/quote" variant="outline-light">
-                Get a quote
-              </ButtonLink>
-            </div>
-          </div>
+      <HeroStage
+        slides={slides}
+        facts={
+          <ul className="flex gap-8 text-[13px] text-white/[0.78]">
+            {facts.map((fact) => (
+              <li key={fact.label} className="flex items-baseline gap-2">
+                <span className="display text-2xl font-extrabold leading-none text-white">
+                  {fact.value}
+                </span>
+                {fact.label}
+              </li>
+            ))}
+          </ul>
+        }
+      >
+        <h1 className="display text-shadow-hero mt-6 text-[clamp(42px,5.4vw,92px)] font-extrabold leading-[0.9] tracking-[-0.034em]">
+          Precision spares,
+          <br />
+          <span className="text-accent">built for the field.</span>
+        </h1>
+        <p className="mt-4 flex items-center gap-3.5 text-[13px] font-semibold uppercase tracking-[0.18em] text-white/[0.88] before:h-0.5 before:w-8 before:bg-accent after:h-0.5 after:w-8 after:bg-accent">
+          Manufacturer &amp; dealer · {site.address.locality}
+        </p>
+        <p className="mx-auto mt-[26px] max-w-[56ch] text-[clamp(15px,1.15vw,18px)] leading-[1.55] text-white/[0.86]">
+          Spool valves, seal kits and hydraulic spares for{" "}
+          <strong className="font-semibold text-white">
+            JCB, L&amp;T, Terex, Escorts, Case, Mahindra and CAT
+          </strong>{" "}
+          — matched to the machine, the year and the valve block.
+        </p>
+        <div className="mt-[34px] flex flex-wrap justify-center gap-3">
+          <ButtonLink href="#finder" variant="light">
+            Find your spool
+          </ButtonLink>
+          <ButtonLink href="/quote" variant="ghost">
+            Get a quote
+          </ButtonLink>
         </div>
-      </Container>
-
-      <div className="relative z-10 border-t border-white/25">
-        <Container className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 py-4 font-mono text-[9px] uppercase tracking-[0.16em] text-white/65 md:text-[10px]">
-          <p>Faridabad, India · Manufacturer &amp; Dealer</p>
-          <p>Supplying 15+ states</p>
-        </Container>
-      </div>
-    </section>
+      </HeroStage>
+    </>
   );
 }

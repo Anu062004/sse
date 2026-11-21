@@ -41,7 +41,7 @@ export default async function QuotePage({
 
           <aside className="col-span-4 lg:col-span-4 lg:col-start-9 lg:self-start">
             <div className="border-t border-navy/20 pt-4">
-              <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted">
                 Prefer to talk?
               </p>
               <div className="mt-4 space-y-3 text-sm">
@@ -71,17 +71,17 @@ export default async function QuotePage({
                     {site.email}
                   </a>
                 </p>
-                <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-navy/45">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">
                   {site.hours}
                 </p>
               </div>
             </div>
 
             <div className="mt-8 border-t border-navy/20 pt-4">
-              <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted">
                 What to include
               </p>
-              <ul className="mt-4 list-disc space-y-2 pl-4 text-sm leading-relaxed text-navy/65 marker:text-yellow">
+              <ul className="mt-4 list-disc space-y-2 pl-4 text-sm leading-relaxed text-navy/65 marker:text-accent">
                 <li>Machine model and year.</li>
                 <li>Valve block make: Husco, Hydra Control or Walvoil.</li>
                 <li>The old part number, or a photo of the old part.</li>
@@ -89,7 +89,7 @@ export default async function QuotePage({
               </ul>
             </div>
 
-            <p className="mt-8 font-mono text-[9px] uppercase leading-relaxed tracking-[0.14em] text-navy/45">
+            <p className="mt-8 text-xs font-bold uppercase leading-relaxed tracking-[0.14em] text-muted">
               Dispatch from Faridabad
               <br />
               Dealer and bulk rates available

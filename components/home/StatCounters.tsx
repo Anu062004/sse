@@ -63,9 +63,9 @@ export function StatCounters() {
       {site.stats.map((stat, index) => (
         <div key={stat.label}>
           <div aria-hidden="true" className="relative h-px bg-navy/20">
-            <span className="absolute left-0 top-0 h-px w-8 bg-yellow" />
+            <span className="absolute left-0 top-0 h-px w-8 bg-accent" />
           </div>
-          <dt className="mt-4 font-mono text-[9px] uppercase tracking-[0.18em] text-navy/50">
+          <dt className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-muted">
             {stat.label}
           </dt>
           <dd

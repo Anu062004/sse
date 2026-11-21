@@ -1,23 +1,18 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter_Tight } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
-import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
-const sans = Inter_Tight({
+// Variable width axis powers the condensed `.display` headings (font-stretch: 72%).
+const sans = Archivo({
   subsets: ["latin"],
+  axes: ["wdth"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
   display: "swap",
 });
 
@@ -71,24 +66,26 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-IN" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="en-IN" className={sans.variable}>
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-navy focus:px-4 focus:py-3 focus:text-[10px] focus:font-semibold focus:uppercase focus:tracking-[0.16em] focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-navy focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-white"
         >
           Skip to content
         </a>
-        <SiteHeader />
-        <main id="main" tabIndex={-1}>
-          {children}
-        </main>
-        <SiteFooter />
         <div
           aria-hidden="true"
-          className="h-[calc(3.75rem+env(safe-area-inset-bottom))] lg:hidden"
+          className="scroll-progress pointer-events-none fixed inset-x-0 top-0 z-[60] h-[3px] bg-accent"
         />
-        <MobileActionBar />
+        <div className="relative">
+          <SiteHeader />
+          <main id="main" tabIndex={-1}>
+            {children}
+          </main>
+        </div>
+        <SiteFooter />
+        <WhatsAppFloat />
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
       </body>
     </html>

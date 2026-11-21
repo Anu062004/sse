@@ -1,14 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLink } from "@/components/ui/ArrowLink";
+import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { MediaFrame } from "@/components/ui/MediaFrame";
+import { ArrowRightIcon, DocumentIcon } from "@/components/ui/Icons";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import {
-  getCategoryCounts,
-  getCategoryImage,
-  products,
-} from "@/lib/products";
+import { getCategoryCounts, products } from "@/lib/products";
 
 export function ProductRange() {
   const categoryCounts = getCategoryCounts();
@@ -17,82 +14,61 @@ export function ProductRange() {
     <Section id="products">
       <Container>
         <SectionHeader
-          index="02"
-          label="Product range"
-          title="Spool valves, seal kits and the parts around them."
-          intro="Seven categories for loaders, excavators and backhoes. Filter the catalogue by machine, valve block and year."
-          action={<ArrowLink href="/products">All products</ArrowLink>}
+          label="The components"
+          title={`${categoryCounts.length === 7 ? "Seven" : categoryCounts.length} components. One catalogue.`}
+          intro="Everything in the SSE product catalogue, from spool valves for every major loader and excavator to the seals that keep them tight."
         />
 
-        <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 md:mt-16 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
-          {categoryCounts.map((category) => {
-            const image = getCategoryImage(category.slug);
-
-            return (
-              <Link
-                key={category.slug}
-                href={`/products?category=${category.slug}`}
-                className="group flex flex-col border-t border-navy/20 pt-4"
-              >
-                <MediaFrame
-                  images={image ? [image] : []}
-                  alt={`${category.name} from SSE Aftermarket Solution`}
-                  label={category.name}
-                  ratio="aspect-square"
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+        <div className="mt-14 grid grid-cols-1 gap-5 min-[481px]:grid-cols-2 min-[1101px]:grid-cols-4 min-[761px]:grid-cols-3">
+          {categoryCounts.map((category) => (
+            <Link
+              key={category.slug}
+              href={`/products?category=${category.slug}`}
+              className="lift reveal group flex flex-col overflow-hidden rounded-card bg-white text-navy"
+            >
+              <div className="relative h-[170px] overflow-hidden bg-[#0D1A3D]">
+                <Image
+                  src={category.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1101px) 25vw, (min-width: 761px) 33vw, (min-width: 481px) 50vw, 100vw"
+                  className="zoom-img object-contain"
                 />
-                <div className="mt-4 flex items-start justify-between gap-3">
-                  <h3 className="text-base font-medium leading-snug tracking-[-0.02em] group-hover:underline group-hover:decoration-yellow group-hover:underline-offset-4 sm:text-lg">
-                    {category.name}
-                  </h3>
-                  <span
-                    aria-hidden="true"
-                    className="mt-0.5 shrink-0 text-sm transition-transform duration-200 group-hover:translate-x-1"
-                  >
-                    →
+              </div>
+              <div className="grow-bar" />
+              <div className="flex flex-1 flex-col gap-2.5 px-[22px] pb-6 pt-[22px]">
+                <div className="flex items-center justify-between">
+                  <span className="display text-lg font-bold text-muted">{category.index}</span>
+                  <span className="rounded-full bg-sand px-2.5 py-[5px] text-[13px] font-semibold">
+                    {category.count} {category.count === 1 ? "part" : "parts"}
                   </span>
                 </div>
-                <div className="mt-2 flex items-center justify-between gap-3 font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
-                  <span>{category.index}</span>
-                  <span>{category.count} parts</span>
-                </div>
-                <p className="mt-3 hidden text-sm leading-relaxed text-navy/60 sm:line-clamp-2">
-                  {category.description}
-                </p>
-              </Link>
-            );
-          })}
-
-          <Link
-            href="/products"
-            className="group flex flex-col border-t border-navy/20 pt-4"
-          >
-            <div className="relative flex aspect-square flex-col justify-between bg-navy p-5 text-white">
-              <div className="flex items-start justify-between gap-3">
-                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/60">
-                  Catalogue
-                </span>
-                <span
-                  aria-hidden="true"
-                  className="text-lg transition-transform duration-200 group-hover:translate-x-1"
-                >
-                  →
+                <h3 className="display text-2xl font-bold leading-[1.05]">{category.name}</h3>
+                <p className="flex-1 text-sm leading-normal text-[#4A5672]">{category.description}</p>
+                <span className="mt-1 inline-flex items-center gap-2 text-sm font-semibold">
+                  View parts <ArrowRightIcon size={14} />
                 </span>
               </div>
-              <p className="text-[clamp(3rem,5vw,4.5rem)] font-medium leading-none tracking-[-0.06em]">
-                {products.length}
-              </p>
-              <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/60">
-                parts listed
+            </Link>
+          ))}
+
+          <div className="reveal flex min-h-[360px] flex-col justify-between gap-7 rounded-card bg-navy p-7 text-white">
+            <div>
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-accent text-navy">
+                <DocumentIcon size={26} />
+              </div>
+              <h3 className="display mt-[22px] text-[28px] font-bold leading-none">
+                The full product catalogue
+              </h3>
+              <p className="mt-3 text-[15px] leading-[1.55] text-white/75">
+                {products.length} parts across spools, unloader spools and seal
+                kits, labelled by machine and valve block.
               </p>
             </div>
-            <h3 className="mt-4 text-base font-medium leading-snug tracking-[-0.02em] group-hover:underline group-hover:decoration-yellow group-hover:underline-offset-4 sm:text-lg">
-              View all products
-            </h3>
-            <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
-              Filter by machine · valve · year
-            </p>
-          </Link>
+            <ButtonLink href="/products" variant="light" size="sm" className="self-start">
+              Browse the catalogue
+            </ButtonLink>
+          </div>
         </div>
       </Container>
     </Section>

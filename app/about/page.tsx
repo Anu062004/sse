@@ -76,7 +76,7 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
+              <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-muted">
                 Built for abrasive site conditions · Faridabad
               </p>
             </div>
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 key={principle.title}
                 className="col-span-4 border-t border-navy/20 pt-4 md:col-span-4 lg:col-span-4"
               >
-                <p className="font-mono text-[10px] tracking-[0.14em] text-navy/40">
+                <p className="text-xs font-bold tracking-[0.14em] text-muted">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-3 text-lg font-medium tracking-[-0.02em]">
@@ -147,7 +147,7 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <section className="on-dark border-t border-yellow bg-navy py-16 text-white md:py-20">
+      <section className="on-dark border-t border-accent bg-navy py-16 text-white md:py-20">
         <Container>
           <div className="grid grid-cols-4 gap-x-4 gap-y-8 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
             <div className="col-span-4 lg:col-span-7">

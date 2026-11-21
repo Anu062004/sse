@@ -27,7 +27,7 @@ export default function ContactPage() {
           <div className="col-span-4 lg:col-span-6">
             <dl>
               <div className="grid grid-cols-[6rem_1fr] gap-4 border-t border-navy/20 py-5">
-                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45">
+                <dt className="text-xs font-bold uppercase tracking-[0.18em] text-muted">
                   Phone
                 </dt>
                 <dd className="text-base">
@@ -41,7 +41,7 @@ export default function ContactPage() {
               </div>
 
               <div className="grid grid-cols-[6rem_1fr] gap-4 border-t border-navy/20 py-5">
-                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45">
+                <dt className="text-xs font-bold uppercase tracking-[0.18em] text-muted">
                   WhatsApp
                 </dt>
                 <dd className="text-base">
@@ -57,7 +57,7 @@ export default function ContactPage() {
               </div>
 
               <div className="grid grid-cols-[6rem_1fr] gap-4 border-t border-navy/20 py-5">
-                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45">
+                <dt className="text-xs font-bold uppercase tracking-[0.18em] text-muted">
                   Email
                 </dt>
                 <dd className="break-all text-base">
@@ -71,7 +71,7 @@ export default function ContactPage() {
               </div>
 
               <div className="grid grid-cols-[6rem_1fr] gap-4 border-t border-navy/20 py-5">
-                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45">
+                <dt className="text-xs font-bold uppercase tracking-[0.18em] text-muted">
                   Address
                 </dt>
                 <dd className="text-base leading-relaxed text-navy/80">
@@ -92,7 +92,7 @@ export default function ContactPage() {
               </div>
 
               <div className="grid grid-cols-[6rem_1fr] gap-4 border-y border-navy/20 py-5">
-                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45">
+                <dt className="text-xs font-bold uppercase tracking-[0.18em] text-muted">
                   Hours
                 </dt>
                 <dd className="text-base text-navy/80">{site.hours}</dd>
@@ -102,7 +102,7 @@ export default function ContactPage() {
 
           <div className="col-span-4 lg:col-span-5 lg:col-start-8">
             <div className="border border-line bg-paper p-6 md:p-8">
-              <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-navy/45">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted">
                 Quote requests
               </p>
               <h2 className="mt-3 text-2xl font-medium leading-tight tracking-[-0.03em]">
@@ -123,7 +123,7 @@ export default function ContactPage() {
                   WhatsApp us
                 </ButtonLink>
               </div>
-              <p className="mt-6 border-t border-line pt-4 font-mono text-[9px] uppercase leading-relaxed tracking-[0.14em] text-navy/45">
+              <p className="mt-6 border-t border-line pt-4 text-xs font-bold uppercase leading-relaxed tracking-[0.14em] text-muted">
                 Dealer and bulk enquiries welcome
                 <br />
                 Dispatch across India

@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLink } from "@/components/ui/ArrowLink";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { formatDate } from "@/lib/format";
 import { quoteHref, whatsappHref } from "@/lib/links";
 import { getPost, posts } from "@/data/posts";
@@ -45,30 +45,24 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      <Container className="py-8 md:py-12">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Journal", href: "/blog" },
-            { label: post.title },
-          ]}
-        />
+      <PageHeader
+        title={post.title}
+        intro={post.excerpt}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Journal", href: "/blog" },
+          { label: post.title },
+        ]}
+      >
+        <p className="mt-6 text-[13px] font-bold uppercase tracking-[0.14em] text-white/70">
+          {post.category} · {post.readingTime} read
+        </p>
+      </PageHeader>
 
-        <div className="mt-8 grid grid-cols-4 gap-x-4 gap-y-8 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
+      <Container className="py-12 md:py-16">
+        <div className="grid grid-cols-4 gap-x-4 gap-y-8 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
           <article className="col-span-4 md:col-span-8 lg:col-span-7 lg:col-start-5 lg:row-start-1">
-            <header>
-              <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
-                {post.category} · {post.readingTime} read
-              </p>
-              <h1 className="mt-4 text-[clamp(2.25rem,4.8vw,4rem)] font-medium leading-[0.98] tracking-[-0.04em]">
-                {post.title}
-              </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-navy/70">
-                {post.excerpt}
-              </p>
-            </header>
-
-            <div className="mt-10 max-w-[68ch] border-t border-navy/20 pt-8">
+            <div className="max-w-[68ch]">
               {post.body.map((block, index) => {
                 if (block.type === "h2") {
                   return (
@@ -85,7 +79,7 @@ export default async function BlogPostPage({ params }: Props) {
                   return (
                     <ul
                       key={index}
-                      className="mt-5 list-disc space-y-2 pl-5 text-base leading-relaxed text-navy/75 marker:text-yellow"
+                      className="mt-5 list-disc space-y-2 pl-5 text-base leading-relaxed text-navy/75 marker:text-accent"
                     >
                       {block.items.map((item) => (
                         <li key={item}>{item}</li>
@@ -124,7 +118,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           <aside className="col-span-4 lg:col-span-3 lg:col-start-1 lg:row-start-1 lg:self-start">
             <div className="border-t border-navy/20 pt-4">
-              <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">
                 {post.category}
               </p>
               <p className="mt-3 text-sm text-navy/70">
@@ -168,10 +162,10 @@ export default async function BlogPostPage({ params }: Props) {
                   href={`/blog/${item.slug}`}
                   className="group border-t border-navy/20 pt-4"
                 >
-                  <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-navy/45">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">
                     {item.category} · {formatDate(item.date)}
                   </p>
-                  <h3 className="mt-3 text-lg font-medium leading-snug tracking-[-0.02em] group-hover:underline group-hover:decoration-yellow group-hover:underline-offset-4">
+                  <h3 className="mt-3 text-lg font-medium leading-snug tracking-[-0.02em] group-hover:underline group-hover:decoration-accent group-hover:underline-offset-4">
                     {item.title}
                   </h3>
                 </Link>

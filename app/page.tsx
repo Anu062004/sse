@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
+import { About } from "@/components/home/About";
+import { BrandMarquee } from "@/components/home/BrandMarquee";
 import { Coverage } from "@/components/home/Coverage";
-import { DealerCta } from "@/components/home/DealerCta";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { Hero } from "@/components/home/Hero";
-import { MachineWall } from "@/components/home/MachineWall";
 import { ProductRange } from "@/components/home/ProductRange";
 import { Quality } from "@/components/home/Quality";
 import { SpoolFinder } from "@/components/home/SpoolFinder";
-import { Stats } from "@/components/home/Stats";
 import { pageMetadata } from "@/lib/seo";
 import { getFeaturedProducts } from "@/lib/products";
 import { site } from "@/lib/site";
@@ -28,14 +27,13 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Stats />
+      <About />
       <ProductRange />
-      <SpoolFinder />
       <FeaturedProducts products={getFeaturedProducts()} />
-      <MachineWall />
-      <Coverage />
+      <SpoolFinder />
+      <BrandMarquee />
       <Quality />
-      <DealerCta />
+      <Coverage />
     </>
   );
 }

@@ -9,16 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: "#0B1530",
-        yellow: "#F5B800",
-        paper: "#F4F5F7",
-        line: "#D9DCE1",
+        navy: "#0B1736",
+        ink: "#09132D",
+        accent: "#F5821F",
+        cream: "#F4F2ED",
+        sand: "#F1EEE8",
+        stone: "#E9E6DF",
+        slate: "#3B4763",
+        muted: "#5A6680",
+        paper: "#F4F2ED",
+        line: "#DCD8CF",
+        whatsapp: "#169248",
         error: "#B42318",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: [
-          "var(--font-mono)",
           "ui-monospace",
           "SFMono-Regular",
           "Menlo",
@@ -26,16 +32,15 @@ const config: Config = {
         ],
       },
       maxWidth: {
-        site: "1440px",
+        site: "1320px",
       },
-      keyframes: {
-        heroZoom: {
-          "0%": { transform: "scale(1)" },
-          "100%": { transform: "scale(1.06)" },
-        },
+      borderRadius: {
+        card: "20px",
+        panel: "28px",
       },
-      animation: {
-        "hero-zoom": "heroZoom 24s ease-in-out infinite alternate",
+      spacing: {
+        gutter: "clamp(20px,4vw,48px)",
+        section: "clamp(80px,10vw,140px)",
       },
     },
   },

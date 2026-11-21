@@ -1,7 +1,9 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { ArrowRightIcon } from "@/components/ui/Icons";
 import { cn } from "@/lib/cn";
 
+/** Underlined text link with a sliding arrow. */
 export function ArrowLink({
   href,
   children,
@@ -11,23 +13,26 @@ export function ArrowLink({
   children: ReactNode;
   className?: string;
 }) {
+  const external = href.startsWith("http");
+  const classes = cn("tlink", className);
+  const content = (
+    <>
+      {children}
+      <ArrowRightIcon />
+    </>
+  );
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className={classes}>
+        {content}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={cn(
-        "group inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em]",
-        className,
-      )}
-    >
-      <span className="border-b border-transparent pb-1 transition-colors group-hover:border-yellow">
-        {children}
-      </span>
-      <span
-        aria-hidden="true"
-        className="transition-transform duration-200 group-hover:translate-x-1"
-      >
-        →
-      </span>
+    <Link href={href} className={classes}>
+      {content}
     </Link>
   );
 }

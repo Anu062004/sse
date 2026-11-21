@@ -10,12 +10,7 @@ export function FitmentLine({
   className?: string;
 }) {
   return (
-    <p
-      className={cn(
-        "font-mono text-[10px] uppercase leading-relaxed tracking-[0.12em] opacity-60",
-        className,
-      )}
-    >
+    <p className={cn("text-[13.5px] leading-normal text-[#4A5672]", className)}>
       {formatFitment(product)}
     </p>
   );
