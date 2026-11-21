@@ -501,36 +501,6 @@
   }
 
   /* ---------- Footer ---------- */
-  .ft-card {
-    background: rgba(11, 23, 54, 0.45);
-    -webkit-backdrop-filter: blur(18px) saturate(150%);
-    backdrop-filter: blur(18px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.14),
-      0 30px 60px -30px rgba(0, 0, 0, 0.6);
-  }
-  .ft-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    min-height: 52px;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 14.5px;
-    transition:
-      color 0.3s,
-      padding 0.3s;
-  }
-  .ft-row svg {
-    flex: none;
-    color: var(--acc);
-  }
-  a.ft-row:hover {
-    color: var(--acc);
-    padding-left: 6px;
-  }
   .flink {
     color: rgba(255, 255, 255, 0.78);
     font-size: 14px;
@@ -542,24 +512,6 @@
   .flink:hover {
     color: var(--acc);
     padding-left: 6px;
-  }
-  .social {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
-    color: #fff;
-    transition:
-      background 0.3s,
-      color 0.3s,
-      border-color 0.3s;
-  }
-  .social:hover {
-    background: var(--acc);
-    border-color: var(--acc);
-    color: var(--navy);
   }
 
   /* ---------- Floating WhatsApp ---------- */
