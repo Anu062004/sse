@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { ButtonLink } from "@/components/ui/Button";
-import { ArrowLeftIcon, ArrowRightIcon, CheckIcon, CloseIcon, WhatsAppIcon } from "@/components/ui/Icons";
+import { ArrowLeftIcon, ArrowRightIcon, CloseIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { MediaFrame } from "@/components/ui/MediaFrame";
 import { getCategoryName } from "@/data/categories";
 import { productWhatsappHref, quoteHref } from "@/lib/links";
-import { getProductFeatures, getProductSpecs, type Product } from "@/lib/products";
+import { getSpecRows } from "@/lib/product-content";
+import type { Product } from "@/lib/products";
 
 type Nav = {
   position: number;
@@ -13,7 +15,7 @@ type Nav = {
 };
 
 /**
- * Two-column product panel: photo on the left, tags, specs, features and
+ * Two-column product panel: photo on the left, tags, spec table and
  * enquiry buttons on the right. Used by the catalogue quick view and the
  * product page; quick-view controls appear only when handlers are passed.
  */
@@ -33,9 +35,7 @@ export function ProductDetail({
   priority?: boolean;
 }) {
   const Heading = headingLevel;
-  const specs = getProductSpecs(product).filter(
-    (spec) => spec.label !== "Part number" && spec.value && spec.value !== "—",
-  );
+  const specs = getSpecRows(product);
 
   return (
     <div className="rise-in relative grid w-full max-w-[1120px] grid-cols-1 overflow-hidden rounded-panel bg-white text-navy shadow-[0_50px_100px_-40px_rgba(0,0,0,0.6)] min-[861px]:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
@@ -110,24 +110,13 @@ export function ProductDetail({
           {specs.map((spec) => (
             <div
               key={spec.label}
-              className="grid grid-cols-[150px_minmax(0,1fr)] gap-4 px-4 py-[11px] text-sm odd:bg-[#F7F5F1] max-[420px]:grid-cols-[110px_minmax(0,1fr)]"
+              className="grid grid-cols-[170px_minmax(0,1fr)] gap-4 px-4 py-[11px] text-sm odd:bg-[#F7F5F1] max-[420px]:grid-cols-[110px_minmax(0,1fr)]"
             >
               <dt className="font-medium text-muted">{spec.label}</dt>
               <dd className="font-semibold text-navy">{spec.value}</dd>
             </div>
           ))}
         </dl>
-
-        <ul className="mt-5 flex flex-col gap-2.5">
-          {getProductFeatures(product).map((feature) => (
-            <li key={feature} className="flex items-start gap-2.5 text-sm text-[#34405C]">
-              <span className="mt-px grid h-5 w-5 flex-none place-items-center rounded-full bg-accent text-navy">
-                <CheckIcon size={12} />
-              </span>
-              {feature}
-            </li>
-          ))}
-        </ul>
 
         <div className="mt-[26px] flex flex-wrap gap-2.5">
           <ButtonLink
@@ -146,6 +135,15 @@ export function ProductDetail({
           Not sure it fits? Send a photo of the old part and its valve block —
           we will confirm before dispatch.
         </p>
+        {onClose ? (
+          <Link
+            href={`/products/${product.slug}`}
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-navy underline decoration-accent decoration-2 underline-offset-4 hover:text-accent"
+          >
+            Read the full description
+            <ArrowRightIcon size={14} />
+          </Link>
+        ) : null}
       </div>
     </div>
   );

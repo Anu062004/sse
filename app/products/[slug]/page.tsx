@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProductCard } from "@/components/products/ProductCard";
+import { ProductDescription } from "@/components/products/ProductDescription";
 import { ProductDetail } from "@/components/products/ProductDetail";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -72,6 +73,8 @@ export default async function ProductPage({ params }: Props) {
           </div>
         </Container>
       </div>
+
+      <ProductDescription product={product} />
 
       {related.length > 0 ? (
         <Section>
