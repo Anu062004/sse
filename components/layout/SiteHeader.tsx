@@ -11,7 +11,7 @@ export function SiteHeader() {
   return (
     <header className="pointer-events-none absolute inset-x-0 top-0 z-50 px-[clamp(10px,2vw,24px)] pt-3.5">
       <div className="pointer-events-auto mx-auto flex h-[68px] max-w-site items-center justify-between gap-6 pl-3.5 pr-2.5">
-        <Logo />
+        <Logo priority className="h-11 sm:h-14" />
         <NavLinks />
         <div className="flex items-center gap-2.5">
           <a

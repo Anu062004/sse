@@ -90,7 +90,7 @@ export function SiteFooter() {
 
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 py-12 lg:grid-cols-[1.5fr_1fr_1.2fr_1.4fr] lg:gap-x-10">
           <div className="col-span-2 lg:col-span-1">
-            <Logo />
+            <Logo className="h-14" />
             <p className="mt-5 max-w-[34ch] text-sm leading-relaxed text-white/65">
               Manufacturer and dealer of spool valves, seal kits and hydraulic
               spares for earthmoving machines. Supplying 15+ states from{" "}

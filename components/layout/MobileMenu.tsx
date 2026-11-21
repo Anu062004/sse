@@ -65,7 +65,7 @@ export function MobileMenu() {
       >
         <div className="flex h-dvh flex-col">
           <div className="flex h-[96px] shrink-0 items-center justify-between border-b border-white/[0.12] px-5">
-            <Logo />
+            <Logo className="h-11" />
             <button
               ref={closeRef}
               type="button"
