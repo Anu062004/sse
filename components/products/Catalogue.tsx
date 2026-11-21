@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import catalogueHero from "@/assets/images/site/catalogue-hero.jpg";
 import { ProductCard } from "@/components/products/ProductCard";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -89,22 +90,7 @@ export function Catalogue({
         title="Product catalogue"
         intro="Every spool, seal kit and spare in the SSE range — filter by component, machine and valve block, then open a part for full fitment details."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Product catalogue" }]}
-        aside={
-          <ul className="flex gap-[clamp(20px,3vw,44px)]">
-            {[
-              { value: products.length, label: "Parts listed" },
-              { value: site.machines.length, label: "Machine brands" },
-              { value: valveBlocks.length, label: "Valve block makes" },
-            ].map((stat) => (
-              <li key={stat.label} className="flex flex-col gap-1 text-[13px] text-white/[0.72]">
-                <span className="display text-[clamp(30px,3vw,44px)] font-extrabold leading-none text-white">
-                  {stat.value}
-                </span>
-                {stat.label}
-              </li>
-            ))}
-          </ul>
-        }
+        background={catalogueHero}
       >
         <div className="relative z-[2] -mb-[98px] mt-10 flex h-[68px] items-center gap-3.5 rounded-card bg-white pl-6 pr-2.5 text-navy shadow-[0_30px_60px_-28px_rgba(3,8,22,0.55),0_0_0_1px_rgba(11,23,54,0.06)] focus-within:shadow-[0_30px_60px_-28px_rgba(3,8,22,0.55),0_0_0_3px_var(--acc)] md:-mb-[114px]">
           <SearchIcon size={20} className="flex-none text-accent" />
