@@ -112,6 +112,6 @@ export function articleSchema(post: Post) {
     author: { "@type": "Organization", name: post.author },
     publisher: { "@type": "Organization", name: site.name },
     mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
-    image: absoluteUrl("/og.jpg"),
+    image: absoluteUrl("/og-v2.jpg"),
   };
 }

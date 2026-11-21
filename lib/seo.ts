@@ -19,7 +19,7 @@ export function pageMetadata({
   title,
   description,
   path,
-  image = "/og.jpg",
+  image = "/og-v2.jpg",
   noIndex = false,
   type = "website",
   publishedTime,

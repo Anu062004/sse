@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     description: site.description,
     images: [
       {
-        url: "/og.jpg",
+        url: "/og-v2.jpg",
         width: 1200,
         height: 630,
-        alt: "SSE Aftermarket Solution — precision spares for earthmoving machines",
+        alt: "SSE Aftermarket Solution — precision spares. Built for the field.",
       },
     ],
   },
@@ -57,9 +57,24 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    images: ["/og.jpg"],
+    images: ["/og-v2.jpg"],
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=2", sizes: "any" },
+      { url: "/brand/icon-192.png?v=2", type: "image/png", sizes: "192x192" },
+      { url: "/brand/icon-512.png?v=2", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico?v=2",
+    apple: [
+      {
+        url: "/brand/apple-icon-180.png?v=2",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
