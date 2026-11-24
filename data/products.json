@@ -32,7 +32,12 @@
     "spool_position": "Loader",
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-front.jpg",
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-side.jpg",
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-top.jpg",
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-end.jpg"
+    ],
     "description": "Aftermarket loader spool for JCB 3DX machines with the Husco valve block, 2008–2010. Supplied as a matched set of two.",
     "price": "",
     "in_stock": ""

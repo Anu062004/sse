@@ -113,7 +113,7 @@ export function ProductGallery({
             fill
             sizes="(min-width: 1024px) 520px, 100vw"
             priority={priority && active === 0}
-            className="fade-in object-cover"
+            className="fade-in bg-white object-contain"
             draggable={false}
           />
         ) : (
