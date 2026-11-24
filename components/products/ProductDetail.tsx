@@ -15,7 +15,7 @@ export function ProductDetail({ product, priority = false }: { product: Product;
   const specs = getSpecRows(product);
 
   return (
-    <div className="rise-in grid w-full grid-cols-1 gap-8 rounded-panel bg-white p-[clamp(16px,2.6vw,36px)] text-navy shadow-[0_50px_100px_-40px_rgba(0,0,0,0.6)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-12">
+    <div className="rise-in grid w-full grid-cols-1 gap-8 text-navy lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-12">
       <ProductGallery images={product.images} alt={product.name} priority={priority} />
 
       <div className="min-w-0">

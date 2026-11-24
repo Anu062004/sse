@@ -54,7 +54,7 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <>
-      <div className="on-dark relative bg-ink pb-16 pt-[140px] md:pb-20">
+      <div className="on-dark relative bg-ink pb-8 pt-[140px]">
         <div aria-hidden="true" className="dots absolute inset-0" />
         <Container className="relative">
           <Breadcrumbs
@@ -68,9 +68,12 @@ export default async function ProductPage({ params }: Props) {
               { label: product.name },
             ]}
           />
-          <div className="mt-8">
-            <ProductDetail product={product} priority />
-          </div>
+        </Container>
+      </div>
+
+      <div className="bg-white py-[clamp(32px,5vw,64px)]">
+        <Container>
+          <ProductDetail product={product} priority />
         </Container>
       </div>
 
