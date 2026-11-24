@@ -1,25 +1,66 @@
 import type { ReactNode } from "react";
 
 /**
- * Line drawings of a landmark for each state we supply, drawn on a 64×64 grid
- * with a shared ground line so they read as one set.
+ * Silhouette illustrations of a landmark for each state we supply.
+ *
+ * Drawn on a 64×64 grid as solid shapes in `currentColor` with openings
+ * (arches, windows, bands) punched out using the even-odd fill rule, so the
+ * soft sun disc behind shows through. Background scenery uses a lighter tint
+ * of the same colour, and everything stands on a shared ground at y = 54.
  */
 type Landmark = { name: string; art: ReactNode };
 
-const ground = <path d="M6 56h52" />;
+const ground = <rect x="6" y="54" width="52" height="2" rx="1" />;
+const water = (
+  <path
+    d="M8 52.5h14M28 52.5h10M44 52.5h12M14 56h10M30 56h16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.6}
+    strokeLinecap="round"
+  />
+);
+/** Lighter background layer (hills, distant scenery). */
+const Far = ({ d }: { d: string }) => (
+  <path d={d} opacity={0.22} clipPath="url(#landmark-disc)" />
+);
 
-const hawaMahalWindows = [
-  ...[18, 24, 30, 36, 42].map((x) => `M${x} 34v4`),
-  ...[18, 24, 30, 36, 42, 46].map((x) => `M${x} 44v4`),
-  ...[24, 30, 36].map((x) => `M${x} 26v4`),
-  "M30 20v2",
-].join("");
+/** Grid of small window holes: rows of [y, x positions], each w×h. */
+function windows(rows: [number, number[]][], w = 2, h = 3) {
+  return rows
+    .flatMap(([y, xs]) => xs.map((x) => `M${x} ${y}h${w}v${h}h-${w}z`))
+    .join("");
+}
 
-const konarkSpokes = Array.from({ length: 8 }, (_, i) => {
-  const a = (i * Math.PI) / 4;
-  const p = (r: number) => `${(32 + r * Math.cos(a)).toFixed(2)} ${(32 + r * Math.sin(a)).toFixed(2)}`;
-  return `M${p(4.5)}L${p(15)}`;
-}).join("");
+const konark = (() => {
+  const c = 32;
+  const pt = (r: number, a: number) =>
+    `${(c + r * Math.cos(a)).toFixed(2)} ${(c + r * Math.sin(a)).toFixed(2)}`;
+  // Eight broad spokes and eight slim ones, alternating.
+  const spoke = (a: number, half: number, r1: number, r2: number) =>
+    `M${pt(r1, a - half)}L${pt(r2, a - half * 0.6)}L${pt(r2, a + half * 0.6)}L${pt(r1, a + half)}z`;
+  const spokes = Array.from({ length: 16 }, (_, i) => {
+    const a = (i * Math.PI) / 8 - Math.PI / 2;
+    return i % 2 === 0 ? spoke(a, 0.2, 6, 17) : spoke(a, 0.07, 6, 17);
+  }).join("");
+  const beads = Array.from({ length: 16 }, (_, i) => {
+    const a = (i * Math.PI) / 8 - Math.PI / 2 + Math.PI / 16;
+    const [x, y] = pt(19.6, a).split(" ");
+    return <circle key={i} cx={x} cy={y} r={0.9} fill="var(--landmark-cut, #fff)" />;
+  });
+  return (
+    <>
+      <path
+        fillRule="evenodd"
+        d={`M${c} ${c - 22}a22 22 0 1 1 0 44a22 22 0 1 1 0-44zM${c} ${c - 17}a17 17 0 1 0 0 34a17 17 0 1 0 0-34z`}
+      />
+      <path d={spokes} />
+      <circle cx={c} cy={c} r={6.5} />
+      <circle cx={c} cy={c} r={2.4} fill="var(--landmark-cut, #fff)" />
+      {beads}
+    </>
+  );
+})();
 
 export const landmarks: Record<string, Landmark> = {
   Delhi: {
@@ -27,7 +68,10 @@ export const landmarks: Record<string, Landmark> = {
     art: (
       <>
         {ground}
-        <path d="M18 56V22h28v34M26 56V37a6 6 0 0 1 12 0v19M16 22h32M20 22v-5h24v5M24 17v-4h16v4M28 13q4-6 8 0" />
+        <path
+          fillRule="evenodd"
+          d="M20 54V25h24v29h-6V39a6 6 0 0 0-12 0v15zM22.5 31h5v1.6h-5zM36.5 31h5v1.6h-5zM18 21h28v4H18zM22 16h20v5H22zM26 12.5h12V16H26zM28 12.5q4-5.5 8 0z"
+        />
       </>
     ),
   },
@@ -36,7 +80,10 @@ export const landmarks: Record<string, Landmark> = {
     art: (
       <>
         {ground}
-        <path d="M22 56v-8h20v8M26 48l3-34h6l3 34M27.3 36h9.4M28.3 24h7.4M29 14q3-5 6 0" />
+        <path
+          fillRule="evenodd"
+          d="M21 54v-7h22v7zM26 47l3-31h6l3 31zM27.1 37h9.8v1.6h-9.8zM28 27h8v1.4h-8zM30 54v-4q2-2.5 4 0v4zM28.5 16q3.5-7 7 0zM31.4 9h1.2v3h-1.2z"
+        />
       </>
     ),
   },
@@ -44,7 +91,12 @@ export const landmarks: Record<string, Landmark> = {
     name: "Golden Temple",
     art: (
       <>
-        <path d="M18 44V30h28v14M22 30v-8h20v8M26 22q0-10 6-12 6 2 6 12M32 10V6M17 30v-3q2-3 4 0v3M43 30v-3q2-3 4 0v3M8 44h48M12 50h12M30 50h14M48 50h8M10 55h14M32 55h18" />
+        {water}
+        <path
+          fillRule="evenodd"
+          d="M16 48V31h32v17zM20.5 48v-6q2-3 4 0v6zM30 48v-7q2-3.5 4 0v7zM39.5 48v-6q2-3 4 0v6zM22 31v-6h20v6zM24 25c0-8 4-11 8-14 4 3 8 6 8 14zM31.4 6h1.2v6h-1.2zM15 31v-3q2.5-4 5 0v3zM44 31v-3q2.5-4 5 0v3z"
+        />
+        <path d="M10 48h44v2H10z" />
       </>
     ),
   },
@@ -53,8 +105,20 @@ export const landmarks: Record<string, Landmark> = {
     art: (
       <>
         {ground}
-        <path d="M14 56V30h6v-6h6v-8h12v8h6v6h6v26M28 16q2-4 4 0 2-4 4 0M14 40h36M20 30h24" />
-        <path d={hawaMahalWindows} />
+        <path
+          fillRule="evenodd"
+          d={
+            "M12 54V33q2.5-3 5 0v-6q2.5-3 5 0v-6q2.5-3 5 0v-6q5-5 10 0v6q2.5-3 5 0v6q2.5-3 5 0v6q2.5-3 5 0v21z" +
+            windows([
+              [37, [14.5, 19.5, 24.5, 29.5, 34.5, 39.5, 44.5, 49.5]],
+              [44, [14.5, 19.5, 24.5, 29.5, 34.5, 39.5, 44.5, 49.5]],
+              [31, [19.5, 24.5, 29.5, 34.5, 39.5, 44.5]],
+              [25, [24.5, 29.5, 34.5, 39.5]],
+              [19, [29.5, 34.5]],
+            ]) +
+            "M29.5 54v-4.5q2.5-3 5 0V54z"
+          }
+        />
       </>
     ),
   },
@@ -62,7 +126,10 @@ export const landmarks: Record<string, Landmark> = {
     name: "Taj Mahal",
     art: (
       <>
-        <path d="M8 56v-4h48v4M20 52V36h24v16M28 52v-8q4-6 8 0v8M23 36q-1-14 9-18 10 4 9 18M32 18v-5M21 36q2-4 4 0M39 36q2-4 4 0M13 52V30M51 52V30M11.5 30q1.5-4 3 0M49.5 30q1.5-4 3 0" />
+        <path
+          fillRule="evenodd"
+          d="M6 56v-5h52v5zM20 51V34h24v17zM28.5 51v-8q3.5-5 7 0v8zM22 39h3v5h-3zM39 39h3v5h-3zM24 34c-5-6 0-13 8-17 8 4 13 11 8 17zM31.3 10h1.4v7.5h-1.4zM19.5 34q2.5-5 5 0zM39.5 34q2.5-5 5 0zM11 51V30h3v21zM50 51V30h3v21zM10.5 30q2-5 4 0zM49.5 30q2-5 4 0z"
+        />
       </>
     ),
   },
@@ -70,17 +137,26 @@ export const landmarks: Record<string, Landmark> = {
     name: "Kedarnath",
     art: (
       <>
+        <Far d="M2 54 18 24l7 10 11-20 26 40z" />
+        <path d="M14.5 30.5 18 24l3.5 5-2 -1-2 2zM32.5 20.5 36 14l4 7.5-2.5-1.5-2 2z" fill="var(--landmark-cut, #fff)" opacity={0.9} />
         {ground}
-        <path d="M4 44l14-24 8 12 10-18 14 20 10 10M14 27l4-7 4 6M32 20l4-6 5 7M22 56V44h20v12M25 44l3-12h8l3 12M30 32l2-5 2 5M30 56v-6h4v6" />
+        <path
+          fillRule="evenodd"
+          d="M21 54V44h22v10zM24 44l3-13q5-6 10 0l3 13zM30.6 25h2.8v6h-2.8zM29 54v-6q3-3.5 6 0v6zM26 39h12v1.4H26z"
+        />
       </>
     ),
   },
   "Himachal Pradesh": {
-    name: "Shimla hills",
+    name: "Christ Church, Shimla",
     art: (
       <>
+        <Far d="M2 54V40q10-12 20-4t20-6 20 8v16z" />
         {ground}
-        <path d="M4 46l16-28 10 14 10-12 20 26M16 56v-4M10 52l6-12 6 12zM12 45l4-9 4 9M46 56v-5M38 51l8-16 8 16zM41 43l5-11 5 11" />
+        <path
+          fillRule="evenodd"
+          d="M14 54V38l11-9 11 9v16zM18 54v-8q2-3 4 0v8zM24 54v-8q2-3 4 0v8zM23.5 40q1.5-3 3 0v2h-3zM38 54V24h10v30zM37 24l6-16 6 16zM43 28a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 1 0 0-5.2zM41.5 54v-7q1.5-3 3 0v7zM36 38l2-1.5V54h-2z"
+        />
       </>
     ),
   },
@@ -88,7 +164,18 @@ export const landmarks: Record<string, Landmark> = {
     name: "Sanchi Stupa",
     art: (
       <>
-        <path d="M4 56h56M12 50h42M16 50a16 16 0 0 1 32 0M28 34v-4h8v4M32 30v-8M27 25h10M28.5 22h7M12 54v-4M54 54v-4M6 56V40M14 56V40M4 41h12M4 45h12" />
+        {ground}
+        <path
+          fillRule="evenodd"
+          d="M10 54v-6h44v6zM13 48a19 19 0 0 1 38 0zM27 29h10v4H27zM31.3 19h1.4v10h-1.4zM27 22h10v1.6H27zM28.5 19h7v1.4h-7z"
+        />
+        {/* Torana gateway in front, separated by a cut-colour outline. */}
+        <path
+          d="M20 54V36h3v18zM41 54V36h3v18zM17 34h30v3H17zM18 39.5h28v2.5H18zM16 30q16 4 32 0v3q-16 4-32 0z"
+          stroke="var(--landmark-cut, #fff)"
+          strokeWidth={1.4}
+          paintOrder="stroke"
+        />
       </>
     ),
   },
@@ -97,8 +184,10 @@ export const landmarks: Record<string, Landmark> = {
     art: (
       <>
         {ground}
-        <path d="M22 56v-6h20v6M28 19l-2 31h12l-2-31zM28 23l-3 14M36 23l2 12M30 19h4" />
-        <circle cx="32" cy="14" r="3.4" />
+        <path
+          fillRule="evenodd"
+          d="M20 54v-4h24v4zM23 50v-5h18v5zM27.5 45 25 22q0-4 4-5h6q4 1 4 5l-2.5 23zM32 8.5a4 4 0 1 0 0 8 4 4 0 1 0 0-8zM30.6 36h2.8v9h-2.8z"
+        />
       </>
     ),
   },
@@ -106,16 +195,31 @@ export const landmarks: Record<string, Landmark> = {
     name: "Gateway of India",
     art: (
       <>
-        <path d="M10 52V30h44v22M26 52V41a6 6 0 0 1 12 0v11M14 52v-6a3 3 0 0 1 6 0v6M44 52v-6a3 3 0 0 1 6 0v6M10 35h44M12 30v-8h6v8M46 30v-8h6v8M26 30q0-8 6-10 6 2 6 10M12 22q3-5 6 0M46 22q3-5 6 0M6 52h52M10 56h14M30 56h14M48 56h8" />
+        {water}
+        <path
+          fillRule="evenodd"
+          d="M10 50V30h44v20zM26 50V40a6 6 0 0 1 12 0v10zM14 50v-6a2.5 2.5 0 0 1 5 0v6zM45 50v-6a2.5 2.5 0 0 1 5 0v6zM14.5 35h4v4h-4zM45.5 35h4v4h-4zM11 30v-8h6v8zM47 30v-8h6v8zM11 22q3-6 6 0zM47 22q3-6 6 0zM23 30v-3h18v3zM26 27q6-10 12 0zM31.4 15h1.2v4h-1.2z"
+        />
       </>
     ),
   },
   Chhattisgarh: {
     name: "Chitrakote Falls",
     art: (
-      <>
-        <path d="M6 22q26 8 52 0M6 22v6M58 22v6M14 25v20M20 26.6v22M26 27.6v22M32 28v22M38 27.6v22M44 26.6v22M50 25v20M8 53q4-3 8 0t8 0 8 0 8 0 8 0 8 0" />
-      </>
+      <g clipPath="url(#landmark-disc)">
+        <Far d="M0 64V22q32 10 64 0v42z" />
+        <path
+          fillRule="evenodd"
+          d="M2 17q30 10 60 0v6q-30 10-60 0zM10 25.6h3v17q-1.5 2-3 0zM16.5 27.4h3.5v20q-1.75 2.2-3.5 0zM23.5 28.6h3v19q-1.5 2-3 0zM30 29.2h4v22q-2 2.4-4 0zM37.5 28.6h3v20q-1.5 2-3 0zM44 27.4h3.5v19q-1.75 2.2-3.5 0zM51 25.6h3v15q-1.5 2-3 0z"
+        />
+        <path
+          d="M6 54q3-2.5 6 0t6 0 6 0 6 0 6 0 6 0 6 0 6 0 6 0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={1.8}
+          strokeLinecap="round"
+        />
+      </g>
     ),
   },
   Bihar: {
@@ -123,7 +227,10 @@ export const landmarks: Record<string, Landmark> = {
     art: (
       <>
         {ground}
-        <path d="M14 56V46h36v10M24 46l4-34h8l4 34M30 12l2-6 2 6M25.2 36h13.6M26.4 26h11.2M27.6 18h8.8M16 46l2-10h2l2 10M42 46l2-10h2l2 10M30 56v-6q2-3 4 0v6" />
+        <path
+          fillRule="evenodd"
+          d="M13 54v-8h38v8zM24.5 46 28 13h8l3.5 33zM29 13l3-7 3 7zM26.4 36h11.2v1.6H26.4zM27.3 27.5h9.4v1.4h-9.4zM28.2 19.5h7.6v1.3h-7.6zM30 46v-5q2-3 4 0v5zM15 46l2-12h3l2 12zM42 46l2-12h3l2 12zM29 54v-5h6v5z"
+        />
       </>
     ),
   },
@@ -131,8 +238,13 @@ export const landmarks: Record<string, Landmark> = {
     name: "Baidyanath Dham",
     art: (
       <>
+        <Far d="M2 54V44q8-10 18-6t12 4 14-8 16 6v14z" />
         {ground}
-        <path d="M4 48q12-16 20-6M44 40q8-8 16 6M24 56V46h16v10M26 46q-2-16 6-26 8 10 6 26M29 20h6M32 20v-6l5 2-5 2M30 56v-5h4v5" />
+        <path
+          fillRule="evenodd"
+          d="M21 54V44h22v10zM24 44c0-12 3-20 8-27 5 7 8 15 8 27zM29 54v-6q3-3.5 6 0v6zM26.2 36h11.6v1.6H26.2zM27.2 28.5h9.6v1.4h-9.6zM32 12.4a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 1 0 0-4.8zM31.4 5h1.2v8h-1.2z"
+        />
+        <path d="M32.6 5.2 39 7.4l-6.4 2.4z" className="text-accent" fill="currentColor" />
       </>
     ),
   },
@@ -140,20 +252,31 @@ export const landmarks: Record<string, Landmark> = {
     name: "Howrah Bridge",
     art: (
       <>
-        <path d="M4 44h56M18 44V16M46 44V16M4 40l14-24 14 10 14-10 14 24M18 16l7 28M32 26l-7 18M32 26l7 18M46 16l-7 28M8 52h14M28 52h14M48 52h8M12 56h16M36 56h14" />
+        <path
+          d="M2 42h60v3H2zM16 45V14h4v31zM44 45V14h4v31z"
+        />
+        <path
+          d="M4 42 18 15l14 9 14-9 14 27M18 15l8 27M32 24l-6 18M32 24l6 18M46 15l-8 27M4 42h56M10 31l2 11M54 31l-2 11"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={1.8}
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+        <path
+          d="M6 50h14M26 50h12M44 50h14M12 55h14M34 55h16"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={1.6}
+          strokeLinecap="round"
+          opacity={0.45}
+        />
       </>
     ),
   },
   Odisha: {
     name: "Konark Sun Temple",
-    art: (
-      <>
-        <circle cx="32" cy="32" r="20" />
-        <circle cx="32" cy="32" r="15" />
-        <circle cx="32" cy="32" r="4.5" />
-        <path d={konarkSpokes} />
-      </>
-    ),
+    art: konark,
   },
 };
 
@@ -163,15 +286,18 @@ export function LandmarkArt({ state, className }: { state: string; className?: s
   return (
     <svg
       viewBox="0 0 64 64"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.6}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fill="currentColor"
       aria-hidden="true"
       focusable="false"
       className={className}
     >
+      <defs>
+        <clipPath id="landmark-disc">
+          <circle cx="32" cy="30" r="25" />
+          <rect x="7" y="30" width="50" height="24" />
+        </clipPath>
+      </defs>
+      <circle cx="32" cy="30" r="25" className="text-accent" fill="currentColor" opacity={0.12} />
       {landmark.art}
     </svg>
   );
