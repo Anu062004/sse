@@ -1,6 +1,6 @@
 import { ProductGallery } from "@/components/products/ProductGallery";
 import { ButtonLink } from "@/components/ui/Button";
-import { CheckIcon, WhatsAppIcon } from "@/components/ui/Icons";
+import { CheckIcon } from "@/components/ui/Icons";
 import { getCategoryName } from "@/data/categories";
 import { formatFitment } from "@/lib/format";
 import { productWhatsappHref, quoteHref } from "@/lib/links";
@@ -27,9 +27,7 @@ export function ProductDetail({ product, priority = false }: { product: Product;
           Part number: <strong className="font-mono font-bold text-navy">{product.part_number}</strong>
         </p>
         <p className="mt-2 flex items-start gap-2 text-[15px] text-slate">
-          <span className="mt-0.5 grid h-5 w-5 flex-none place-items-center rounded-full bg-accent text-navy">
-            <CheckIcon size={12} />
-          </span>
+          <CheckIcon size={16} strokeWidth={2.4} className="mt-[3px] flex-none text-[#1a8f4c]" />
           <span>
             Fits <strong className="font-semibold text-navy">{formatFitment(product)}</strong>
           </span>
@@ -39,8 +37,7 @@ export function ProductDetail({ product, priority = false }: { product: Product;
           <ButtonLink
             href={productWhatsappHref(product.part_number, product.name)}
             variant="whatsapp"
-            icon={<WhatsAppIcon size={18} />}
-            className="w-full justify-between"
+            className="w-full"
           >
             Enquire on WhatsApp
           </ButtonLink>
@@ -49,9 +46,16 @@ export function ProductDetail({ product, priority = false }: { product: Product;
           </ButtonLink>
         </div>
         <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-muted">
-          <li>✓ Fitment confirmed before dispatch</li>
-          <li>✓ Supplied as {product.pack_size}</li>
-          <li>✓ Dealer &amp; bulk rates</li>
+          {[
+            "Fitment confirmed before dispatch",
+            `Supplied as ${product.pack_size}`,
+            "Dealer & bulk rates",
+          ].map((point) => (
+            <li key={point} className="flex items-center gap-1.5">
+              <CheckIcon size={13} strokeWidth={2.4} className="text-navy/50" />
+              {point}
+            </li>
+          ))}
         </ul>
 
         <p className="mt-6 text-[15px] leading-[1.7] text-[#34405C]">

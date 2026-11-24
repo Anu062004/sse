@@ -79,9 +79,8 @@ export function SiteFooter() {
             </ButtonLink>
             <ButtonLink
               href={whatsappHref("Hello SSE, I would like a quote for earthmoving spares.")}
-              variant="ghost"
+              variant="whatsapp"
               size="sm"
-              icon={<WhatsAppIcon />}
             >
               WhatsApp
             </ButtonLink>

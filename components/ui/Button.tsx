@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { ArrowRightIcon } from "@/components/ui/Icons";
+import { ArrowRightIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { cn } from "@/lib/cn";
 
 type Variant =
@@ -48,6 +48,27 @@ export function ButtonIcon({ children }: { children?: ReactNode }) {
   return <span className="btn-ic">{children ?? <ArrowRightIcon />}</span>;
 }
 
+/**
+ * WhatsApp buttons lead with the brand logo, the way WhatsApp's own
+ * click-to-chat buttons do; every other variant ends in the round icon well.
+ */
+function buttonContent(children: ReactNode, variant: Variant | undefined, icon: ReactNode | false | undefined) {
+  if (variant === "whatsapp") {
+    return (
+      <>
+        <WhatsAppIcon size={20} className="btn-lead" />
+        {children}
+      </>
+    );
+  }
+  return (
+    <>
+      {children}
+      {icon === false ? null : <ButtonIcon>{icon}</ButtonIcon>}
+    </>
+  );
+}
+
 type CommonProps = {
   children: ReactNode;
   variant?: Variant;
@@ -66,12 +87,7 @@ export function ButtonLink({
   onClick,
 }: CommonProps & { href: string; onClick?: () => void }) {
   const classes = buttonStyles({ variant, size, className });
-  const content = (
-    <>
-      {children}
-      {icon === false ? null : <ButtonIcon>{icon}</ButtonIcon>}
-    </>
-  );
+  const content = buttonContent(children, variant, icon);
 
   if (href.startsWith("/")) {
     return (
@@ -104,8 +120,7 @@ export function Button({
 }: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children"> & CommonProps) {
   return (
     <button className={buttonStyles({ variant, size, className })} {...props}>
-      {children}
-      {icon === false ? null : <ButtonIcon>{icon}</ButtonIcon>}
+      {buttonContent(children, variant, icon)}
     </button>
   );
 }

@@ -1,6 +1,6 @@
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { CheckIcon, WhatsAppIcon } from "@/components/ui/Icons";
+import { CheckIcon } from "@/components/ui/Icons";
 import { productWhatsappHref, quoteHref } from "@/lib/links";
 import { getDescriptionSections } from "@/lib/product-content";
 import type { Product } from "@/lib/products";
@@ -56,7 +56,6 @@ export function ProductDescription({ product }: { product: Product }) {
                 href={productWhatsappHref(product.part_number, product.name)}
                 variant="whatsapp"
                 size="sm"
-                icon={<WhatsAppIcon size={18} />}
               >
                 Enquire on WhatsApp
               </ButtonLink>

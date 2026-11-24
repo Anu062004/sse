@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
-import { CloseIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from "@/components/ui/Icons";
+import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/ui/Icons";
 import { Logo } from "@/components/ui/Logo";
 import { categories } from "@/data/categories";
 import { telHref, whatsappHref } from "@/lib/links";
@@ -137,7 +137,7 @@ export function MobileMenu() {
               <ButtonLink href={telHref} variant="ghost" size="sm" icon={<PhoneIcon />}>
                 Call
               </ButtonLink>
-              <ButtonLink href={whatsappHref()} variant="whatsapp" size="sm" icon={<WhatsAppIcon />}>
+              <ButtonLink href={whatsappHref()} variant="whatsapp" size="sm">
                 WhatsApp
               </ButtonLink>
             </div>

@@ -171,11 +171,15 @@
     border-color: var(--acc);
   }
   .btn-whatsapp {
-    background: linear-gradient(180deg, #23b85f, #169248);
-    color: #fff;
+    gap: 10px;
+    background: #25d366;
+    color: #0b141a;
   }
-  .btn-whatsapp:hover {
-    color: var(--navy);
+  .btn-whatsapp::before {
+    background: #1fb855;
+  }
+  .btn-lead {
+    flex: none;
   }
   .btn-on-accent::before {
     background: var(--navy);
@@ -483,25 +487,16 @@
 
   /* ---------- Floating WhatsApp ---------- */
   .wa-btn {
-    background: linear-gradient(180deg, #23b85f 0%, #169248 100%);
+    background: #25d366;
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.35),
-      inset 0 -2px 0 rgba(0, 0, 0, 0.15),
-      0 14px 30px -10px rgba(22, 146, 72, 0.7);
-    transition: transform 0.35s var(--ease-out);
+      0 2px 4px rgba(0, 0, 0, 0.12),
+      0 8px 20px -6px rgba(0, 0, 0, 0.3);
+    transition:
+      transform 0.25s var(--ease-out),
+      background-color 0.25s;
   }
-  .wa-ring {
-    animation: waping 2.6s var(--ease-out) infinite;
-  }
-  @keyframes waping {
-    0% {
-      transform: scale(1);
-      opacity: 0.7;
-    }
-    100% {
-      transform: scale(1.55);
-      opacity: 0;
-    }
+  .group:hover .wa-btn {
+    background: #1fb855;
   }
 
   /* ---------- Marquee ---------- */
@@ -666,13 +661,11 @@
     .bg-settle,
     .mq-track,
     .scroll-progress,
-    .wa-ring,
     .fade-in,
     .rise-in {
       animation: none !important;
     }
-    .scroll-progress,
-    .wa-ring {
+    .scroll-progress {
       display: none;
     }
   }
