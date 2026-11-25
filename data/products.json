@@ -17,7 +17,9 @@
       "/images/products/jcb-3dx-loader-spool-husco-2005-2007-front.jpg",
       "/images/products/jcb-3dx-loader-spool-husco-2005-2007-side.jpg",
       "/images/products/jcb-3dx-loader-spool-husco-2005-2007-top.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-end.jpg"
+      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-end.jpg",
+      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-catalog-1.jpg",
+      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-catalog-2.jpg"
     ],
     "description": "Aftermarket loader spool for JCB 3DX machines with the Husco valve block, 2005–2007. Supplied as a matched set of two with the correct land spacing and end detail.",
     "price": "",
@@ -41,7 +43,9 @@
       "/images/products/jcb-3dx-loader-spool-husco-2008-2010-front.jpg",
       "/images/products/jcb-3dx-loader-spool-husco-2008-2010-side.jpg",
       "/images/products/jcb-3dx-loader-spool-husco-2008-2010-top.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-end.jpg"
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-end.jpg",
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-catalog-1.jpg",
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-catalog-2.jpg"
     ],
     "description": "Aftermarket loader spool for JCB 3DX machines with the Husco valve block, 2008–2010. Supplied as a matched set of two.",
     "price": "",
@@ -83,7 +87,8 @@
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control.jpg"
+      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control.jpg",
+      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control-catalog-1.jpg"
     ],
     "description": "Replacement loader spool set for JCB 3DX XTRA machines running the Hydra Control valve block.",
     "price": "",
@@ -103,7 +108,9 @@
     "spool_position": "Loader — 3 spools",
     "pack_size": "1 set (3 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-3dx-3-spool-loader-set-husco-catalog-1.jpg"
+    ],
     "description": "Complete three-spool loader set for JCB 3DX with the Husco valve block. Each spool is matched to its position in the block.",
     "price": "",
     "in_stock": ""
@@ -122,7 +129,9 @@
     "spool_position": "Loader",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-2d-2dx-loader-spool-hydra-control-catalog-1.jpg"
+    ],
     "description": "Loader spool for JCB 2D and 2DX machines with the Hydra Control valve block.",
     "price": "",
     "in_stock": ""
@@ -141,7 +150,9 @@
     "spool_position": "Unloader",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-3dx-unloader-spool-husco-catalog-1.jpg"
+    ],
     "description": "Unloader spool for the JCB 3DX loader valve block with Husco valve gear.",
     "price": "",
     "in_stock": ""
@@ -181,7 +192,9 @@
     "spool_position": "Excavator",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-49hp-excavator-spool-hydra-control-catalog-1.jpg"
+    ],
     "description": "Excavator spool for 49 HP JCB machines running the Hydra Control valve block.",
     "price": "",
     "in_stock": ""
@@ -200,7 +213,9 @@
     "spool_position": "Excavator",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-3dx-excavator-spool-catalog-1.jpg"
+    ],
     "description": "Excavator spool for JCB 3DX. Confirm the valve block make and spool position before ordering.",
     "price": "",
     "in_stock": ""
@@ -219,7 +234,9 @@
     "spool_position": "Excavator",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-3dx-xtra-excavator-spool-hydra-control-catalog-1.jpg"
+    ],
     "description": "Excavator spool for JCB 3DX XTRA machines with the Hydra Control valve block.",
     "price": "",
     "in_stock": ""
@@ -280,7 +297,9 @@
     "spool_position": "Unloader",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/lnt-terex-escorts-case-unloader-spool-walvoil-catalog-1.jpg"
+    ],
     "description": "Unloader spool for L&T, Terex, Escorts and Case loader valve blocks with Walvoil valve gear.",
     "price": "",
     "in_stock": ""
@@ -341,7 +360,9 @@
     "spool_position": "Excavator",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/cat-424hd-excavator-spool-catalog-1.jpg"
+    ],
     "description": "Excavator spool for CAT 424HD machines.",
     "price": "",
     "in_stock": ""
@@ -360,7 +381,9 @@
     "spool_position": "Loader",
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/escorts-loader-spool-set-catalog-1.jpg"
+    ],
     "description": "Loader spool set for Escorts machines. Supplied as a set of two.",
     "price": "",
     "in_stock": ""
@@ -379,7 +402,10 @@
     "spool_position": "Excavator",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-2d-excavator-spool-hydra-control-catalog-1.jpg",
+      "/images/products/jcb-2d-excavator-spool-hydra-control-catalog-2.jpg"
+    ],
     "description": "Excavator spool for JCB 2D machines with the Hydra Control valve block.",
     "price": "",
     "in_stock": ""
@@ -398,7 +424,9 @@
     "spool_position": "Excavator",
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
-    "images": [],
+    "images": [
+      "/images/products/jcb-76hp-excavator-spool-2021-catalog-1.jpg"
+    ],
     "description": "Excavator spool for 76 HP machines, 2021 fitment.",
     "price": "",
     "in_stock": ""
@@ -417,7 +445,9 @@
     "spool_position": "Pump",
     "pack_size": "1 kit",
     "material": "NBR seals and O-rings",
-    "images": [],
+    "images": [
+      "/images/products/jcb-hydraulic-pump-seal-kit-parker-catalog-1.jpg"
+    ],
     "description": "Seal kit for the JCB hydraulic pump with Parker valve gear. Includes the seals and O-rings required for one pump rebuild.",
     "price": "",
     "in_stock": ""
@@ -437,7 +467,8 @@
     "pack_size": "1 kit (4 sets)",
     "material": "NBR seals with PU wipers",
     "images": [
-      "/images/products/jcb-loader-valve-block-wiper-seal-kit.jpg"
+      "/images/products/jcb-loader-valve-block-wiper-seal-kit.jpg",
+      "/images/products/jcb-loader-valve-block-wiper-seal-kit-catalog-1.jpg"
     ],
     "description": "Wiper seal kit for the JCB loader valve block with Husco valve gear. One kit contains four sets.",
     "price": "",
@@ -457,7 +488,9 @@
     "spool_position": "Valve block",
     "pack_size": "1 kit (12 sets)",
     "material": "NBR seals with PU wipers",
-    "images": [],
+    "images": [
+      "/images/products/jcb-xtra-excavator-valve-block-wiper-seal-kit-catalog-1.jpg"
+    ],
     "description": "Wiper seal kit for the JCB 3DX XTRA excavator valve block. One kit contains twelve sets.",
     "price": "",
     "in_stock": ""
@@ -476,7 +509,10 @@
     "spool_position": "Valve block",
     "pack_size": "1 kit (4 sets)",
     "material": "NBR seals with PU wipers",
-    "images": [],
+    "images": [
+      "/images/products/jcb-2d-wiper-seal-kit-catalog-1.jpg",
+      "/images/products/jcb-2d-wiper-seal-kit-catalog-2.jpg"
+    ],
     "description": "Wiper seal kit for the JCB 2D valve block. One kit contains four sets.",
     "price": "",
     "in_stock": ""
@@ -495,7 +531,10 @@
     "spool_position": "Valve block",
     "pack_size": "1 kit",
     "material": "NBR seals with PU wipers",
-    "images": [],
+    "images": [
+      "/images/products/lnt-escorts-terex-wiper-seal-kit-catalog-1.jpg",
+      "/images/products/lnt-escorts-terex-wiper-seal-kit-catalog-2.jpg"
+    ],
     "description": "Wiper seal kit for L&T, Escorts and Terex valve blocks.",
     "price": "",
     "in_stock": ""
@@ -573,7 +612,9 @@
     "spool_position": "Slew",
     "pack_size": "1 pc",
     "material": "Hardened steel, zinc plated",
-    "images": [],
+    "images": [
+      "/images/products/slew-plunger-bolt-catalog-1.jpg"
+    ],
     "description": "Slew plunger bolt for excavator slew and brake assemblies. Confirm thread and length before ordering.",
     "price": "",
     "in_stock": ""
