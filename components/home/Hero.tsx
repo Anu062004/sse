@@ -3,8 +3,8 @@ import caseDesktop from "@/assets/images/hero/case-desktop.jpg";
 import caseMobile from "@/assets/images/hero/case-mobile.jpg";
 import jcbDesktop from "@/assets/images/hero/jcb-xcmg-desktop.jpg";
 import jcbMobile from "@/assets/images/hero/jcb-xcmg-mobile.jpg";
-import backhoeDesktop from "@/assets/images/hero/backhoe-desktop.jpg";
-import backhoeMobile from "@/assets/images/hero/backhoe-mobile.jpg";
+import weldingDesktop from "@/assets/images/hero/welding-desktop.jpg";
+import weldingMobile from "@/assets/images/hero/welding-mobile.jpg";
 import { HeroStage, type HeroSlide } from "@/components/home/HeroSlideshow";
 import { ButtonLink } from "@/components/ui/Button";
 import { site } from "@/lib/site";
@@ -33,7 +33,7 @@ function slide(
 export function Hero() {
   const slides = [
     slide(caseDesktop, caseMobile, "CASE CX210B excavator on a construction site", "Excavators · Caterpillar, L&T, Mahindra"),
-    slide(backhoeDesktop, backhoeMobile, "JCB backhoe loader working on a building site", "Backhoe loaders · JCB 2D, 3DX, 3DX Xtra"),
+    slide(weldingDesktop, weldingMobile, "Welder in a protective mask working in an engineering workshop", "Workshop · precision engineering"),
     slide(jcbDesktop, jcbMobile, "JCB and XCMG crawler excavators side by side", "Crawler excavators · on-site spares"),
   ];
   const first = slides[0];
