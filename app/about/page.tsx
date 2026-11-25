@@ -64,7 +64,7 @@ const showcase = [
     image: "/images/products/jcb-3dx-loader-spool-husco-2008-2010-end.jpg",
     brand: "JCB",
     part: "3DX loader spool set · Husco",
-    fit: "object-contain bg-white",
+    fit: "object-contain bg-white p-4 sm:p-6",
   },
   {
     slug: "lnt-escorts-terex-excavator-spool",
@@ -130,8 +130,8 @@ export default function AboutPage() {
 
       <Section>
         <Container>
-          <div className="grid grid-cols-4 gap-x-4 gap-y-10 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
-            <div className="col-span-4 lg:col-span-6">
+          <div className="grid grid-cols-4 gap-x-4 gap-y-12 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
+            <div className="col-span-4 md:col-span-8 lg:col-span-7">
               <p className="text-xl leading-relaxed tracking-[-0.01em] text-navy/85 md:text-2xl">
                 We make the hydraulic parts that keep backhoe loaders and
                 excavators working — the spools that steer oil inside the
@@ -153,8 +153,14 @@ export default function AboutPage() {
                 to serve both domestic and international markets.
               </p>
 
-              <h2 className="mt-10 text-xs font-bold uppercase tracking-[0.16em] text-muted">What we do</h2>
-              <ol className="mt-4 grid gap-5 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <div className="mt-8">
+                <ArrowLink href="/products">Browse the catalogue</ArrowLink>
+              </div>
+            </div>
+
+            <div className="col-span-4 md:col-span-8 lg:col-span-4 lg:col-start-9">
+              <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-muted">What we do</h2>
+              <ol className="mt-4 grid gap-6 sm:grid-cols-3 lg:grid-cols-1">
                 {work.map((step, index) => (
                   <li key={step.title} className="border-t-2 border-accent pt-3">
                     <h3 className="text-[15px] font-bold text-navy">
@@ -165,46 +171,73 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ol>
-
-              <div className="mt-8">
-                <ArrowLink href="/products">Browse the catalogue</ArrowLink>
-              </div>
-            </div>
-
-            <div className="col-span-4 lg:col-span-5 lg:col-start-8">
-              <ul className="grid grid-cols-3 gap-3">
-                {showcase.map((item, index) => (
-                  <li key={item.slug} className={index === 0 ? "col-span-3" : undefined}>
-                    <Link
-                      href={`/products/${item.slug}`}
-                      className="group flex h-full flex-col overflow-hidden rounded-card border border-navy/10 bg-white"
-                    >
-                      <div
-                        className={`relative overflow-hidden bg-white ${index === 0 ? "aspect-[16/9]" : "aspect-[3/4]"}`}
-                      >
-                        <Image
-                          src={item.image}
-                          alt={`${item.brand} ${item.part} made by SSE`}
-                          fill
-                          sizes={index === 0 ? "(min-width: 1024px) 42vw, 100vw" : "(min-width: 1024px) 14vw, 33vw"}
-                          className={`${item.fit} transition-transform duration-500 group-hover:scale-[1.04]`}
-                        />
-                      </div>
-                      <div className="flex-1 border-t border-navy/10 px-3.5 py-2.5">
-                        <p className="text-[13px] font-bold text-navy">{item.brand}</p>
-                        <p className="text-xs text-muted">{item.part}</p>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-muted">
-                Real SSE parts · Your trusted partner in hydraulic components
-              </p>
             </div>
           </div>
         </Container>
       </Section>
+
+      <section className="bg-cream pb-section text-navy">
+        <Container>
+          <div className="grid grid-cols-4 gap-x-4 gap-y-10 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
+            <div className="col-span-4 md:col-span-8 lg:sticky lg:top-32 lg:col-span-4 lg:self-start">
+              <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-muted before:h-0.5 before:w-8 before:bg-accent">
+                Real SSE parts
+              </p>
+              <h2 className="display mt-4 text-[clamp(30px,3.4vw,50px)] font-extrabold leading-[1.02] text-navy">
+                Made for every brand we serve.
+              </h2>
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-navy/65 md:text-base">
+                Spools we manufacture for JCB, L&amp;T, Escorts, Terex,
+                Caterpillar and Mahindra machines — photographed in our
+                Faridabad workshop.
+              </p>
+              <div className="mt-6">
+                <ArrowLink href="/products">See all parts</ArrowLink>
+              </div>
+            </div>
+
+            <ul className="col-span-4 md:col-span-8 lg:col-span-7 lg:col-start-6">
+              {showcase.map((item, index) => (
+                <li
+                  key={item.slug}
+                  className="stack-card mb-6 last:mb-0 lg:sticky lg:mb-[18vh] lg:last:mb-0"
+                  style={{ top: `calc(8rem + ${index * 22}px)` }}
+                >
+                  <Link
+                    href={`/products/${item.slug}`}
+                    className="group grid overflow-hidden rounded-panel border border-navy/10 bg-white shadow-[0_24px_60px_-30px_rgba(11,21,48,0.45)] sm:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden bg-white sm:aspect-auto sm:min-h-[360px]">
+                      <Image
+                        src={item.image}
+                        alt={`${item.brand} ${item.part} made by SSE`}
+                        fill
+                        sizes="(min-width: 1024px) 26vw, (min-width: 640px) 45vw, 100vw"
+                        className={`${item.fit} transition-transform duration-700 group-hover:scale-[1.04]`}
+                      />
+                    </div>
+                    <div className="flex flex-col justify-between gap-8 p-6 md:p-8">
+                      <span className="display text-sm font-extrabold text-muted">
+                        {String(index + 1).padStart(2, "0")} / {String(showcase.length).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <p className="display text-[clamp(26px,2.4vw,36px)] font-extrabold leading-[1.05] text-navy">
+                          {item.brand}
+                        </p>
+                        <p className="mt-2 text-sm text-navy/65 md:text-base">{item.part}</p>
+                        <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy group-hover:text-accent">
+                          View part
+                          <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </section>
 
       <Section tone="white">
         <Container>

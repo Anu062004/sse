@@ -27,14 +27,14 @@ const steps = [
 export function Quality() {
   return (
     <section id="quality" className="scroll-mt-24 py-section">
-      <Container className="grid grid-cols-1 items-stretch gap-[clamp(32px,5vw,80px)] min-[901px]:grid-cols-2">
-        <figure className="swipe-in relative m-0 min-h-[520px] overflow-hidden rounded-panel bg-navy">
+      <Container className="grid grid-cols-1 items-center gap-[clamp(32px,5vw,80px)] min-[901px]:grid-cols-2">
+        <figure className="swipe-in relative m-0 aspect-[3/2] overflow-hidden rounded-panel bg-navy">
           <Image
             src={jcbDesktop}
             alt="JCB and XCMG crawler excavators parked on a sandy site"
             fill
             sizes="(min-width: 901px) 50vw, 100vw"
-            className="object-cover"
+            className="object-cover object-[50%_60%]"
           />
           <figcaption className="absolute inset-x-5 bottom-5 flex items-center justify-between gap-3 rounded-2xl bg-ink/[0.78] px-[18px] py-3.5 text-sm text-white backdrop-blur-md">
             <span>Built for abrasive site conditions</span>
