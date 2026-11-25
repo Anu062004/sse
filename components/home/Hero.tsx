@@ -63,23 +63,19 @@ export function Hero() {
       <HeroStage
         slides={slides}
       >
-        <h1 className="display text-shadow-hero mt-6 text-[clamp(42px,5.4vw,92px)] font-extrabold leading-[0.9] tracking-[-0.034em]">
+        <h1 className="display text-shadow-hero text-[clamp(38px,4.4vw,72px)] font-extrabold leading-[0.98] tracking-[-0.03em]">
           Precision engineering.
           <br />
           <span className="text-accent">Reliable performance.</span>
         </h1>
-        <p className="mt-4 flex items-center gap-3.5 text-[13px] font-semibold uppercase tracking-[0.18em] text-white/[0.88] before:h-0.5 before:w-8 before:bg-accent after:h-0.5 after:w-8 after:bg-accent">
+        <p className="text-shadow-hero mt-6 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.2em] text-white/80 before:h-px before:w-6 before:bg-accent after:h-px after:w-6 after:bg-accent">
           Manufacturer &amp; supplier · {site.address.locality}
         </p>
-        <p className="mx-auto mt-[26px] max-w-[56ch] text-[clamp(15px,1.15vw,18px)] leading-[1.55] text-white/[0.86]">
-          High-precision hydraulic spools, seal kits and aftermarket spares for
-          backhoe loaders and excavators —{" "}
-          <strong className="font-semibold text-white">
-            JCB, L&amp;T, Escorts, Terex, Bull, Caterpillar and Mahindra
-          </strong>
-          .
+        <p className="text-shadow-hero mx-auto mt-5 max-w-[44ch] text-[clamp(15px,1.05vw,17px)] leading-[1.65] text-white/[0.82]">
+          Hydraulic spools, seal kits and aftermarket spares for backhoe
+          loaders and excavators.
         </p>
-        <div className="mt-[34px] flex flex-wrap justify-center gap-3">
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
           <ButtonLink href="#finder" variant="light">
             Find your spool
           </ButtonLink>
