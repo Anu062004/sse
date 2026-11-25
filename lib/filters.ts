@@ -1,4 +1,4 @@
-import { categories } from "@/data/categories";
+import { categories, getCategoryName } from "@/data/categories";
 import {
   machineMatches,
   products,
@@ -54,11 +54,39 @@ function matchesYear(product: Product, year: number): boolean {
   return year <= product.year_to;
 }
 
+/** Everything a visitor might type to find a part, lower-cased. */
+function searchText(product: Product): string {
+  return [
+    product.name,
+    product.part_number,
+    product.machine,
+    product.model,
+    product.valve_block,
+    product.spool_position,
+    getCategoryName(product.category),
+    product.description,
+  ]
+    .join(" ")
+    .toLowerCase()
+    .replace(/[—–-]/g, " ");
+}
+
+/**
+ * True when every word of the query appears somewhere in the product, in any
+ * order — so "husco 3dx loader" and "loader spool jcb" both match.
+ */
+export function matchesQuery(product: Product, query: string): boolean {
+  const words = query.toLowerCase().replace(/[—–-]/g, " ").split(/\s+/).filter(Boolean);
+  if (words.length === 0) return true;
+  const text = searchText(product);
+  return words.every((word) => text.includes(word));
+}
+
 export function filterProducts(
   filters: ProductFilters,
   list: Product[] = products,
 ): Product[] {
-  const query = filters.q?.trim().toLowerCase();
+  const query = filters.q?.trim();
 
   return list.filter((product) => {
     if (filters.category && product.category !== filters.category) return false;
@@ -67,19 +95,7 @@ export function filterProducts(
     }
     if (filters.valve && !product.valve_block.includes(filters.valve)) return false;
     if (filters.year && !matchesYear(product, filters.year)) return false;
-    if (query) {
-      const haystack = [
-        product.name,
-        product.part_number,
-        product.machine,
-        product.model,
-        product.valve_block,
-        product.description,
-      ]
-        .join(" ")
-        .toLowerCase();
-      if (!haystack.includes(query)) return false;
-    }
+    if (query && !matchesQuery(product, query)) return false;
     return true;
   });
 }

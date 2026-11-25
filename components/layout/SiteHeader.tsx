@@ -1,5 +1,6 @@
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { NavLinks } from "@/components/layout/NavLinks";
+import { QuickSearch } from "@/components/layout/QuickSearch";
 import { ButtonLink } from "@/components/ui/Button";
 import { PhoneIcon } from "@/components/ui/Icons";
 import { Logo } from "@/components/ui/Logo";
@@ -14,6 +15,7 @@ export function SiteHeader() {
         <Logo priority className="h-11 sm:h-14" />
         <NavLinks />
         <div className="flex items-center gap-2.5">
+          <QuickSearch />
           <a
             href={telHref}
             aria-label={`Call ${site.phone}`}

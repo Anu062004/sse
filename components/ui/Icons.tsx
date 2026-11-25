@@ -152,7 +152,6 @@ export function ClockIcon(props: IconProps) {
 export function SearchIcon(props: IconProps) {
   return (
     <Svg strokeWidth={2} {...props}>
-      <circle cx="11" cy="11" r="7" fill="currentColor" fillOpacity=".18" stroke="none" />
       <circle cx="11" cy="11" r="7" />
       <path d="m20 20-3.5-3.5" />
     </Svg>
