@@ -1,5 +1,12 @@
 const url = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sse-rosy.vercel.app";
 
+/**
+ * Contact number for calls and WhatsApp, kept out of the repository. Set
+ * NEXT_PUBLIC_CONTACT_PHONE (e.g. "+91 98765 43210") in Vercel and .env.local.
+ */
+const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE?.trim() || "+91 00000 00000";
+const contactDigits = contactPhone.replace(/\D/g, "");
+
 export const site = {
   name: "S S Engineering",
   shortName: "SSE",
@@ -9,9 +16,9 @@ export const site = {
   url: url.replace(/\/$/, ""),
   locale: "en_IN",
   email: "mavi_65@yahoo.in",
-  phone: "+91 00000 00000",
-  phoneHref: "+910000000000",
-  whatsappNumber: "910000000000",
+  phone: contactPhone,
+  phoneHref: `+${contactDigits}`,
+  whatsappNumber: contactDigits,
   address: {
     locality: "Faridabad",
     region: "Haryana",
