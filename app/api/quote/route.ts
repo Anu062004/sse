@@ -1,16 +1,59 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { buildQuoteEmail } from "@/lib/quote-email";
+import { clientIp, rateLimit } from "@/lib/rate-limit";
 import { site } from "@/lib/site";
 import { validateQuote } from "@/lib/validation";
 
 export const runtime = "nodejs";
 
+/** Largest body the form can legitimately send (all fields at max length). */
+const MAX_BODY_BYTES = 8 * 1024;
+/** Quote requests allowed per visitor in each window. */
+const RATE_LIMIT = 10;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
+/** Only accept posts made from this site's own pages. */
+function isSameOrigin(request: Request): boolean {
+  const origin = request.headers.get("origin");
+  if (!origin) return request.headers.get("sec-fetch-site") !== "cross-site";
+  try {
+    return new URL(origin).host === request.headers.get("host");
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(request: Request) {
+  if (!isSameOrigin(request)) {
+    return NextResponse.json({ error: "Forbidden." }, { status: 403 });
+  }
+
+  if (!request.headers.get("content-type")?.includes("application/json")) {
+    return NextResponse.json({ error: "Invalid request." }, { status: 415 });
+  }
+
+  const declaredLength = Number(request.headers.get("content-length") ?? 0);
+  if (declaredLength > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Request too large." }, { status: 413 });
+  }
+
+  const limit = rateLimit(`quote:${clientIp(request)}`, RATE_LIMIT, RATE_WINDOW_MS);
+  if (!limit.ok) {
+    return NextResponse.json(
+      { error: "Too many requests. Please wait a few minutes, or call or WhatsApp us." },
+      { status: 429, headers: { "Retry-After": String(limit.retryAfter) } },
+    );
+  }
+
   let payload: unknown;
 
   try {
-    payload = await request.json();
+    const body = await request.text();
+    if (body.length > MAX_BODY_BYTES) {
+      return NextResponse.json({ error: "Request too large." }, { status: 413 });
+    }
+    payload = JSON.parse(body);
   } catch {
     return NextResponse.json(
       { error: "Invalid request." },
