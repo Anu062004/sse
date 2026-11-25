@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import fieldDetail from "@/assets/images/site/field-detail.jpg";
+import Link from "next/link";
 import { StatCounters } from "@/components/home/StatCounters";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { ButtonLink } from "@/components/ui/Button";
@@ -57,6 +57,53 @@ const range = [
   "Other specialised hydraulic components",
 ];
 
+/** Real SSE parts shown in the intro, one per brand family. */
+const showcase = [
+  {
+    slug: "jcb-3dx-loader-spool-husco-2008-2010",
+    image: "/images/products/jcb-3dx-loader-spool-husco-2008-2010-end.jpg",
+    brand: "JCB",
+    part: "3DX loader spool set · Husco",
+    fit: "object-contain bg-white",
+  },
+  {
+    slug: "lnt-escorts-terex-excavator-spool",
+    image: "/images/products/lnt-escorts-terex-excavator-spool.jpg",
+    brand: "L&T · Escorts · Terex",
+    part: "Excavator spool",
+    fit: "object-cover",
+  },
+  {
+    slug: "cat-424b-excavator-spool",
+    image: "/images/products/cat-424b-excavator-spool.jpg",
+    brand: "Caterpillar",
+    part: "424B excavator spools",
+    fit: "object-cover",
+  },
+  {
+    slug: "mahindra-excavator-spool-husco",
+    image: "/images/products/mahindra-excavator-spool-husco.jpg",
+    brand: "Mahindra",
+    part: "Excavator spool · Husco",
+    fit: "object-cover",
+  },
+];
+
+const work = [
+  {
+    title: "We manufacture",
+    body: "Hydraulic spools and components are machined, ground and finished in Faridabad to match the original part's lands, grooves and end detail.",
+  },
+  {
+    title: "We match",
+    body: "Every part is identified by machine, model year and valve block — Husco, Hydra Control or Walvoil — so it fits the first time.",
+  },
+  {
+    title: "We supply",
+    body: "Dealers, workshops and fleet owners order single parts or bulk sets, packed and labelled, dispatched across India.",
+  },
+];
+
 const principles = [
   {
     title: "Confirm the fitment",
@@ -86,8 +133,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-4 gap-x-4 gap-y-10 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
             <div className="col-span-4 lg:col-span-6">
               <p className="text-xl leading-relaxed tracking-[-0.01em] text-navy/85 md:text-2xl">
-                Precision engineering. Reliable performance. That is the
-                standard behind every part that leaves our works in Faridabad.
+                We make the hydraulic parts that keep backhoe loaders and
+                excavators working — the spools that steer oil inside the
+                control valve, and the seals, shafts and levers around them.
               </p>
               <p className="mt-6 max-w-xl text-sm leading-relaxed text-navy/65 md:text-base">
                 We specialise in precision-engineered hydraulic spools, seal kits
@@ -104,23 +152,54 @@ export default function AboutPage() {
                 consistent quality, precision and dependable service, and we aim
                 to serve both domestic and international markets.
               </p>
+
+              <h2 className="mt-10 text-xs font-bold uppercase tracking-[0.16em] text-muted">What we do</h2>
+              <ol className="mt-4 grid gap-5 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                {work.map((step, index) => (
+                  <li key={step.title} className="border-t-2 border-accent pt-3">
+                    <h3 className="text-[15px] font-bold text-navy">
+                      <span className="mr-2 text-accent">{String(index + 1).padStart(2, "0")}</span>
+                      {step.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-navy/65">{step.body}</p>
+                  </li>
+                ))}
+              </ol>
+
               <div className="mt-8">
                 <ArrowLink href="/products">Browse the catalogue</ArrowLink>
               </div>
             </div>
 
             <div className="col-span-4 lg:col-span-5 lg:col-start-8">
-              <div className="relative aspect-[4/5] overflow-hidden bg-paper">
-                <Image
-                  src={fieldDetail}
-                  alt="Excavator tracks on a working site"
-                  fill
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
+              <ul className="grid grid-cols-3 gap-3">
+                {showcase.map((item, index) => (
+                  <li key={item.slug} className={index === 0 ? "col-span-3" : undefined}>
+                    <Link
+                      href={`/products/${item.slug}`}
+                      className="group flex h-full flex-col overflow-hidden rounded-card border border-navy/10 bg-white"
+                    >
+                      <div
+                        className={`relative overflow-hidden bg-white ${index === 0 ? "aspect-[16/9]" : "aspect-[3/4]"}`}
+                      >
+                        <Image
+                          src={item.image}
+                          alt={`${item.brand} ${item.part} made by SSE`}
+                          fill
+                          sizes={index === 0 ? "(min-width: 1024px) 42vw, 100vw" : "(min-width: 1024px) 14vw, 33vw"}
+                          className={`${item.fit} transition-transform duration-500 group-hover:scale-[1.04]`}
+                        />
+                      </div>
+                      <div className="flex-1 border-t border-navy/10 px-3.5 py-2.5">
+                        <p className="text-[13px] font-bold text-navy">{item.brand}</p>
+                        <p className="text-xs text-muted">{item.part}</p>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
               <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-muted">
-                Your trusted partner in hydraulic components
+                Real SSE parts · Your trusted partner in hydraulic components
               </p>
             </div>
           </div>
