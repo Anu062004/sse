@@ -75,7 +75,7 @@ export const posts: Post[] = [
     body: [
       {
         type: "p",
-        text: "Aftermarket spools are matched to the valve block, not just the machine. JCB, L&T, Terex, Escorts, Case, Mahindra and CAT machines can carry different blocks depending on the build year, the model and the market.",
+        text: "Aftermarket spools are matched to the valve block, not just the machine. JCB, L&T, Escorts, Terex, Bull, Caterpillar and Mahindra machines can carry different blocks depending on the build year, the model and the market.",
       },
       {
         type: "h2",

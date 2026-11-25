@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Spool Valves, Seal Kits & Hydraulic Spares",
   description:
-    "Browse spool valves, seal kits, gear lever sets, hydro clamp seals, slew plunger bolts, stub axles and hub seals for JCB, L&T, Terex, Escorts, Case, Mahindra and CAT machines.",
+    "Browse spool valves, seal kits, gear lever sets, hydro clamp seals, slew plunger bolts, stub axles and hub seals for JCB, L&T, Escorts, Terex, Bull, Caterpillar and Mahindra machines.",
   path: "/products",
 });
 

@@ -78,7 +78,7 @@ export function SiteFooter() {
               Request a quote
             </ButtonLink>
             <ButtonLink
-              href={whatsappHref("Hello SSE, I would like a quote for earthmoving spares.")}
+              href={whatsappHref("Hello SSE, I would like a quote for hydraulic spares.")}
               variant="whatsapp"
               size="sm"
             >
@@ -91,9 +91,9 @@ export function SiteFooter() {
           <div className="col-span-2 lg:col-span-1">
             <Logo className="h-14" />
             <p className="mt-5 max-w-[34ch] text-sm leading-relaxed text-white/65">
-              Manufacturer and dealer of spool valves, seal kits and hydraulic
-              spares for earthmoving machines. Supplying 15+ states from{" "}
-              {site.address.locality}.
+              Precision hydraulic components and aftermarket spares for
+              backhoe loaders and excavators. 7+ years of experience,
+              supplying across India from {site.address.locality}.
             </p>
           </div>
 

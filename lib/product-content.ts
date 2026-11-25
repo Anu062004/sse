@@ -160,7 +160,7 @@ export function getDescriptionSections(product: Product): DescriptionSection[] {
     {
       heading: `About ${site.name}`,
       paragraphs: [
-        `Manufacturer and dealer of earthmoving spares based in ${site.address.locality}, ${site.address.region}, supplying dealers, workshops and fleet owners in more than 15 states of India. Prices on request; dealer and bulk rates available.`,
+        `SSE is a manufacturer and supplier of high-precision hydraulic components and aftermarket spares for backhoe loaders and excavators, based in ${site.address.locality}, ${site.address.region}, with over 7 years of industry experience. We supply dealers, workshops and fleet owners across India. Prices on request; dealer and bulk rates available.`,
       ],
     },
   ];

@@ -16,7 +16,7 @@ export function ProductRange() {
         <SectionHeader
           label="The components"
           title={`${categoryCounts.length === 7 ? "Seven" : categoryCounts.length} components. One catalogue.`}
-          intro="Everything in the SSE product catalogue, from spool valves for every major loader and excavator to the seals that keep them tight."
+          intro="Hydraulic spools for backhoe loader, excavator and loader applications, seal kits for valves, rams and brakes, and the specialised parts that keep machines working."
         />
 
         <div className="mt-14 grid grid-cols-1 gap-5 min-[481px]:grid-cols-2 min-[1101px]:grid-cols-4 min-[761px]:grid-cols-3">

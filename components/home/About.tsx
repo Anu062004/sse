@@ -12,9 +12,9 @@ export function About() {
           <Eyebrow tone="accent">About SSE</Eyebrow>
           <p className="fill-wrap display mt-7 max-w-[22ch] text-[clamp(26px,3.4vw,52px)] font-bold leading-[0.98]">
             <span className="fill-text">
-              We manufacture and deal in earthmoving spares, supplying more than
-              15 states of India with precision — and we measure ourselves on
-              one thing: fulfilling customer demand.
+              For over 7 years we have manufactured precision hydraulic
+              components for backhoe loaders — delivering consistent quality,
+              precision and dependable service across India.
             </span>
           </p>
 
@@ -41,8 +41,8 @@ export function About() {
               How we work
             </ButtonLink>
             <p className="max-w-[40ch] text-[15px] font-semibold">
-              Customer feedback shapes every batch — parts are matched to the
-              machine, the year and the valve block.
+              Precision in every component. Reliability in every
+              partnership.
             </p>
           </div>
         </Container>

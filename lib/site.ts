@@ -1,11 +1,11 @@
 const url = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sse-rosy.vercel.app";
 
 export const site = {
-  name: "SSE Aftermarket Solution",
+  name: "S S Engineering",
   shortName: "SSE",
-  tagline: "The ultimate solutions for earthmoving spares",
+  tagline: "Precision Engineering. Reliable Performance.",
   description:
-    "Manufacturer and dealer of aftermarket spool valves, seal kits and hydraulic spares for JCB, L&T, Terex, Escorts, Case, Mahindra and CAT machines. Based in Faridabad, supplying 15+ states.",
+    "Manufacturer and supplier of high-precision hydraulic spools, seal kits and aftermarket spares for backhoe loaders and excavators — JCB, L&T, Escorts, Terex, Bull, Caterpillar and Mahindra. 7+ years of experience, based in Faridabad.",
   url: url.replace(/\/$/, ""),
   locale: "en_IN",
   email: "mavi_65@yahoo.in",
@@ -21,13 +21,13 @@ export const site = {
   },
   hours: "Mon–Sat · 9:30–18:30 IST",
   mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=SSE+Aftermarket+Solution+Faridabad",
-  machines: ["JCB", "L&T", "Terex", "Escorts", "Case", "Mahindra", "CAT"],
+    "https://www.google.com/maps/search/?api=1&query=S+S+Engineering+Faridabad",
+  machines: ["JCB", "L&T", "Escorts", "Terex", "Bull", "Caterpillar", "Mahindra"],
   stats: [
+    { value: 7, suffix: "+", label: "Years of industry experience" },
     { value: 15, suffix: "+", label: "States supplied across India" },
     { value: 70, suffix: "+", label: "Product variants" },
-    { value: 7, suffix: "", label: "Machine brands covered" },
-    { value: 3, suffix: "", label: "Valve block makes — Husco, Hydra Control, Walvoil" },
+    { value: 7, suffix: "", label: "Equipment brands served" },
   ],
   nav: [
     { label: "Home", href: "/" },

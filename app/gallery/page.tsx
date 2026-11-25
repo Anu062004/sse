@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Gallery",
   description:
-    "Machines and field conditions SSE Aftermarket Solution supplies for — CASE, JCB, XCMG and other earthmoving equipment.",
+    "Machines and field conditions S S Engineering (SSE) supplies for — CASE, JCB, XCMG and other earthmoving equipment.",
   path: "/gallery",
 });
 

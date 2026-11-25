@@ -32,14 +32,14 @@ function slide(
 
 export function Hero() {
   const slides = [
-    slide(caseDesktop, caseMobile, "CASE CX210B excavator on a construction site", "Excavators · CASE, CAT, Mahindra"),
+    slide(caseDesktop, caseMobile, "CASE CX210B excavator on a construction site", "Excavators · Caterpillar, L&T, Mahindra"),
     slide(backhoeDesktop, backhoeMobile, "JCB backhoe loader working on a building site", "Backhoe loaders · JCB 2D, 3DX, 3DX Xtra"),
     slide(jcbDesktop, jcbMobile, "JCB and XCMG crawler excavators side by side", "Crawler excavators · on-site spares"),
   ];
   const first = slides[0];
   const facts = [
+    { value: "7+", label: "Years experience" },
     { value: "15+", label: "States supplied" },
-    { value: "70+", label: "Product variants" },
     { value: String(site.machines.length), label: "Machine brands" },
   ];
 
@@ -81,19 +81,20 @@ export function Hero() {
         }
       >
         <h1 className="display text-shadow-hero mt-6 text-[clamp(42px,5.4vw,92px)] font-extrabold leading-[0.9] tracking-[-0.034em]">
-          Precision spares,
+          Precision engineering.
           <br />
-          <span className="text-accent">built for the field.</span>
+          <span className="text-accent">Reliable performance.</span>
         </h1>
         <p className="mt-4 flex items-center gap-3.5 text-[13px] font-semibold uppercase tracking-[0.18em] text-white/[0.88] before:h-0.5 before:w-8 before:bg-accent after:h-0.5 after:w-8 after:bg-accent">
-          Manufacturer &amp; dealer · {site.address.locality}
+          Manufacturer &amp; supplier · {site.address.locality}
         </p>
         <p className="mx-auto mt-[26px] max-w-[56ch] text-[clamp(15px,1.15vw,18px)] leading-[1.55] text-white/[0.86]">
-          Spool valves, seal kits and hydraulic spares for{" "}
+          High-precision hydraulic spools, seal kits and aftermarket spares for
+          backhoe loaders and excavators —{" "}
           <strong className="font-semibold text-white">
-            JCB, L&amp;T, Terex, Escorts, Case, Mahindra and CAT
-          </strong>{" "}
-          — matched to the machine, the year and the valve block.
+            JCB, L&amp;T, Escorts, Terex, Bull, Caterpillar and Mahindra
+          </strong>
+          .
         </p>
         <div className="mt-[34px] flex flex-wrap justify-center gap-3">
           <ButtonLink href="#finder" variant="light">

@@ -12,7 +12,7 @@ import { getFeaturedProducts } from "@/lib/products";
 import { site } from "@/lib/site";
 
 const title =
-  "SSE Aftermarket Solution — Spool Valves & Seal Kits, Faridabad";
+  "SSE – S S Engineering | Hydraulic Spools & Seal Kits, Faridabad";
 
 export const metadata: Metadata = {
   ...pageMetadata({

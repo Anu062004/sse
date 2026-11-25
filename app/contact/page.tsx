@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
-    "Contact SSE Aftermarket Solution in Faridabad, Haryana for spool valves, seal kits and hydraulic spares. Call, WhatsApp or request a quote.",
+    "Contact S S Engineering (SSE) in Faridabad, Haryana for spool valves, seal kits and hydraulic spares. Call, WhatsApp or request a quote.",
   path: "/contact",
 });
 

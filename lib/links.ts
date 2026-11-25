@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 export const telHref = `tel:${site.phoneHref}`;
 
 export function whatsappHref(
-  message = "Hello SSE, I would like a quote for earthmoving spares.",
+  message = "Hello SSE, I would like a quote for hydraulic spares.",
 ): string {
   return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }

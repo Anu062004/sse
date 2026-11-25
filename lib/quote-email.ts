@@ -44,7 +44,7 @@ export function buildQuoteEmail(data: QuoteInput) {
 
   const html = `<div style="background:#F4F5F7;padding:32px 16px;font-family:Arial,Helvetica,sans-serif;">
   <div style="max-width:640px;margin:0 auto;background:#FFFFFF;border-top:6px solid #F5B800;padding:32px;">
-    <p style="margin:0 0 8px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#5A6070;">SSE Aftermarket Solution</p>
+    <p style="margin:0 0 8px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#5A6070;">SSE – S S Engineering</p>
     <h1 style="margin:0 0 24px;font-size:24px;line-height:1.2;color:#0B1530;">New quote request</h1>
     <table style="width:100%;border-collapse:collapse;">${tableRows}</table>
     <p style="margin:24px 0 0;font-size:12px;line-height:1.6;color:#5A6070;">Sent from the SSE website quote form. Reply directly to this email to contact the customer.</p>
