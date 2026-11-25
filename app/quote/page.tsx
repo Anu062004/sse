@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import catalogueHero from "@/assets/images/site/catalogue-hero.jpg";
 import { QuoteForm } from "@/components/quote/QuoteForm";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -31,6 +32,7 @@ export default async function QuotePage({
         eyebrow="Request a quote"
         title="Tell us what you need."
         intro="Share the machine, part number and quantity. We will confirm price, fitment and availability."
+        background={catalogueHero}
       />
 
       <Container className="py-10 md:py-14">
