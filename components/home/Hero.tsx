@@ -37,11 +37,6 @@ export function Hero() {
     slide(jcbDesktop, jcbMobile, "JCB and XCMG crawler excavators side by side", "Crawler excavators · on-site spares"),
   ];
   const first = slides[0];
-  const facts = [
-    { value: "7+", label: "Years experience" },
-    { value: "15+", label: "States supplied" },
-    { value: String(site.machines.length), label: "Machine brands" },
-  ];
 
   return (
     <>
@@ -67,18 +62,6 @@ export function Hero() {
       />
       <HeroStage
         slides={slides}
-        facts={
-          <ul className="flex gap-8 text-[13px] text-white/[0.78]">
-            {facts.map((fact) => (
-              <li key={fact.label} className="flex items-baseline gap-2">
-                <span className="display text-2xl font-extrabold leading-none text-white">
-                  {fact.value}
-                </span>
-                {fact.label}
-              </li>
-            ))}
-          </ul>
-        }
       >
         <h1 className="display text-shadow-hero mt-6 text-[clamp(42px,5.4vw,92px)] font-extrabold leading-[0.9] tracking-[-0.034em]">
           Precision engineering.

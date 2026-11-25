@@ -1,7 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { ArrowLeftIcon, ArrowRightIcon } from "@/components/ui/Icons";
+import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 type Source = { src: string; srcSet?: string; width: number; height: number };
@@ -61,73 +60,9 @@ export function HeroSlides({ slides, active }: { slides: HeroSlide[]; active: nu
   );
 }
 
-/** Caption, progress bars, counter and arrows along the bottom of the hero. */
-export function HeroControls({
-  slides,
-  active,
-  onSelect,
-}: {
-  slides: HeroSlide[];
-  active: number;
-  onSelect: (index: number) => void;
-}) {
-  const count = slides.length;
-  const pad = (n: number) => String(n).padStart(2, "0");
-
-  return (
-    <>
-      <div className="flex w-[220px] flex-col items-center gap-2.5">
-        <p aria-live="polite" className="max-w-full truncate text-xs text-white/75">
-          {slides[active]?.caption}
-        </p>
-        <div className="flex w-full gap-1.5">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.desktop.src}
-              type="button"
-              aria-label={`Show slide ${index + 1}`}
-              aria-current={index === active ? "true" : undefined}
-              onClick={() => onSelect(index)}
-              className="relative h-[3px] flex-1 cursor-pointer overflow-hidden rounded-[3px] bg-white/[0.28] before:absolute before:-inset-y-3 before:inset-x-0"
-            >
-              <i
-                className="block h-full bg-accent transition-[width] duration-700 ease-[var(--ease-swift)]"
-                style={{ width: index <= active ? "100%" : "0%" }}
-              />
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="flex items-center justify-end gap-3.5 max-[640px]:hidden">
-        <span className="display text-[22px] font-extrabold leading-none">
-          {pad(active + 1)}
-          <span className="font-semibold text-white/50"> / {pad(count)}</span>
-        </span>
-        <button
-          type="button"
-          aria-label="Previous slide"
-          onClick={() => onSelect((active - 1 + count) % count)}
-          className="icbtn icbtn-light"
-        >
-          <ArrowLeftIcon size={18} />
-        </button>
-        <button
-          type="button"
-          aria-label="Next slide"
-          onClick={() => onSelect((active + 1) % count)}
-          className="icbtn icbtn-light"
-        >
-          <ArrowRightIcon size={18} />
-        </button>
-      </div>
-    </>
-  );
-}
-
-/** Owns the autoplay timer; restarts it whenever the viewer picks a slide. */
+/** Advances the background photos every few seconds. */
 export function useSlideshow(count: number) {
   const [active, setActive] = useState(0);
-  const [epoch, setEpoch] = useState(0);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -137,30 +72,23 @@ export function useSlideshow(count: number) {
       }
     }, INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, [count, epoch]);
+  }, [count]);
 
-  const select = useCallback((index: number) => {
-    setActive(index);
-    setEpoch((value) => value + 1);
-  }, []);
-
-  return { active, select };
+  return active;
 }
 
 /**
- * Full-height hero shell: crossfading photos, scrims, the server-rendered copy
- * as children, and a bottom bar with `facts` on the left and slide controls.
+ * Full-height hero shell: crossfading photos, scrims and the server-rendered
+ * copy as children.
  */
 export function HeroStage({
   slides,
-  facts,
   children,
 }: {
   slides: HeroSlide[];
-  facts: ReactNode;
   children: ReactNode;
 }) {
-  const { active, select } = useSlideshow(slides.length);
+  const active = useSlideshow(slides.length);
 
   return (
     <section
@@ -174,10 +102,6 @@ export function HeroStage({
       />
       <div className="relative mx-auto flex h-full w-full max-w-site flex-col px-gutter pb-[clamp(24px,4vh,40px)] pt-28">
         <div className="flex flex-1 flex-col items-center justify-center text-center">{children}</div>
-        <div className="grid grid-cols-1 items-center justify-items-center gap-8 border-t border-white/20 pt-[22px] min-[641px]:grid-cols-[minmax(0,1fr)_auto] min-[641px]:justify-items-stretch min-[1101px]:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
-          <div className="hidden min-[1101px]:block">{facts}</div>
-          <HeroControls slides={slides} active={active} onSelect={select} />
-        </div>
       </div>
     </section>
   );
