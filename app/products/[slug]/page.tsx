@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/products/ProductCard";
 import { ProductDescription } from "@/components/products/ProductDescription";
 import { ProductDetail } from "@/components/products/ProductDetail";
 import { ArrowLink } from "@/components/ui/ArrowLink";
+import { HeaderBackdrop } from "@/components/ui/PageHeader";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -54,8 +55,8 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <>
-      <div className="on-dark relative bg-ink pb-8 pt-[140px]">
-        <div aria-hidden="true" className="dots absolute inset-0" />
+      <div className="on-dark relative bg-ink pb-10 pt-[140px]">
+        <HeaderBackdrop />
         <Container className="relative">
           <Breadcrumbs
             items={[
