@@ -3,12 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { StatCounters } from "@/components/home/StatCounters";
 import { ArrowLink } from "@/components/ui/ArrowLink";
-import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { quoteHref, whatsappHref } from "@/lib/links";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -361,35 +359,6 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
-
-      <section className="on-dark border-t border-accent bg-navy py-16 text-white md:py-20">
-        <Container>
-          <div className="grid grid-cols-4 gap-x-4 gap-y-8 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
-            <div className="col-span-4 lg:col-span-7">
-              <h2 className="text-3xl font-medium leading-[1.02] tracking-[-0.035em] sm:text-4xl lg:text-5xl">
-                SSE — your trusted partner in hydraulic components.
-              </h2>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
-                Need a part that is not listed? Send the machine, year and a
-                photo of the old part. We will check the fitment and confirm the
-                pack size.
-              </p>
-            </div>
-            <div className="col-span-4 flex flex-col gap-3 sm:flex-row lg:col-span-4 lg:col-start-9 lg:justify-end">
-              <ButtonLink
-                href={whatsappHref(
-                  "Hello SSE, I need help finding a part that is not listed.",
-                )}
-              >
-                WhatsApp
-              </ButtonLink>
-              <ButtonLink href={quoteHref()} variant="outline-light">
-                Get a quote
-              </ButtonLink>
-            </div>
-          </div>
-        </Container>
-      </section>
     </>
   );
 }
