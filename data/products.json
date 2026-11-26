@@ -280,11 +280,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-excavator-spool-catalog-1.jpg"
+      "/images/products/jcb-3dx-excavator-spool/ai-front-v1.webp",
+      "/images/products/jcb-3dx-excavator-spool/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-3dx-excavator-spool/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-3dx-excavator-spool/ai-end-oblique-v1.webp",
+      "/images/products/jcb-3dx-excavator-spool/original-catalog.png"
     ],
     "description": "Excavator spool for JCB 3DX. Confirm the valve block make and spool position before ordering.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 11,
@@ -301,11 +312,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-xtra-excavator-spool-hydra-control-catalog-1.jpg"
+      "/images/products/jcb-3dx-xtra-excavator-spool-hydra-control/ai-front-v1.webp",
+      "/images/products/jcb-3dx-xtra-excavator-spool-hydra-control/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-3dx-xtra-excavator-spool-hydra-control/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-3dx-xtra-excavator-spool-hydra-control/ai-end-oblique-v1.webp",
+      "/images/products/jcb-3dx-xtra-excavator-spool-hydra-control/original-catalog.png"
     ],
     "description": "Excavator spool for JCB 3DX XTRA machines with the Hydra Control valve block.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 12,
@@ -322,11 +344,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/mahindra-excavator-spool-husco.jpg"
+      "/images/products/mahindra-excavator-spool-husco/ai-front-v1.webp",
+      "/images/products/mahindra-excavator-spool-husco/ai-three-quarter-left-v1.webp",
+      "/images/products/mahindra-excavator-spool-husco/ai-three-quarter-right-v1.webp",
+      "/images/products/mahindra-excavator-spool-husco/ai-end-oblique-v1.webp",
+      "/images/products/mahindra-excavator-spool-husco/original-catalog.png"
     ],
     "description": "Excavator spool for Mahindra machines with the Husco valve block.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 13,
@@ -343,11 +376,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/lnt-terex-escorts-case-loader-spool-walvoil.jpg"
+      "/images/products/lnt-terex-escorts-case-loader-spool-walvoil/ai-front-v1.webp",
+      "/images/products/lnt-terex-escorts-case-loader-spool-walvoil/ai-three-quarter-left-v1.webp",
+      "/images/products/lnt-terex-escorts-case-loader-spool-walvoil/ai-three-quarter-right-v1.webp",
+      "/images/products/lnt-terex-escorts-case-loader-spool-walvoil/ai-end-oblique-v1.webp",
+      "/images/products/lnt-terex-escorts-case-loader-spool-walvoil/original-catalog.png"
     ],
     "description": "New-model loader spool for L&T, Terex, Escorts and Case machines with the Walvoil valve block.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 14,
@@ -364,11 +408,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/lnt-terex-escorts-case-unloader-spool-walvoil-catalog-1.jpg"
+      "/images/products/lnt-terex-escorts-case-unloader-spool-walvoil/ai-front-v1.webp",
+      "/images/products/lnt-terex-escorts-case-unloader-spool-walvoil/ai-three-quarter-left-v1.webp",
+      "/images/products/lnt-terex-escorts-case-unloader-spool-walvoil/ai-three-quarter-right-v1.webp",
+      "/images/products/lnt-terex-escorts-case-unloader-spool-walvoil/ai-end-oblique-v1.webp",
+      "/images/products/lnt-terex-escorts-case-unloader-spool-walvoil/original-catalog.png"
     ],
     "description": "Unloader spool for L&T, Terex, Escorts and Case loader valve blocks with Walvoil valve gear.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 15,
@@ -385,11 +440,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/lnt-escorts-terex-excavator-spool.jpg"
+      "/images/products/lnt-escorts-terex-excavator-spool/ai-front-v1.webp",
+      "/images/products/lnt-escorts-terex-excavator-spool/ai-three-quarter-left-v1.webp",
+      "/images/products/lnt-escorts-terex-excavator-spool/ai-three-quarter-right-v1.webp",
+      "/images/products/lnt-escorts-terex-excavator-spool/ai-end-oblique-v1.webp",
+      "/images/products/lnt-escorts-terex-excavator-spool/original-catalog.png"
     ],
     "description": "Excavator spool for L&T, Escorts and Terex machines. Send the old spool or part number to confirm fitment.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 16,
@@ -448,11 +514,22 @@
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/escorts-loader-spool-set-catalog-1.jpg"
+      "/images/products/escorts-loader-spool-set/ai-front-v1.webp",
+      "/images/products/escorts-loader-spool-set/ai-three-quarter-left-v1.webp",
+      "/images/products/escorts-loader-spool-set/ai-three-quarter-right-v1.webp",
+      "/images/products/escorts-loader-spool-set/ai-end-oblique-v1.webp",
+      "/images/products/escorts-loader-spool-set/original-catalog.png"
     ],
     "description": "Loader spool set for Escorts machines. Supplied as a set of two.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 19,
@@ -469,12 +546,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-2d-excavator-spool-hydra-control-catalog-1.jpg",
-      "/images/products/jcb-2d-excavator-spool-hydra-control-catalog-2.jpg"
+      "/images/products/jcb-2d-excavator-spool-hydra-control/ai-front-v1.webp",
+      "/images/products/jcb-2d-excavator-spool-hydra-control/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-2d-excavator-spool-hydra-control/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-2d-excavator-spool-hydra-control/ai-end-oblique-v1.webp",
+      "/images/products/jcb-2d-excavator-spool-hydra-control/original-catalog.png"
     ],
     "description": "Excavator spool for JCB 2D machines with the Hydra Control valve block.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 20,
@@ -491,11 +578,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-76hp-excavator-spool-2021-catalog-1.jpg"
+      "/images/products/jcb-76hp-excavator-spool-2021/ai-front-v1.webp",
+      "/images/products/jcb-76hp-excavator-spool-2021/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-76hp-excavator-spool-2021/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-76hp-excavator-spool-2021/ai-end-oblique-v1.webp",
+      "/images/products/jcb-76hp-excavator-spool-2021/original-catalog.png"
     ],
     "description": "Excavator spool for 76 HP machines, 2021 fitment.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 21,
@@ -512,11 +610,22 @@
     "pack_size": "1 kit",
     "material": "NBR seals and O-rings",
     "images": [
-      "/images/products/jcb-hydraulic-pump-seal-kit-parker-catalog-1.jpg"
+      "/images/products/jcb-hydraulic-pump-seal-kit-parker/ai-front-v2.webp",
+      "/images/products/jcb-hydraulic-pump-seal-kit-parker/ai-three-quarter-left-v2.webp",
+      "/images/products/jcb-hydraulic-pump-seal-kit-parker/ai-three-quarter-right-v2.webp",
+      "/images/products/jcb-hydraulic-pump-seal-kit-parker/ai-end-oblique-v2.webp",
+      "/images/products/jcb-hydraulic-pump-seal-kit-parker/original-catalog.png"
     ],
     "description": "Seal kit for the JCB hydraulic pump with Parker valve gear. Includes the seals and O-rings required for one pump rebuild.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 22,
@@ -533,12 +642,22 @@
     "pack_size": "1 kit (4 sets)",
     "material": "NBR seals with PU wipers",
     "images": [
-      "/images/products/jcb-loader-valve-block-wiper-seal-kit.jpg",
-      "/images/products/jcb-loader-valve-block-wiper-seal-kit-catalog-1.jpg"
+      "/images/products/jcb-loader-valve-block-wiper-seal-kit/ai-front-v1.webp",
+      "/images/products/jcb-loader-valve-block-wiper-seal-kit/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-loader-valve-block-wiper-seal-kit/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-loader-valve-block-wiper-seal-kit/ai-end-oblique-v1.webp",
+      "/images/products/jcb-loader-valve-block-wiper-seal-kit/original-catalog.png"
     ],
     "description": "Wiper seal kit for the JCB loader valve block with Husco valve gear. One kit contains four sets.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 23,
@@ -555,11 +674,22 @@
     "pack_size": "1 kit (12 sets)",
     "material": "NBR seals with PU wipers",
     "images": [
-      "/images/products/jcb-xtra-excavator-valve-block-wiper-seal-kit-catalog-1.jpg"
+      "/images/products/jcb-xtra-excavator-valve-block-wiper-seal-kit/ai-front-v1.webp",
+      "/images/products/jcb-xtra-excavator-valve-block-wiper-seal-kit/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-xtra-excavator-valve-block-wiper-seal-kit/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-xtra-excavator-valve-block-wiper-seal-kit/ai-end-oblique-v1.webp",
+      "/images/products/jcb-xtra-excavator-valve-block-wiper-seal-kit/original-catalog.png"
     ],
     "description": "Wiper seal kit for the JCB 3DX XTRA excavator valve block. One kit contains twelve sets.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 24,
@@ -658,11 +788,22 @@
     "pack_size": "1 set",
     "material": "Hardened steel, machined",
     "images": [
-      "/images/products/gear-lever-set-jcb-3dx.jpg"
+      "/images/products/gear-lever-set-jcb-3dx/ai-front-v2.webp",
+      "/images/products/gear-lever-set-jcb-3dx/ai-three-quarter-left-v2.webp",
+      "/images/products/gear-lever-set-jcb-3dx/ai-three-quarter-right-v2.webp",
+      "/images/products/gear-lever-set-jcb-3dx/ai-end-oblique-v2.webp",
+      "/images/products/gear-lever-set-jcb-3dx/original-catalog.png"
     ],
     "description": "Gear lever set for JCB 3DX. Machined lever with ball end.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 29,
@@ -679,11 +820,22 @@
     "pack_size": "1 pc",
     "material": "Hardened steel, zinc plated",
     "images": [
-      "/images/products/slew-plunger-bolt-catalog-1.jpg"
+      "/images/products/slew-plunger-bolt/ai-front-v1.webp",
+      "/images/products/slew-plunger-bolt/ai-three-quarter-left-v1.webp",
+      "/images/products/slew-plunger-bolt/ai-three-quarter-right-v1.webp",
+      "/images/products/slew-plunger-bolt/ai-end-oblique-v1.webp",
+      "/images/products/slew-plunger-bolt/original-catalog.png"
     ],
     "description": "Slew plunger bolt for excavator slew and brake assemblies. Confirm thread and length before ordering.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 30,

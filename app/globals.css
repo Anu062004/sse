@@ -316,6 +316,24 @@
   }
 
   /* ---------- Cards ---------- */
+  .catalog-card {
+    position: relative;
+    isolation: isolate;
+  }
+  /* One satin tint across the photo and card body, including white photo backgrounds. */
+  .catalog-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.045' filter='url(%23grain)'/%3E%3C/svg%3E"),
+      linear-gradient(135deg, #fbf8f1 0%, #f3f0e9 55%, #e8e9e3 100%);
+    background-size: 160px 160px, 100% 100%;
+  }
   .lift {
     transition:
       transform 0.5s var(--ease-out),

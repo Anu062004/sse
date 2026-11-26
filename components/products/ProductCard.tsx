@@ -12,7 +12,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="lift group flex flex-col overflow-hidden rounded-[22px] bg-white text-left text-navy shadow-[0_1px_0_rgba(11,23,54,0.04),0_0_0_1px_rgba(11,23,54,0.06)] hover:shadow-[0_28px_50px_-28px_rgba(11,23,54,0.42),0_0_0_1px_rgba(11,23,54,0.08)]"
+      className="catalog-card lift group flex flex-col overflow-hidden rounded-[22px] bg-white text-left text-navy shadow-[0_1px_0_rgba(11,23,54,0.04),0_0_0_1px_rgba(11,23,54,0.06)] hover:shadow-[0_28px_50px_-28px_rgba(11,23,54,0.42),0_0_0_1px_rgba(11,23,54,0.08)]"
     >
       <span className="relative block">
         <MediaFrame

@@ -64,7 +64,7 @@ export function FeaturedProducts({ products }: { products: Product[] }) {
             <Link
               key={product.id}
               href={`/products/${product.slug}`}
-              className="group flex shrink-0 basis-[300px] snap-start flex-col overflow-hidden rounded-card bg-white text-navy"
+              className="catalog-card group flex shrink-0 basis-[300px] snap-start flex-col overflow-hidden rounded-card bg-white text-navy"
             >
               <MediaFrame
                 images={product.images}

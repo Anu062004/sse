@@ -24,7 +24,7 @@ export function ProductRange() {
             <Link
               key={category.slug}
               href={`/products?category=${category.slug}`}
-              className="lift reveal group flex flex-col overflow-hidden rounded-card bg-white text-navy"
+              className="catalog-card lift reveal group flex flex-col overflow-hidden rounded-card bg-white text-navy"
             >
               <div className="relative h-[170px] overflow-hidden bg-[#0D1A3D]">
                 <Image
