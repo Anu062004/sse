@@ -28,15 +28,17 @@ function EmptySlot({ label, small = false }: { label: string; small?: boolean })
  */
 export function ProductGallery({
   images = [],
+  labels = [],
   alt,
   priority = false,
 }: {
   images?: string[];
+  labels?: string[];
   alt: string;
   priority?: boolean;
 }) {
   const slots = Array.from({ length: Math.max(VIEWS.length, images.length) }, (_, i) => ({
-    label: VIEWS[i] ?? `View ${i + 1}`,
+    label: labels[i] ?? VIEWS[i] ?? `View ${i + 1}`,
     src: images[i] ?? null,
   }));
   const [active, setActive] = useState(0);
@@ -80,7 +82,7 @@ export function ProductGallery({
                 )}
               >
                 {slot.src ? (
-                  <Image src={slot.src} alt="" fill sizes="88px" className="object-cover" />
+                  <Image src={slot.src} alt="" fill sizes="88px" className="bg-white object-contain" />
                 ) : (
                   <EmptySlot label={slot.label} small />
                 )}
@@ -119,6 +121,11 @@ export function ProductGallery({
         ) : (
           <EmptySlot label={current.label} />
         )}
+        {current.src && labels[active] ? (
+          <span className="absolute bottom-3 left-3 max-w-[75%] rounded-md bg-white/95 px-2.5 py-1 text-xs font-semibold text-navy shadow-sm">
+            {current.label}
+          </span>
+        ) : null}
         <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-navy shadow-sm">
           {active + 1} / {slots.length}
         </span>

@@ -8,3 +8,6 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# Extracted catalog originals and AI image review drafts
+/catalog-image-review/

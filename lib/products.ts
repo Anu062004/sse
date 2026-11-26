@@ -17,6 +17,7 @@ export type Product = {
   pack_size: string;
   material: string;
   images: string[];
+  image_labels?: string[];
   description: string;
   price: string;
   in_stock: string;

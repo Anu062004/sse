@@ -14,16 +14,22 @@
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-front.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-side.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-top.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-end.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-catalog-1.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2005-2007-catalog-2.jpg"
+      "/images/products/jcb-3dx-loader-spool-husco-2005-2007/ai-front-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2005-2007/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2005-2007/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2005-2007/ai-end-oblique-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2005-2007/original-catalog.png"
     ],
     "description": "Aftermarket loader spool for JCB 3DX machines with the Husco valve block, 2005–2007. Supplied as a matched set of two with the correct land spacing and end detail.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 2,
@@ -40,16 +46,22 @@
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-front.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-side.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-top.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-end.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-catalog-1.jpg",
-      "/images/products/jcb-3dx-loader-spool-husco-2008-2010-catalog-2.jpg"
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010/ai-front-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010/ai-end-oblique-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2008-2010/original-catalog.png"
     ],
     "description": "Aftermarket loader spool for JCB 3DX machines with the Husco valve block, 2008–2010. Supplied as a matched set of two.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 3,
@@ -66,11 +78,22 @@
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-loader-spool-husco-2013-onwards.jpg"
+      "/images/products/jcb-3dx-loader-spool-husco-2013-onwards/ai-front-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2013-onwards/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2013-onwards/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2013-onwards/ai-end-oblique-v1.webp",
+      "/images/products/jcb-3dx-loader-spool-husco-2013-onwards/original-catalog.png"
     ],
     "description": "Aftermarket loader spool for JCB 3DX machines with the Husco valve block, 2013 onwards. Supplied as a matched set of two.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 4,
@@ -87,12 +110,22 @@
     "pack_size": "1 set (2 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control.jpg",
-      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control-catalog-1.jpg"
+      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control/ai-front-v1.webp",
+      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control/ai-end-oblique-v1.webp",
+      "/images/products/jcb-3dx-xtra-loader-spool-hydra-control/original-catalog.png"
     ],
     "description": "Replacement loader spool set for JCB 3DX XTRA machines running the Hydra Control valve block.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 5,
@@ -151,11 +184,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-unloader-spool-husco-catalog-1.jpg"
+      "/images/products/jcb-3dx-unloader-spool-husco/ai-front-v1.webp",
+      "/images/products/jcb-3dx-unloader-spool-husco/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-3dx-unloader-spool-husco/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-3dx-unloader-spool-husco/ai-end-oblique-v1.webp",
+      "/images/products/jcb-3dx-unloader-spool-husco/original-catalog.png"
     ],
     "description": "Unloader spool for the JCB 3DX loader valve block with Husco valve gear.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 8,
@@ -172,11 +216,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-xtra-unloader-spool-hydra-control.jpg"
+      "/images/products/jcb-3dx-xtra-unloader-spool-hydra-control/ai-front-v1.webp",
+      "/images/products/jcb-3dx-xtra-unloader-spool-hydra-control/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-3dx-xtra-unloader-spool-hydra-control/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-3dx-xtra-unloader-spool-hydra-control/ai-end-oblique-v1.webp",
+      "/images/products/jcb-3dx-xtra-unloader-spool-hydra-control/original-catalog.png"
     ],
     "description": "Unloader spool for the JCB 3DX XTRA loader valve block with Hydra Control valve gear.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 9,
@@ -193,11 +248,22 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-49hp-excavator-spool-hydra-control-catalog-1.jpg"
+      "/images/products/jcb-49hp-excavator-spool-hydra-control/ai-front-v1.webp",
+      "/images/products/jcb-49hp-excavator-spool-hydra-control/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-49hp-excavator-spool-hydra-control/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-49hp-excavator-spool-hydra-control/ai-end-oblique-v1.webp",
+      "/images/products/jcb-49hp-excavator-spool-hydra-control/original-catalog.png"
     ],
     "description": "Excavator spool for 49 HP JCB machines running the Hydra Control valve block.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 10,

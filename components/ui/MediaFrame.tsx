@@ -52,7 +52,7 @@ export function MediaFrame({
           fill
           sizes={sizes}
           priority={priority}
-          className={cn("zoom-img object-cover", imageClassName)}
+          className={cn("zoom-img bg-white object-contain", imageClassName)}
         />
       ) : (
         <span className="ph-empty">

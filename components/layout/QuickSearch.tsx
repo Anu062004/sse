@@ -181,7 +181,7 @@ export function QuickSearch({ className }: { className?: string }) {
                   >
                     <span className="relative h-14 w-14 flex-none overflow-hidden rounded-lg bg-[#F4F3F0]">
                       {product.images[0] ? (
-                        <Image src={product.images[0]} alt="" fill sizes="56px" className="object-cover" />
+                        <Image src={product.images[0]} alt="" fill sizes="56px" className="bg-white object-contain" />
                       ) : (
                         <span className="grid h-full w-full place-items-center text-[#9AA1B2]">
                           <SearchIcon size={18} />
