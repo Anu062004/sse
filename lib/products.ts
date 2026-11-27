@@ -18,6 +18,7 @@ export type Product = {
   material: string;
   images: string[];
   image_labels?: string[];
+  image_note?: string;
   description: string;
   price: string;
   in_stock: string;

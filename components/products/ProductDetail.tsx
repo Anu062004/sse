@@ -16,7 +16,12 @@ export function ProductDetail({ product, priority = false }: { product: Product;
 
   return (
     <div className="rise-in grid w-full grid-cols-1 gap-8 text-navy lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-12">
-      <ProductGallery images={product.images} labels={product.image_labels} alt={product.name} priority={priority} />
+      <div className="min-w-0">
+        <ProductGallery images={product.images} labels={product.image_labels} alt={product.name} priority={priority} />
+        {product.image_note ? (
+          <p className="mt-3 text-sm leading-relaxed text-muted">{product.image_note}</p>
+        ) : null}
+      </div>
 
       <div className="min-w-0">
         <p className="text-sm font-semibold text-muted">

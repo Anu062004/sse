@@ -142,11 +142,23 @@
     "pack_size": "1 set (3 pcs)",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-3dx-3-spool-loader-set-husco-catalog-1.jpg"
+      "/images/products/jcb-3dx-3-spool-loader-set-husco/ai-front-v1.webp",
+      "/images/products/jcb-3dx-3-spool-loader-set-husco/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-3dx-3-spool-loader-set-husco/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-3dx-3-spool-loader-set-husco/ai-end-oblique-v1.webp",
+      "/images/products/jcb-3dx-3-spool-loader-set-husco/original-catalog.png"
     ],
     "description": "Complete three-spool loader set for JCB 3DX with the Husco valve block. Each spool is matched to its position in the block.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ],
+    "image_note": "Photo reproduces the two spools visible in the catalog reference. Confirm all three set components when enquiring."
   },
   {
     "id": 6,
@@ -163,11 +175,23 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/jcb-2d-2dx-loader-spool-hydra-control-catalog-1.jpg"
+      "/images/products/jcb-2d-2dx-loader-spool-hydra-control/ai-front-v1.webp",
+      "/images/products/jcb-2d-2dx-loader-spool-hydra-control/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-2d-2dx-loader-spool-hydra-control/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-2d-2dx-loader-spool-hydra-control/ai-end-oblique-v1.webp",
+      "/images/products/jcb-2d-2dx-loader-spool-hydra-control/original-catalog.png"
     ],
     "description": "Loader spool for JCB 2D and 2DX machines with the Hydra Control valve block.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ],
+    "image_note": "Two variants shown, matching the catalog reference. Supplied as 1 pc; confirm the required variant when enquiring."
   },
   {
     "id": 7,
@@ -472,11 +496,23 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/cat-424b-excavator-spool.jpg"
+      "/images/products/cat-424b-excavator-spool/ai-front-v1.webp",
+      "/images/products/cat-424b-excavator-spool/ai-three-quarter-left-v1.webp",
+      "/images/products/cat-424b-excavator-spool/ai-three-quarter-right-v1.webp",
+      "/images/products/cat-424b-excavator-spool/ai-end-oblique-v1.webp",
+      "/images/products/cat-424b-excavator-spool/original-catalog.png"
     ],
     "description": "Excavator spool for CAT 424B machines.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ],
+    "image_note": "Five variants shown, matching the catalog reference. Supplied as 1 pc; confirm the required variant when enquiring."
   },
   {
     "id": 17,
@@ -493,11 +529,23 @@
     "pack_size": "1 pc",
     "material": "Hardened alloy steel, ground and lapped",
     "images": [
-      "/images/products/cat-424hd-excavator-spool-catalog-1.jpg"
+      "/images/products/cat-424hd-excavator-spool/ai-front-v1.webp",
+      "/images/products/cat-424hd-excavator-spool/ai-three-quarter-left-v1.webp",
+      "/images/products/cat-424hd-excavator-spool/ai-three-quarter-right-v1.webp",
+      "/images/products/cat-424hd-excavator-spool/ai-end-oblique-v1.webp",
+      "/images/products/cat-424hd-excavator-spool/original-catalog.png"
     ],
     "description": "Excavator spool for CAT 424HD machines.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ],
+    "image_note": "Six variants shown, matching the catalog reference. Supplied as 1 pc; confirm the required variant when enquiring."
   },
   {
     "id": 18,
@@ -703,15 +751,28 @@
     "year_to": null,
     "valve_block": "—",
     "spool_position": "Valve block",
-    "pack_size": "1 kit (4 sets)",
+    "pack_size": "1 kit (variant dependent)",
     "material": "NBR seals with PU wipers",
     "images": [
-      "/images/products/jcb-2d-wiper-seal-kit-catalog-1.jpg",
-      "/images/products/jcb-2d-wiper-seal-kit-catalog-2.jpg"
+      "/images/products/jcb-2d-wiper-seal-kit/ai-front-v1.webp",
+      "/images/products/jcb-2d-wiper-seal-kit/ai-three-quarter-left-v1.webp",
+      "/images/products/jcb-2d-wiper-seal-kit/ai-three-quarter-right-v1.webp",
+      "/images/products/jcb-2d-wiper-seal-kit/ai-end-oblique-v1.webp",
+      "/images/products/jcb-2d-wiper-seal-kit/original-catalog.png",
+      "/images/products/jcb-2d-wiper-seal-kit/original-catalog-excavator.png"
     ],
-    "description": "Wiper seal kit for the JCB 2D valve block. One kit contains four sets.",
+    "description": "Wiper seal kits for JCB 2D loader and excavator valve blocks. Confirm the application and kit contents when enquiring.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Loader kit · Front",
+      "AI-generated · Loader kit · Left three-quarter",
+      "AI-generated · Loader kit · Right three-quarter",
+      "AI-generated · Loader kit · End oblique",
+      "Original catalog · Loader (2 sets)",
+      "Original catalog · Excavator (6 sets)"
+    ],
+    "image_note": "Generated views show the loader kit (2 sets). The original excavator kit photo (6 sets) is also included. Confirm your valve block and kit contents when enquiring."
   },
   {
     "id": 25,
@@ -728,12 +789,25 @@
     "pack_size": "1 kit",
     "material": "NBR seals with PU wipers",
     "images": [
-      "/images/products/lnt-escorts-terex-wiper-seal-kit-catalog-1.jpg",
-      "/images/products/lnt-escorts-terex-wiper-seal-kit-catalog-2.jpg"
+      "/images/products/lnt-escorts-terex-wiper-seal-kit/ai-front-v1.webp",
+      "/images/products/lnt-escorts-terex-wiper-seal-kit/ai-three-quarter-left-v1.webp",
+      "/images/products/lnt-escorts-terex-wiper-seal-kit/ai-three-quarter-right-v1.webp",
+      "/images/products/lnt-escorts-terex-wiper-seal-kit/ai-end-oblique-v1.webp",
+      "/images/products/lnt-escorts-terex-wiper-seal-kit/original-catalog.png",
+      "/images/products/lnt-escorts-terex-wiper-seal-kit/original-catalog-excavator.png"
     ],
     "description": "Wiper seal kit for L&T, Escorts and Terex valve blocks.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Loader kit · Front",
+      "AI-generated · Loader kit · Left three-quarter",
+      "AI-generated · Loader kit · Right three-quarter",
+      "AI-generated · Loader kit · End oblique",
+      "Original catalog · Loader (2 sets)",
+      "Original catalog · Excavator (6 sets)"
+    ],
+    "image_note": "Generated views show the loader kit (2 sets). The original excavator kit photo (6 sets) is also included. Confirm your valve block and kit contents when enquiring."
   },
   {
     "id": 26,
@@ -749,10 +823,24 @@
     "spool_position": "Hydro clamp",
     "pack_size": "1 set",
     "material": "NBR / PU",
-    "images": [],
+    "images": [
+      "/images/products/hydro-clamp-seal-kit/ai-front-v1.webp",
+      "/images/products/hydro-clamp-seal-kit/ai-three-quarter-left-v1.webp",
+      "/images/products/hydro-clamp-seal-kit/ai-three-quarter-right-v1.webp",
+      "/images/products/hydro-clamp-seal-kit/ai-end-oblique-v1.webp",
+      "/images/products/hydro-clamp-seal-kit/original-catalog.jpg"
+    ],
     "description": "Hydro clamp seal set for loader and excavator hydraulic clamp circuits.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_note": "Illustrations follow the catalog hydro-clamp seal reference. Confirm seal sizes and set contents when enquiring.",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 27,
@@ -768,10 +856,24 @@
     "spool_position": "Front axle",
     "pack_size": "1 set",
     "material": "Forged steel, machined",
-    "images": [],
+    "images": [
+      "/images/products/stub-axle-with-front-hub-seal/ai-front-v1.webp",
+      "/images/products/stub-axle-with-front-hub-seal/ai-three-quarter-left-v1.webp",
+      "/images/products/stub-axle-with-front-hub-seal/ai-three-quarter-right-v1.webp",
+      "/images/products/stub-axle-with-front-hub-seal/ai-end-oblique-v1.webp",
+      "/images/products/stub-axle-with-front-hub-seal/original-catalog.jpg"
+    ],
     "description": "Stub axle for JCB 3DX supplied with the matching front hub seal.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_note": "Front hub seal shown; the stub axle assembly is not pictured. Confirm complete set contents when enquiring.",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ]
   },
   {
     "id": 28,
@@ -852,11 +954,23 @@
     "pack_size": "1 pc",
     "material": "Forged steel, machined",
     "images": [
-      "/images/products/stub-axle-jcb-3dx.jpg"
+      "/images/products/stub-axle-jcb-3dx/ai-front-v1.webp",
+      "/images/products/stub-axle-jcb-3dx/ai-three-quarter-left-v1.webp",
+      "/images/products/stub-axle-jcb-3dx/ai-three-quarter-right-v1.webp",
+      "/images/products/stub-axle-jcb-3dx/ai-end-oblique-v1.webp",
+      "/images/products/stub-axle-jcb-3dx/original-catalog.png"
     ],
     "description": "Stub axle for the JCB 3DX front axle assembly.",
     "price": "",
-    "in_stock": ""
+    "in_stock": "",
+    "image_labels": [
+      "AI-generated · Front",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · End oblique",
+      "Original catalog"
+    ],
+    "image_note": "Two variants shown, matching the catalog reference. Supplied as 1 pc; confirm the required variant when enquiring."
   },
   {
     "id": 31,
