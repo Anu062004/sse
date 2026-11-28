@@ -46,8 +46,8 @@ export function FooterAnimation() {
         ref={videoRef}
         src="/videos/footer-earthmoving.mp4"
         poster="/videos/footer-earthmoving-poster.webp"
-        width={480}
-        height={270}
+        width={960}
+        height={540}
         muted
         loop
         playsInline
@@ -58,7 +58,7 @@ export function FooterAnimation() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(9,19,45,0.9)_0%,rgba(9,19,45,0.65)_55%,rgba(9,19,45,0.35)_100%),linear-gradient(0deg,#09132d_0%,transparent_45%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(9,19,45,0.88)_0%,rgba(9,19,45,0.5)_55%,rgba(9,19,45,0.18)_100%),linear-gradient(0deg,#09132d_0%,transparent_45%)]"
       />
       {!failed ? (
         <button
