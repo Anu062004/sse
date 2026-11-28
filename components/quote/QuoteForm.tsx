@@ -150,7 +150,7 @@ export function QuoteForm({ product }: { product?: Product }) {
             </p>
             <p className="mt-2 text-base font-medium">{product.name}</p>
             <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-muted">
-              Part {product.part_number}
+              {product.part_number ? `Part ${product.part_number}` : "Part number confirmed on enquiry"}
             </p>
           </div>
         ) : null}

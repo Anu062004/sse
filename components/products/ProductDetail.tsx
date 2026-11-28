@@ -29,7 +29,7 @@ export function ProductDetail({ product, priority = false }: { product: Product;
         </p>
         <h1 className="display mt-2 text-[clamp(28px,2.8vw,42px)] font-extrabold leading-[1.02]">{product.name}</h1>
         <p className="mt-3 text-[15px] text-slate">
-          Part number: <strong className="font-mono font-bold text-navy">{product.part_number}</strong>
+          Part number: <strong className="font-mono font-bold text-navy">{product.part_number || "Confirmed on enquiry"}</strong>
         </p>
         <p className="mt-2 flex items-start gap-2 text-[15px] text-slate">
           <CheckIcon size={16} strokeWidth={2.4} className="mt-[3px] flex-none text-[#1a8f4c]" />

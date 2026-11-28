@@ -16,7 +16,7 @@ export function ProductRange() {
         <SectionHeader
           label="The components"
           title={`${categoryCounts.length === 7 ? "Seven" : categoryCounts.length} components. One catalogue.`}
-          intro="Hydraulic spools for backhoe loader, excavator and loader applications, seal kits for valves, rams and brakes, and the specialised parts that keep machines working."
+          intro="Hydraulic spools and cylinders for backhoes and loaders, seal kits for valves and rams, and the specialised parts that keep machines working."
         />
 
         <div className="mt-14 grid grid-cols-1 gap-5 min-[481px]:grid-cols-2 min-[1101px]:grid-cols-4 min-[761px]:grid-cols-3">
@@ -61,8 +61,8 @@ export function ProductRange() {
                 The full product catalogue
               </h3>
               <p className="mt-3 text-[15px] leading-[1.55] text-white/75">
-                {products.length} parts across spools, unloader spools and seal
-                kits, labelled by machine and valve block.
+                {products.length} parts across spools, cylinders, seal kits and
+                other spares. Confirm the right fitment with SSE.
               </p>
             </div>
             <ButtonLink href="/products" variant="light" size="sm" className="self-start">

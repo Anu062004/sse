@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { StatCounters } from "@/components/home/StatCounters";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Container } from "@/components/ui/Container";
+import { MediaFrame } from "@/components/ui/MediaFrame";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { pageMetadata } from "@/lib/seo";
+import { getProductBySlug } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
@@ -55,37 +56,29 @@ const range = [
   "Other specialised hydraulic components",
 ];
 
-/** Real SSE parts shown in the intro, one per brand family. */
+/** Keep showcase images and their labels in sync with the catalogue. */
 const showcase = [
   {
     slug: "jcb-3dx-loader-spool-husco-2008-2010",
-    image: "/images/products/jcb-3dx-loader-spool-husco-2008-2010-end.jpg",
     brand: "JCB",
     part: "3DX loader spool set · Husco",
-    fit: "object-contain bg-white p-4 sm:p-6",
   },
   {
     slug: "lnt-escorts-terex-excavator-spool",
-    image: "/images/products/lnt-escorts-terex-excavator-spool.jpg",
     brand: "L&T · Escorts · Terex",
     part: "Excavator spool",
-    fit: "object-cover",
   },
   {
     slug: "cat-424b-excavator-spool",
-    image: "/images/products/cat-424b-excavator-spool.jpg",
     brand: "Caterpillar",
     part: "424B excavator spools",
-    fit: "object-cover",
   },
   {
     slug: "mahindra-excavator-spool-husco",
-    image: "/images/products/mahindra-excavator-spool-husco.jpg",
     brand: "Mahindra",
     part: "Excavator spool · Husco",
-    fit: "object-cover",
   },
-];
+].map((item) => ({ ...item, product: getProductBySlug(item.slug) }));
 
 const work = [
   {
@@ -179,15 +172,15 @@ export default function AboutPage() {
           <div className="grid grid-cols-4 gap-x-4 gap-y-10 md:grid-cols-8 md:gap-x-6 lg:grid-cols-12 lg:gap-x-8">
             <div className="col-span-4 md:col-span-8 lg:sticky lg:top-32 lg:col-span-4 lg:self-start">
               <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-muted before:h-0.5 before:w-8 before:bg-accent">
-                Real SSE parts
+                From our catalogue
               </p>
               <h2 className="display mt-4 text-[clamp(30px,3.4vw,50px)] font-extrabold leading-[1.02] text-navy">
                 Made for every brand we serve.
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-navy/65 md:text-base">
                 Spools we manufacture for JCB, L&amp;T, Escorts, Terex,
-                Caterpillar and Mahindra machines — photographed in our
-                Faridabad workshop.
+                Caterpillar and Mahindra machines — explore the latest
+                catalogue views and full fitment details.
               </p>
               <div className="mt-6">
                 <ArrowLink href="/products">See all parts</ArrowLink>
@@ -206,13 +199,20 @@ export default function AboutPage() {
                     className="group grid overflow-hidden rounded-panel border border-navy/10 bg-white shadow-[0_24px_60px_-30px_rgba(11,21,48,0.45)] sm:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden bg-white sm:aspect-auto sm:min-h-[360px]">
-                      <Image
-                        src={item.image}
-                        alt={`${item.brand} ${item.part} made by SSE`}
+                      <MediaFrame
+                        images={item.product?.images}
+                        alt={item.product?.name ?? `${item.brand} ${item.part}`}
+                        label={item.part}
+                        category={item.product?.category}
                         fill
                         sizes="(min-width: 1024px) 26vw, (min-width: 640px) 45vw, 100vw"
-                        className={`${item.fit} transition-transform duration-700 group-hover:scale-[1.04]`}
+                        imageClassName="p-4 pb-12 sm:p-6 sm:pb-14"
                       />
+                      {item.product?.image_labels?.[0] ? (
+                        <span className="absolute bottom-3 left-3 right-3 text-center text-xs font-semibold text-muted">
+                          {item.product.image_labels[0]}
+                        </span>
+                      ) : null}
                     </div>
                     <div className="flex flex-col justify-between gap-8 p-6 md:p-8">
                       <span className="display text-sm font-extrabold text-muted">

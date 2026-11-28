@@ -10,7 +10,7 @@ export function whatsappHref(
 
 export function productWhatsappHref(partNumber: string, name: string): string {
   return whatsappHref(
-    `Hello SSE, I would like a price for ${name} (${partNumber}).`,
+    `Hello SSE, I would like a price for ${name}${partNumber ? ` (${partNumber})` : ""}.`,
   );
 }
 

@@ -23,7 +23,7 @@ export const categories: Category[] = [
     shortName: "Seals",
     index: "02",
     description:
-      "Wiper and seal kits for spools, hydraulic pumps and loader or excavator valve blocks.",
+      "Seal kits for hydraulic rams, spools, pumps and loader or excavator valve blocks.",
     image: "/images/categories/seal-kits.jpg",
   },
   {
@@ -70,6 +70,15 @@ export const categories: Category[] = [
     description:
       "Stub axle assemblies supplied with the matching front hub seal.",
     image: "/images/categories/hub-seals.jpg",
+  },
+  {
+    slug: "hydraulic-cylinders",
+    name: "Hydraulic Cylinders",
+    shortName: "Cylinders",
+    index: "08",
+    description:
+      "Slew and other hydraulic cylinders for backhoes and loaders. Confirm mounting and dimensions on enquiry.",
+    image: "/images/products/slew-and-hydraulic-cylinders/original-photo.jpg",
   },
 ];
 

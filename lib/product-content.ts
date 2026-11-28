@@ -15,7 +15,10 @@ export function getPartType(product: Product): string {
       if (position.includes("3 spools")) return "Loader spool set (3 spools)";
       return `${position} spool`;
     case "seal-kits":
+      if (position === "Ram cylinder") return "Ram cylinder seals";
       return position === "Pump" ? "Hydraulic pump seal kit" : "Valve block seal kit";
+    case "hydraulic-cylinders":
+      return "Slew and hydraulic cylinders";
     case "hydro-clamp-seals":
       return "Hydro clamp seal kit";
     case "gear-lever-sets":
@@ -44,7 +47,7 @@ export function getSpecRows(product: Product): SpecRow[] {
     { label: "Model year", value: years || "Confirmed on enquiry" },
     { label: "Supplied as", value: product.pack_size },
     { label: "Brand", value: `${site.shortName} (aftermarket)` },
-    { label: "Part no.", value: product.part_number },
+    { label: "Part no.", value: product.part_number || "Confirmed on enquiry" },
   );
   return rows;
 }
@@ -78,6 +81,13 @@ function explainer(product: Product): Explainer {
         signs: ["The boom or dipper creeps down on its own", "Digging movements are slow, weak or jerky", "Oil leaking around the spool ends", "A lever that sticks or does not spring back to neutral"],
       };
     case "seal-kits":
+      if (position === "Ram cylinder") {
+        return {
+          what: "Ram cylinder seals are replacement sealing components for hydraulic cylinders. The required seal profiles and sizes depend on the cylinder being serviced; the supplied photo shows a reference assortment.",
+          where: "In the hydraulic ram assembly. Confirm the cylinder application, machine model and seal dimensions before ordering.",
+          signs: ["Oil leaking around the cylinder rod or gland", "Worn or damaged seals found during inspection", "Cylinder being resealed during a workshop repair"],
+        };
+      }
       if (position === "Pump") {
         return {
           what: "A seal kit is the full set of rubber and polyurethane seals and O-rings needed to rebuild one component. This kit is for the hydraulic pump, which turns engine power into oil pressure for the whole machine.",
@@ -89,6 +99,12 @@ function explainer(product: Product): Explainer {
         what: "A seal kit is a set of wiper seals and O-rings for the control valve block. Wiper seals sit at the ends of each spool: they stop oil leaking out and stop dust getting in, which would scratch the spools.",
         where: `On the control valve block of the ${machine}, at both ends of every spool. It is fitted when spools are serviced or when the valve block starts to leak.`,
         signs: ["Oil seeping or dripping around the spool ends", "Dust and grime building up around the valve block", "Spools have been removed or replaced"],
+      };
+    case "hydraulic-cylinders":
+      return {
+        what: "Slew and other hydraulic cylinders for backhoe and loader applications. The supplied photo shows one cylinder configuration; the required assembly is matched to your machine on enquiry.",
+        where: "In the machine's slew or other hydraulic cylinder application, depending on the assembly requested. Mounting arrangement and dimensions must be confirmed before ordering.",
+        signs: ["Cylinder damage identified during inspection", "Persistent leakage requiring assessment", "Worn mounting points or a cylinder due for replacement"],
       };
     case "hydro-clamp-seals":
       return {
@@ -131,13 +147,16 @@ export function getDescriptionSections(product: Product): DescriptionSection[] {
   const info = explainer(product);
   const brands = product.machine.split("/").map((value) => value.trim()).join(", ");
   const years = formatYearRange(product.year_from, product.year_to);
+  const cylinderPart = product.category === "hydraulic-cylinders" || product.spool_position === "Ram cylinder";
   const fitChecks = [
     `Machine and model: ${product.machine} ${product.model}`.trim(),
     years ? `Model year: ${years}` : "Model year: tell us the year of your machine",
     hasValue(product.valve_block)
       ? `Valve block make: ${product.valve_block} (the name is cast or stamped on the valve block)`
       : "",
-    "If unsure, send a photo of the old part and its valve block. We will confirm before dispatch.",
+    cylinderPart
+      ? "Send photos of the cylinder and old seals, any identification marks, and the required dimensions. We will confirm the correct assembly or seal sizes before dispatch."
+      : "If unsure, send a photo of the old part and its valve block. We will confirm before dispatch.",
   ].filter(Boolean);
 
   return [
@@ -148,13 +167,17 @@ export function getDescriptionSections(product: Product): DescriptionSection[] {
     {
       heading: "What you get",
       paragraphs: [
-        `${product.pack_size}, SSE part number ${product.part_number}. Material: ${product.material.toLowerCase()}. Spools are sleeved in protective tubes; seal kits come in sealed, labelled packs.`,
+        cylinderPart
+          ? "The cylinder assembly or seal selection agreed in your quotation. Confirm part number, dimensions, material, quantity and supplied contents with SSE before ordering. The reference images do not specify a complete kit or guarantee compatibility."
+          : `${product.pack_size}, SSE part number ${product.part_number}. Material: ${product.material.toLowerCase()}. Spools are sleeved in protective tubes; seal kits come in sealed, labelled packs.`,
       ],
     },
     {
       heading: "Important note",
       paragraphs: [
-        `Brand names and model numbers (${brands} ${product.model}) are used only to identify fitment. ${site.name} is not affiliated with these manufacturers. This is an aftermarket replacement part made to match the original fitment.`,
+        cylinderPart
+          ? "These listings cover parts available on enquiry, not a confirmed fit for every backhoe or loader. Additional AI-generated views are illustrations based on the supplied photograph; use the original reference and confirmed measurements when selecting a part."
+          : `Brand names and model numbers (${brands} ${product.model}) are used only to identify fitment. ${site.name} is not affiliated with these manufacturers. This is an aftermarket replacement part made to match the original fitment.`,
       ],
     },
     {

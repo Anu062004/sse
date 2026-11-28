@@ -1009,5 +1009,67 @@
     "description": "Excavator seal kit for CAT 424 machines.",
     "price": "",
     "in_stock": ""
+  },
+  {
+    "id": 33,
+    "slug": "slew-and-hydraulic-cylinders",
+    "name": "Slew & Hydraulic Cylinders — Backhoes and Loaders",
+    "category": "hydraulic-cylinders",
+    "machine": "Backhoe / Loader",
+    "model": "Model confirmed on enquiry",
+    "spool_position": "Slew and other cylinders",
+    "description": "Slew and other hydraulic cylinders for backhoes and loaders. Share the machine model, cylinder application, mounting details and dimensions so SSE can confirm the required assembly, price and availability.",
+    "image_note": "The supplied photograph shows one cylinder configuration. Additional views are AI-generated illustrations, not photographs of other models. Confirm the required cylinder, dimensions and mounting arrangement before ordering.",
+    "part_number": "",
+    "year_from": null,
+    "year_to": null,
+    "valve_block": "—",
+    "pack_size": "Quantity confirmed on enquiry",
+    "material": "Confirmed on enquiry",
+    "price": "",
+    "in_stock": "",
+    "images": [
+      "/images/products/slew-and-hydraulic-cylinders/original-photo.jpg",
+      "/images/products/slew-and-hydraulic-cylinders/ai-side-v1.webp",
+      "/images/products/slew-and-hydraulic-cylinders/ai-overhead-v1.webp",
+      "/images/products/slew-and-hydraulic-cylinders/ai-eye-v1.webp"
+    ],
+    "image_labels": [
+      "Original supplied photo",
+      "AI-generated · Side profile",
+      "AI-generated · Elevated three-quarter",
+      "AI-generated · Eye-end three-quarter"
+    ]
+  },
+  {
+    "id": 34,
+    "slug": "ram-cylinder-seals",
+    "name": "Ram Cylinder Seals",
+    "category": "seal-kits",
+    "machine": "Hydraulic ram",
+    "model": "Application confirmed on enquiry",
+    "spool_position": "Ram cylinder",
+    "description": "Replacement seals for hydraulic ram cylinders. Send photos of the old seals, cylinder identification and seal dimensions so SSE can confirm the required profiles, materials, quantity and price.",
+    "image_note": "The supplied photograph shows a reference seal assortment; exact sizes and supplied contents are confirmed on enquiry. Additional angles are AI-generated illustrations and must not be used to determine dimensions or compatibility.",
+    "part_number": "",
+    "year_from": null,
+    "year_to": null,
+    "valve_block": "—",
+    "pack_size": "Quantity confirmed on enquiry",
+    "material": "Confirmed on enquiry",
+    "price": "",
+    "in_stock": "",
+    "images": [
+      "/images/products/ram-cylinder-seals/original-photo.jpg",
+      "/images/products/ram-cylinder-seals/ai-left-v1.webp",
+      "/images/products/ram-cylinder-seals/ai-right-v1.webp",
+      "/images/products/ram-cylinder-seals/ai-overhead-v1.webp"
+    ],
+    "image_labels": [
+      "Original supplied photo",
+      "AI-generated · Left three-quarter",
+      "AI-generated · Right three-quarter",
+      "AI-generated · Overhead"
+    ]
   }
 ]
