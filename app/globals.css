@@ -59,6 +59,29 @@
 }
 
 @layer components {
+  /* The home hero and its overlaid navbar share one responsive white frame. */
+  .site-shell:has(.hero-frame) {
+    --hero-frame-gap: clamp(10px, 1.5vw, 24px);
+  }
+
+  .hero-frame {
+    padding: var(--hero-frame-gap);
+    background: #fff;
+  }
+
+  .hero-stage {
+    height: calc(100svh - 2 * var(--hero-frame-gap));
+    min-height: 640px;
+    max-height: 1000px;
+    border-radius: clamp(20px, 2.5vw, 40px);
+  }
+
+  .site-shell:has(.hero-frame) > header {
+    top: var(--hero-frame-gap);
+    left: var(--hero-frame-gap);
+    right: var(--hero-frame-gap);
+  }
+
   /* Condensed display face: Archivo at 72% width */
   .display {
     font-stretch: 72%;

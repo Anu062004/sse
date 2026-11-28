@@ -91,18 +91,20 @@ export function HeroStage({
   const active = useSlideshow(slides.length);
 
   return (
-    <section
-      aria-label="Featured"
-      className="on-dark relative h-[100svh] max-h-[1000px] min-h-[720px] overflow-hidden bg-ink text-white"
-    >
-      <HeroSlides slides={slides} active={active} />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_46%_40%_at_50%_50%,rgba(8,17,40,0.62)_0%,rgba(8,17,40,0.3)_60%,rgba(8,17,40,0.18)_100%),linear-gradient(0deg,rgba(8,17,40,0.9)_0%,rgba(8,17,40,0)_34%),linear-gradient(180deg,rgba(8,17,40,0.6)_0%,rgba(8,17,40,0)_24%)]"
-      />
-      <div className="relative mx-auto flex h-full w-full max-w-site flex-col px-gutter pb-[clamp(24px,4vh,40px)] pt-28">
-        <div className="flex flex-1 flex-col items-center justify-center text-center">{children}</div>
-      </div>
-    </section>
+    <div className="hero-frame">
+      <section
+        aria-label="Featured"
+        className="hero-stage on-dark relative overflow-hidden bg-ink text-white"
+      >
+        <HeroSlides slides={slides} active={active} />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_46%_40%_at_50%_50%,rgba(8,17,40,0.62)_0%,rgba(8,17,40,0.3)_60%,rgba(8,17,40,0.18)_100%),linear-gradient(0deg,rgba(8,17,40,0.9)_0%,rgba(8,17,40,0)_34%),linear-gradient(180deg,rgba(8,17,40,0.6)_0%,rgba(8,17,40,0)_24%)]"
+        />
+        <div className="relative mx-auto flex h-full w-full max-w-site flex-col px-gutter pb-[clamp(24px,4vh,40px)] pt-28">
+          <div className="flex flex-1 flex-col items-center justify-center text-center">{children}</div>
+        </div>
+      </section>
+    </div>
   );
 }

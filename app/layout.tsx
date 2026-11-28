@@ -95,7 +95,7 @@ export default function RootLayout({
           aria-hidden="true"
           className="scroll-progress pointer-events-none fixed inset-x-0 top-0 z-[60] h-[3px] bg-accent"
         />
-        <div className="relative">
+        <div className="site-shell relative">
           <SiteHeader />
           <main id="main" tabIndex={-1}>
             {children}
