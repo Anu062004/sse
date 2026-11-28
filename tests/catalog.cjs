@@ -35,7 +35,10 @@ assert.equal(new Set(products.map(p => p.slug)).size, products.length);
 for (const product of products) {
   assert.ok(categories.some(c => c.slug === product.category), product.slug);
   for (const image of product.images) assert.ok(fs.existsSync(path.join(root, "public", image)), image);
-  if (product.image_labels) assert.equal(product.image_labels.length, product.images.length, product.slug);
+  if (product.image_labels) {
+    assert.equal(product.image_labels.length, product.images.length, product.slug);
+    assert.ok(product.image_labels.every(label => label.trim() && !label.includes("AI-generated")), product.slug);
+  }
 }
 for (const category of categories) assert.ok(fs.existsSync(path.join(root, "public", category.image)), category.slug);
 
@@ -51,7 +54,6 @@ for (const [slug, query, type] of [
   assert.equal(product.part_number, "");
   assert.equal(product.images.length, 4);
   assert.equal(product.image_labels[0], "Original supplied photo");
-  assert.ok(product.image_labels.slice(1).every(label => label.startsWith("AI-generated")));
   assert.ok(!("sku" in productSchema(product)));
   assert.equal(getSpecRows(product).find(row => row.label === "Part no.").value, "Confirmed on enquiry");
   const description = JSON.stringify(getDescriptionSections(product));

@@ -99,7 +99,7 @@ The `Product` type in `lib/products.ts` is the field reference. JSON is cast to 
 
 The 34 records comprise 20 spool valves, 8 seal kits, one hydraulic cylinder listing and one each of hydro clamp seals, hub seals, gear lever sets, slew plunger bolts and stub axles. Homepage copy mentions 70+ variants; this marketing figure is separate from the number of website records and needs owner review when content changes.
 
-Some product views are AI-generated from catalogue references. Preserve `AI-generated` and `Original catalog` labels and notes describing variants, incomplete pictured sets or fitment uncertainty. Do not present generated views as original photographs or proof of dimensions. The gallery creates at least four slots; missing views intentionally display “Photo coming soon.”
+Some product views are AI-generated from catalogue references. Image badges use view names without an `AI-generated` prefix. Preserve `Original catalog` labels and notes describing variants, incomplete pictured sets or fitment uncertainty. Do not present generated views as original photographs or proof of dimensions. The gallery creates at least four slots; missing views intentionally display “Photo coming soon.”
 
 The About page's four brand showcase cards resolve their images and labels from each product's current first catalogue image. Update `data/products.json` to change those views; the showcase uses contained images so the entire part remains visible, and retains the catalogue's image disclosure labels.
 
