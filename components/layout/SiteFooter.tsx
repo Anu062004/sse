@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { FooterAnimation } from "@/components/layout/FooterAnimation";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import {
@@ -63,28 +64,29 @@ export function SiteFooter() {
       <div className="h-[3px] bg-accent" aria-hidden="true" />
 
       <Container>
-        <div className="flex flex-col gap-5 border-b border-white/10 py-8 md:flex-row md:items-center md:justify-between">
+        <div className="grid items-center gap-8 border-b border-white/10 py-10 md:grid-cols-2 lg:gap-16">
           <div>
             <p className="display text-2xl font-extrabold leading-tight md:text-[28px]">
               Need a part matched to your machine?
             </p>
-            <p className="mt-1 text-sm text-white/65">
+            <p className="mt-3 max-w-[48ch] text-sm leading-relaxed text-white/65">
               Share the machine, year and valve block — or a photo of the old
               part. Dealer and bulk rates available.
             </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <ButtonLink href="/quote" variant="light" size="sm">
+                Request a quote
+              </ButtonLink>
+              <ButtonLink
+                href={whatsappHref("Hello SSE, I would like a quote for hydraulic spares.")}
+                variant="whatsapp"
+                size="sm"
+              >
+                WhatsApp
+              </ButtonLink>
+            </div>
           </div>
-          <div className="flex flex-none flex-wrap gap-3">
-            <ButtonLink href="/quote" variant="light" size="sm">
-              Request a quote
-            </ButtonLink>
-            <ButtonLink
-              href={whatsappHref("Hello SSE, I would like a quote for hydraulic spares.")}
-              variant="whatsapp"
-              size="sm"
-            >
-              WhatsApp
-            </ButtonLink>
-          </div>
+          <FooterAnimation />
         </div>
 
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 py-12 lg:grid-cols-[1.5fr_1fr_1.2fr_1.4fr] lg:gap-x-10">
