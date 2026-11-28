@@ -57,23 +57,24 @@ function ContactRow({
   );
 }
 
-/** Compact footer: enquiry strip, four link columns, legal bar. */
+/** Animated enquiry banner, followed by link columns and the legal bar. */
 export function SiteFooter() {
   return (
     <footer className="on-dark bg-ink text-white">
       <div className="h-[3px] bg-accent" aria-hidden="true" />
 
-      <Container>
-        <div className="grid items-center gap-8 border-b border-white/10 py-10 md:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="display text-2xl font-extrabold leading-tight md:text-[28px]">
+      <div className="relative isolate overflow-hidden">
+        <FooterAnimation />
+        <Container className="relative z-10 flex min-h-[360px] items-center pb-24 pt-16 md:min-h-[400px] md:pt-20">
+          <div className="max-w-[600px]">
+            <p className="display text-[clamp(30px,3.2vw,46px)] font-extrabold leading-tight">
               Need a part matched to your machine?
             </p>
-            <p className="mt-3 max-w-[48ch] text-sm leading-relaxed text-white/65">
+            <p className="mt-4 max-w-[48ch] text-base leading-relaxed text-white/80">
               Share the machine, year and valve block — or a photo of the old
               part. Dealer and bulk rates available.
             </p>
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <ButtonLink href="/quote" variant="light" size="sm">
                 Request a quote
               </ButtonLink>
@@ -86,9 +87,10 @@ export function SiteFooter() {
               </ButtonLink>
             </div>
           </div>
-          <FooterAnimation />
-        </div>
+        </Container>
+      </div>
 
+      <Container>
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 py-12 lg:grid-cols-[1.5fr_1fr_1.2fr_1.4fr] lg:gap-x-10">
           <div className="col-span-2 lg:col-span-1">
             <Logo className="h-14" />

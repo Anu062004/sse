@@ -41,7 +41,7 @@ export function FooterAnimation() {
   }, [paused, failed]);
 
   return (
-    <div className="relative mx-auto aspect-video w-full max-w-[480px] overflow-hidden rounded-2xl border border-white/15 bg-navy md:mx-0 md:justify-self-end">
+    <div className="absolute inset-0">
       <video
         ref={videoRef}
         src="/videos/footer-earthmoving.mp4"
@@ -54,14 +54,18 @@ export function FooterAnimation() {
         preload="none"
         aria-hidden="true"
         onError={() => setFailed(true)}
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover object-center"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(9,19,45,0.9)_0%,rgba(9,19,45,0.65)_55%,rgba(9,19,45,0.35)_100%),linear-gradient(0deg,#09132d_0%,transparent_45%)]"
       />
       {!failed ? (
         <button
           type="button"
           onClick={() => setPaused((value) => !value)}
           aria-label={paused ? "Play footer animation" : "Pause footer animation"}
-          className="absolute bottom-3 right-3 min-h-11 rounded-full border border-white/30 bg-ink/85 px-4 text-xs font-semibold text-white transition-colors hover:bg-ink motion-reduce:hidden"
+          className="absolute bottom-5 right-gutter z-20 min-h-11 rounded-full border border-white/30 bg-ink/85 px-4 text-xs font-semibold text-white transition-colors hover:bg-ink motion-reduce:hidden"
         >
           {paused ? "Play" : "Pause"}
         </button>
