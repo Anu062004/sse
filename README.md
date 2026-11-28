@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/images/brand/sse-readme-banner.png" alt="SSE Hydraulic Solutions logo" width="720" />
+</p>
+
 # S S Engineering website
 
 SSE is a product catalogue and enquiry website for S S Engineering, a hydraulic components and aftermarket spares business in Faridabad, India. Visitors find parts by machine, year and valve block, inspect fitment details, and contact the business through WhatsApp, phone or the quotation form. Prices and availability are confirmed by the business; there is no checkout or online payment.
