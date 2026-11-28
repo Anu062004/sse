@@ -1,0 +1,122 @@
+{
+  "Delhi": {
+    "name": "India Gate",
+    "src": "/images/landmarks/delhi.webp",
+    "author": "AKS.9955",
+    "source": "https://commons.wikimedia.org/wiki/File:India_Gate_front.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "Haryana": {
+    "name": "Kos Minar",
+    "src": "/images/landmarks/haryana.webp",
+    "author": "Anupamg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kos_Minar_001.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "Punjab": {
+    "name": "Golden Temple",
+    "src": "/images/landmarks/punjab.webp",
+    "author": "Shagil Kannur",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Golden_Temple_of_Amrithsar_7.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "Rajasthan": {
+    "name": "Hawa Mahal",
+    "src": "/images/landmarks/rajasthan.webp",
+    "author": "Chainwit.",
+    "source": "https://commons.wikimedia.org/wiki/File:East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "Uttar Pradesh": {
+    "name": "Taj Mahal",
+    "src": "/images/landmarks/uttar-pradesh.webp",
+    "author": "Yann; edited by Jim Carter",
+    "source": "https://commons.wikimedia.org/wiki/File:Taj_Mahal_(Edited).jpeg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "Uttarakhand": {
+    "name": "Kedarnath",
+    "src": "/images/landmarks/uttarakhand.webp",
+    "author": "Shivam Kumar 766",
+    "source": "https://commons.wikimedia.org/wiki/File:Kedarnath_Temple_in_Rainy_season.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "Himachal Pradesh": {
+    "name": "Christ Church, Shimla",
+    "src": "/images/landmarks/himachal-pradesh.webp",
+    "author": "ShashankSharma2511",
+    "source": "https://commons.wikimedia.org/wiki/File:Christ_Church,_Shimla.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "Madhya Pradesh": {
+    "name": "Sanchi Stupa",
+    "src": "/images/landmarks/madhya-pradesh.webp",
+    "author": "Biswarup Ganguly",
+    "source": "https://commons.wikimedia.org/wiki/File:East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "Gujarat": {
+    "name": "Statue of Unity",
+    "src": "/images/landmarks/gujarat-statue-of-unity.webp",
+    "author": "Veera.sj",
+    "source": "https://commons.wikimedia.org/wiki/File:Full_Length_shot_of_The_Statue_of_Unity.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "Maharashtra": {
+    "name": "Gateway of India",
+    "src": "/images/landmarks/maharashtra.webp",
+    "author": "A.Savin",
+    "source": "https://commons.wikimedia.org/wiki/File:Mumbai_03-2016_30_Gateway_of_India.jpg",
+    "license": "FAL",
+    "licenseUrl": "http://artlibre.org/licence/lal/en"
+  },
+  "Chhattisgarh": {
+    "name": "Chitrakote Falls",
+    "src": "/images/landmarks/chhattisgarh.webp",
+    "author": "Iamg at English Wikipedia",
+    "source": "https://commons.wikimedia.org/wiki/File:Chitrakot_waterfalls.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "Bihar": {
+    "name": "Mahabodhi Temple",
+    "src": "/images/landmarks/bihar.webp",
+    "author": "Bpilgrim",
+    "source": "https://commons.wikimedia.org/wiki/File:Mahabodhitemple.jpg",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+  },
+  "Jharkhand": {
+    "name": "Baidyanath Dham",
+    "src": "/images/landmarks/jharkhand.webp",
+    "author": "Pinakpani",
+    "source": "https://commons.wikimedia.org/wiki/File:Baidyanath_temple_and_temple_complex,_Deoghar_04.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "West Bengal": {
+    "name": "Howrah Bridge",
+    "src": "/images/landmarks/west-bengal.webp",
+    "author": "Apoorva Karlekar",
+    "source": "https://commons.wikimedia.org/wiki/File:Howrah_bridge_at_night.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "Odisha": {
+    "name": "Konark Sun Temple",
+    "src": "/images/landmarks/odisha.webp",
+    "author": "Subham9423",
+    "source": "https://commons.wikimedia.org/wiki/File:Konarka_Temple.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+}
